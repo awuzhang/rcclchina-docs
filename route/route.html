@@ -3,51 +3,234 @@ layout: default
 title: 航线
 ---
 <div class="page" id="page-route">
-  <header class="bar bar-nav">
-    <a class="icon icon-left pull-left"></a>
-    <h1 class="title">航线</h1>
-  </header>
+    <header class="bar bar-nav">
+        <a class="icon icon-left pull-left back"></a>
+        <h1 class="title">航线列表</h1>
+    </header>
+    <nav class="bar bar-tab">
+        <div class="row">
+            <div class="col-50">老年优惠(55岁以上)
+                <input type="checkbox">
+            </div>
+            <div class="col-50">显示旅行社包船航线
+                <input type="checkbox">
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+      <div class="route-searchbox zx1">
+          <div class="row">
+              <a href="#" class="open-popup" data-popup=".popup-ships">游轮</a>
+          </div>
+          <div class="row no-gutter ">
+              <div class="col-33">
+                  <a href="#" class="open-popup" data-popup=".popup-portSelect">
+                      <label>出发港</label>
+                      <div>不限 <i></i></div>
+                  </a>
+              </div>
+              <div class="col-33">
+                  <a href="#" class="open-popup" data-popup=".popup-cportSelect">
+                      <label>目的地</label>
+                      <div>上海 <i></i></div>
+                  </a>
+              </div>
+              <div class="col-33">
+                  <a href="#" class="open-popup" data-popup=".popup-monthSelect">
+                      <label>出发时间</label>
+                      <div>2015/11/30... <i></i></div>
+                  </a>
+              </div>
+          </div>
+      </div>
+      <div class="content native-scroll">
+          <div class="tc">本月(7条航线)</div>
+          <div class="list-block media-list inset">
+              <ul>
+                  <li>
+                      <a href="/route/route_detail" class="item-link item-content">
+                          <div class="item-media">
+                              <img style='width: 4rem;'>
+                          </div>
+                          <div class="item-inner">
+                              <div class="item-title-row">
+                                  <div class="item-title">上海-冲绳-上海 <span>折</span></div>
+                              </div>
+                              <div class="item-subtitle">
+                                <div class="item-text">5天4晚</div>
+                                <div class="item-text">2016/03/25 - 2016/03/29</div>
+                                <div class="item-text">海洋量子号</div>
+                                <div class="item-after">5,178/人起</div>
+                              </div>
+                          </div>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div class="popup popup-ships">
   <div class="content">
-    <div class="content-block list-block">
-      <div class="row">
-        <label>目的地
-          <select>
-            <option>不限</option>
-            <option>泰国</option>
-            <option>中国台湾</option>
-            <option>中国</option>
-            <option>新加坡</option>
-            <option>日本</option>
-            <option>越南</option>
-            <option>韩国</option>
-          </select>
-        </label>
-      </div>
-      <div class="row">
-        <label>出发港口
-          <select>
-            <option>上海</option>
-            <option>香港</option>
-          </select>
-        </label>
-      </div>
-      <div class="row no-gutter">
-        <div class="col-50">
-          <label>出发时间
-          <input type="date" placeholder="不限" value=""></label>
-        </div>
-        <div class="col-50">
-          <div>游轮</div>
-          <select>
-            <option>不限</option>
-            <option>海洋量子号</option>
-            <option>海洋水手号</option>
-            <option>海洋航行者号</option>
-            <option>海洋神话号</option>
-          </select>
-        </div>
-      </div>
-      <a href="/route/route_search" class="button button-fill button-success">查询</a>
+    <div class="list-block media-list">
+      <ul>
+        <li>
+          <label class="label-checkbox item-content">
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">游轮不限</div>
+              </div>
+            </div>
+            <input type="radio" name="ship-radio">
+            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+          </label>
+        </li>
+        <li>
+          <label class="label-checkbox item-content">
+            <div class="item-media"><span>Q</span></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">海洋量子号</div>
+                <div class="item-text">未来智能型</div>
+              </div>
+              <div class="item-subtitle">这不是一艘简单意义上的新船</div>
+              <div class="item-text"><span>24间餐厅</span> <span>28个游乐</span></div>
+            </div>
+            <input type="radio" name="ship-radio">
+            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+          </label>
+        </li>
+        <li>
+          <label class="label-checkbox item-content">
+            <div class="item-media"><span>Q</span></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">海洋量子号</div>
+                <div class="item-text">未来智能型</div>
+              </div>
+              <div class="item-subtitle">这不是一艘简单意义上的新船</div>
+              <div class="item-text"><span>24间餐厅</span> <span>28个游乐</span></div>
+            </div>
+            <input type="radio" name="ship-radio">
+            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+          </label>
+        </li>
+        <li>
+          <label class="label-checkbox item-content">
+            <div class="item-media"><span>Q</span></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">海洋量子号</div>
+                <div class="item-text">未来智能型</div>
+              </div>
+              <div class="item-subtitle">这不是一艘简单意义上的新船</div>
+              <div class="item-text"><span>24间餐厅</span> <span>28个游乐</span></div>
+            </div>
+            <input type="radio" name="ship-radio">
+            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+          </label>
+        </li>
+        <li>
+          <label class="label-checkbox item-content">
+            <div class="item-media"><span>Q</span></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">海洋量子号</div>
+                <div class="item-text">未来智能型</div>
+              </div>
+              <div class="item-subtitle">这不是一艘简单意义上的新船</div>
+              <div class="item-text"><span>24间餐厅</span> <span>28个游乐</span></div>
+            </div>
+            <input type="radio" name="ship-radio">
+            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+          </label>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
+<div class="popup popup-portSelect">
+  <div class="content">
+    <div class="list-block media-list">
+      <ul>
+        <li>
+          <label class="label-checkbox item-content">
+            <div class="item-media"><span>!</span></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">上海</div>
+              </div>
+              <div class="item-subtitle">最近的出发地</div>
+            </div>
+            <input type="radio" name="portSelect-radio">
+            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="popup popup-cportSelect">
+  <div class="content">
+    <div class="list-block media-list">
+      <ul>
+        <li>
+          <label class="label-checkbox item-content">
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">不限目的地</div>
+              </div>
+            </div>
+            <input type="radio" name="cportSelect-radio">
+            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+          </label>
+        </li>
+        <li>
+          <label class="label-checkbox item-content">
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title"><span>新加坡</span><span>新加坡</span></div>
+              </div>
+            </div>
+            <input type="radio" name="cportSelect-radio">
+            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="popup popup-monthSelect">
+  <div class="content">
+    <div class="list-block media-list">
+      <ul>
+        <li>
+          <label class="label-checkbox item-content">
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">不限时间</div>
+              </div>
+            </div>
+            <input type="checkbox" name="monthSelect-checkbox">
+            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+          </label>
+        </li>
+        <li>
+          <label class="label-checkbox item-content">
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">2015年11月</div>
+              </div>
+            </div>
+            <input type="checkbox" name="monthSelect-checkbox">
+            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+

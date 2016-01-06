@@ -1,0 +1,5 @@
+.zx1{z-index:1;}.zx2{z-index:2;}.zx0{z-index:0;}
+.popup, .login-screen  {top: 40%;}
+
+.route-searchbox {position: fixed; background-color: #fff; width: 100%;}
+.label-checked {background-color: #f1f1f1;}
