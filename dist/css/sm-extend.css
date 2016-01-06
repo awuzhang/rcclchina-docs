@@ -116,7 +116,7 @@ body > .photo-browser .toolbar {
   z-index: 5000;
 }
 .page[data-page="photo-browser-slides"] .toolbar a {
-  color: #4cd964;
+  color: #fbb818;
 }
 .photo-browser-popup {
   background: none;

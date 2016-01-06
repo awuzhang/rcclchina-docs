@@ -265,7 +265,7 @@ body {
   font-size: 0.85rem;
   line-height: 1.5;
   color: #3d4145;
-  background: #eee;
+  background: #061556;
   overflow: hidden;
 }
 a,
@@ -279,12 +279,12 @@ p {
   margin: 1em 0;
 }
 a {
-  color: #0894ec;
+  color: #0073bb;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 a:active {
-  color: #0a8ddf;
+  color: #005991;
 }
 .page {
   position: absolute;
@@ -292,7 +292,7 @@ a:active {
   right: 0;
   bottom: 0;
   left: 0;
-  background: #eee;
+  background: #061556;
   z-index: 2000;
 }
 .content {
@@ -950,10 +950,10 @@ i.icon.icon-plus {
   color: #999;
 }
 .color-primary {
-  color: #0894ec;
+  color: #fbb818;
 }
 .color-success {
-  color: #4cd964;
+  color: #fbb818;
 }
 .color-danger {
   color: #f6383a;
@@ -1120,7 +1120,7 @@ i.icon.icon-plus {
 }
 .bar-tab .tab-item.active,
 .bar-tab .tab-item:active {
-  color: #0894ec;
+  color: #fbb818;
 }
 .bar-tab .tab-item .badge {
   position: absolute;
@@ -1172,12 +1172,12 @@ i.icon.icon-plus {
   font-size: 0.8rem;
   line-height: 2.2rem;
   height: 2.2rem;
-  color: #0894ec;
+  color: #fbb818;
   border: 0;
 }
 .bar .button-link:active,
 .bar .button-link.active {
-  color: #0675bb;
+  color: #dc9c04;
 }
 .bar .button-block {
   top: 0.35rem;
@@ -1551,7 +1551,7 @@ html:not(.watch-active-state) .list-block .item-link:active .item-inner:after,
 .list-block .item-link.list-button {
   padding: 0 0.75rem;
   text-align: center;
-  color: #0894ec;
+  color: #fbb818;
   display: block;
   line-height: 2.15rem;
 }
@@ -1995,7 +1995,7 @@ html:not(.watch-active-state) .list-block .item-link:active .item-inner:after,
   display: none;
 }
 .label-switch input[type="checkbox"]:checked + .checkbox {
-  background: #4cd964;
+  background: #fbb818;
 }
 .label-switch input[type="checkbox"]:checked + .checkbox:before {
   -webkit-transform: scale(0);
@@ -2083,7 +2083,7 @@ html.android .label-switch input[type="checkbox"] + .checkbox:before {
   height: 0.1rem;
   margin-top: -1px;
   z-index: 1;
-  background: #0894ec;
+  background: #fbb818;
   content: ' ';
 }
 label.label-checkbox {
@@ -2114,7 +2114,7 @@ label.label-checkbox input[type="radio"] {
 label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-checkbox,
 label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-checkbox {
   border: none;
-  background-color: #0894ec;
+  background-color: #fbb818;
 }
 label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-checkbox:after,
 label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-checkbox:after {
@@ -2228,8 +2228,8 @@ label.label-checkbox.active-state .item-inner:after {
   color: #5f646e;
 }
 .button {
-  border: 1px solid #0894ec;
-  color: #0894ec;
+  border: 1px solid #fbb818;
+  color: #fbb818;
   text-decoration: none;
   text-align: center;
   display: block;
@@ -2256,16 +2256,16 @@ input[type="button"].button {
   width: 100%;
 }
 .button:active {
-  color: #0a8ddf;
-  border-color: #0a8ddf;
+  color: #eea800;
+  border-color: #eea800;
 }
 .button.button-round {
   border-radius: 1.25rem;
 }
 .button.active,
 .button.active:active {
-  color: #0a8ddf;
-  border-color: #0a8ddf;
+  color: #eea800;
+  border-color: #eea800;
 }
 .button.button-big {
   font-size: 0.85rem;
@@ -2274,13 +2274,13 @@ input[type="button"].button {
 }
 .button.button-fill {
   color: #fff;
-  background: #0894ec;
+  background: #fbb818;
   border: none;
   line-height: 1.35rem;
 }
 .button.button-fill.active,
 .button.button-fill:active {
-  background: #0a8ddf;
+  background: #eea800;
 }
 .button.button-fill.button-big {
   line-height: 2.4rem;
@@ -2288,7 +2288,7 @@ input[type="button"].button {
 .button .button-link {
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
-  color: #0894ec;
+  color: #fbb818;
   background-color: transparent;
   border: 0;
 }
@@ -2308,15 +2308,15 @@ input[type="button"].button {
   color: #5f646e;
 }
 .button-light:active {
-  border-color: #0a8ddf;
-  color: #0a8ddf;
+  border-color: #eea800;
+  color: #eea800;
 }
 .button-light.button-fill {
   color: white;
   background-color: #ccc;
 }
 .button-light.button-fill:active {
-  background-color: #0a8ddf;
+  background-color: #eea800;
 }
 .button-dark {
   border-color: #6e727b;
@@ -2324,30 +2324,30 @@ input[type="button"].button {
   color: #5f646e;
 }
 .button-dark:active {
-  border-color: #0a8ddf;
-  color: #0a8ddf;
+  border-color: #eea800;
+  color: #eea800;
 }
 .button-dark.button-fill {
   color: white;
   background-color: #6e727b;
 }
 .button-dark.button-fill:active {
-  background-color: #0a8ddf;
+  background-color: #eea800;
 }
 .button-success {
-  border-color: #4cd964;
-  color: #4cd964;
+  border-color: #fbb818;
+  color: #fbb818;
 }
 .button-success:active {
-  border-color: #2ac845;
-  color: #2ac845;
+  border-color: #eea800;
+  color: #eea800;
 }
 .button-success.button-fill {
   color: white;
-  background-color: #4cd964;
+  background-color: #fbb818;
 }
 .button-success.button-fill:active {
-  background-color: #2ac845;
+  background-color: #eea800;
 }
 .button-danger {
   border-color: #f6383a;
@@ -2429,11 +2429,11 @@ input[type="button"].button {
   width: 100%;
   -webkit-box-flex: 1;
   -ms-flex: 1;
-  border-color: #0894ec;
-  color: #0894ec;
+  border-color: #fbb818;
+  color: #fbb818;
 }
 .buttons-row .button.active {
-  background-color: #0894ec;
+  background-color: #fbb818;
   color: white;
   z-index: 100;
 }
@@ -2496,8 +2496,8 @@ input[type="button"].button {
   border-radius: 0;
 }
 .buttons-tab .button.active {
-  color: #0894ec;
-  border-color: #0894ec;
+  color: #fbb818;
+  border-color: #fbb818;
   z-index: 100;
 }
 /* === Tabs === */
@@ -2537,7 +2537,7 @@ input[type="button"].button {
   top: 0;
   width: 100%;
   height: 100%;
-  background: #efeff4;
+  background: #061556;
   display: none;
 }
 .page.page-current,
@@ -2886,7 +2886,7 @@ input[type="button"].button {
   font-size: 0.85rem;
   line-height: 2.2rem;
   text-align: center;
-  color: #0894ec;
+  color: #fbb818;
   background: #e8e8e8;
   display: block;
   position: relative;
@@ -3116,7 +3116,7 @@ html:not(.watch-active-state) .modal-button:active,
   cursor: pointer;
   line-height: 2.15rem;
   font-size: 1rem;
-  color: #0894ec;
+  color: #fbb818;
 }
 .actions-modal-button:active,
 .actions-modal-button.active-state {
@@ -3903,7 +3903,7 @@ body.panel-closing .page {
   background: #e3e3e3;
 }
 .picker-calendar-day.picker-calendar-day-selected span {
-  background: #0894ec;
+  background: #fbb818;
   color: #fff;
 }
 .picker-calendar-day span {
@@ -4363,7 +4363,7 @@ Framework7 Layouts Themes
   color: #fff;
 }
 .theme-dark .tab-item.active {
-  color: #0894ec;
+  color: #fbb818;
 }
 .theme-dark .picker-calendar-week-days {
   color: #fff;
