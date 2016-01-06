@@ -1,0 +1,173 @@
+---
+layout: default
+title: 预定船票
+---
+<div id="page-booking" class="page">
+  <nav class="bar bar-tab">
+    <a href="/order/order_contact" class="button button-big button-fill button-success">下一步</a>
+  </nav>
+  <div class="content">
+    <div class="content-block">
+      <div class="row">
+        <div class="col-33">
+          <div>1</div>
+          <div>填写乘客信息</div>
+        </div>
+        <div class="col-33">
+          <div>2</div>
+          <div>填写联系人</div>
+        </div>
+        <div class="col-33">
+          <div>3</div>
+          <div>支付</div>
+        </div>
+      </div>
+    </div>
+    <div class="list-block media-list">
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title">上海 - 冲神 - 香港</div>
+          <div class="item-subtitle">5天4晚 <br> 2015年11月20-2015年11月25日</div>
+        </div><div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" width="80"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-content-inner">
+          <p>标准内舱房</p>
+          <div>
+            <a href="#" class="button open-popup" data-popup=".popup-customer"><span class="name">添加乘客1</span><input type="hidden" name="cnfamilyname"><input type="hidden" name="cnname"><input type="hidden" name="lastname"><input type="hidden" name="firstname"><input type="hidden" name="birthdate"><input type="hidden" name="gender"><input type="hidden" name="phone"><input type="hidden" name="email"><input type="hidden" name="membership"></a>
+            <a href="#" class="button open-popup" data-popup=".popup-customer"><span class="name">添加乘客2</span><input type="hidden" name="cnfamilyname"><input type="hidden" name="cnname"><input type="hidden" name="lastname"><input type="hidden" name="firstname"><input type="hidden" name="birthdate"><input type="hidden" name="gender"><input type="hidden" name="phone"><input type="hidden" name="email"><input type="hidden" name="membership"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-content-inner">
+          <p>高级海景房</p>
+          <div>
+            <a class="button" href="/order/order_customer">添加乘客1</a>
+            <a class="button" href="/order/order_customer">添加乘客2(儿童)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup-customer">
+  <div class="content">
+    <div class="content-block-title">必填信息</div>
+    <div class="list-block">
+      <ul>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">中文姓</div>
+              <div class="item-input">
+                <input type="text" name="cnfamilyname" placeholder="请输入">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">中文名</div>
+              <div class="item-input">
+                <input type="text" name="cnname" placeholder="请输入">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">姓氏拼音</div>
+              <div class="item-input">
+                <input type="text" name="lastname" placeholder="请输入">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">名字拼音</div>
+              <div class="item-input">
+                <input type="text" name="firstname" placeholder="请输入">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">出生年月</div>
+              <div class="item-input">
+                <input type="date" name="birthdate" placeholder="Birth day">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">性别</div>
+              <div class="item-input">
+                <select name="gender">
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="content-block-title">选填信息</div>
+    <div class="list-block">
+      <ul>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">手机号码</div>
+              <div class="item-input">
+                <input type="text" name="phone" placeholder="请输入">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">电子邮箱</div>
+              <div class="item-input">
+                <input type="email" name="email" placeholder="请输入">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">会员号</div>
+              <div class="item-input">
+                <input type="text" name="membership" placeholder="请输入">
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-50">
+        <a href="#" class="close-popup button button-fill button-danger">取消</a>
+      </div>
+      <div class="col-50">
+        <a href="#" class="close-popup button button-fill button-success">保存</a>
+      </div>
+    </div>
+  </div>
+</div>
