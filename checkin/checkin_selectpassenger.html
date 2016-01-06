@@ -4,44 +4,97 @@ title: 选择乘客
 ---
 <div class="page" id="page-checkin-selectpassenger">
   <header class="bar bar-nav">
-    <a class="icon icon-left pull-left"></a>
+    <a class="icon icon-left pull-left back"></a>
     <h1 class="title">选择乘客</h1>
   </header>
   <div class="content">
-    <div class="content-block list-block">
-      <div class="row no-gutter">
-          <div>舱房号</div>
-          <input type="text" value="273842">
+    <div class="content-block list-block inset clear_pad">
+      <div class="row text-center checkin_flow_title">
+        <div class="col-25 active">选择乘客</div>
+        <div class="col-25">补充信息</div>
+        <div class="col-25">消费方式</div>
+        <div class="col-25">生成船票</div>
       </div>
-      <div class="row no-gutter">
-        <div class="col-50">
-          <div>出航日期</div>
-          <input type="date">
-        </div>
-        <div class="col-50">
-          <div>搭乘邮轮</div>
-          <select class="nopadding">
-            <option>不限</option>
-            <option>海洋量子号</option>
-            <option>海洋水手号</option>
-            <option>海洋航行者号</option>
-            <option>海洋神话号</option>
-          </select>
-        </div>
-      </div>
-      <div class="row no-gutter">
-        <div class="col-50">
-          <div>乘客姓氏拼音</div>
-          <input type="text" value="Hong">
-        </div>
-        <div class="col-50">
-          <div>乘客出生日期</div>
-          <input type="date">
-        </div>
-      </div>
+      <ul>
+        <li>
+          <div class="row no-gutter">
+            <div class="col-33">
+              <div>订单号</div>
+            </div>
+            <div class="col-66 color_black">
+              <div>2678365</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row no-gutter">
+            <div class="col-33">
+              <div>所乘游轮</div>
+            </div>
+            <div class="col-66 color_black">
+              <div>量子号</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row no-gutter">
+            <div class="col-33">
+              <div>出发日期</div>
+            </div>
+            <div class="col-66 color_black">
+              <div>2015/12/12</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row no-gutter">
+            <div class="col-33">
+              <div>航线</div>
+            </div>
+            <div class="col-66 color_black">
+              <div>上海-冲绳-香港</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="text-center padding75">请选择一位乘客办理登船</div>
+      <ul>
+        <li>
+          <div class="row no-gutter">
+            <div class="col-66 color_black">
+              <div>标准海景房</div>
+            </div>
+            <div class="col-33">
+              <div class="pull-right">房间号7539</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row no-gutter">
+            <div class="col-66">
+              <div>艾丽丝 ALICE HONG</div>
+            </div>
+            <div class="col-33">
+              <div class="pull-right">已办理<span class="icon icon-right"></span></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="checkin/">
+            <div class="row no-gutter">
+              <div class="col-66">
+                <div>吴志娟 ZHIJUAN WU</div>
+              </div>
+              <div class="col-33">
+                <div class="pull-right">未办理<span class="icon icon-right"></span></div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
     </div>
     <div class="content-block list-block">
-      <a href="/checkin/route_search" class="button button-fill button-success">确认</a>
+      <a href="/checkin/checkin_supplementary" class="button button-big button-fill button-success button-round">下一步</a>
     </div>
   </div>
 </div>
