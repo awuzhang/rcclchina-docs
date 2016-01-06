@@ -1,0 +1,10 @@
+@charset "utf-8";
+.smallimg {
+  width: 40%;
+}
+.color_white {
+  color: white;
+}
+#page-checkin-carbinno .list-block input, .list-block select {
+  padding: 0;
+}

@@ -1,0 +1,53 @@
+---
+layout: default
+title: 舱房号验证
+---
+<div class="page" id="page-checkin-carbinno">
+  <header class="bar bar-nav">
+    <a class="icon icon-left pull-left"></a>
+    <h1 class="title">舱房号验证</h1>
+  </header>
+  <div class="content">
+    <div class="content-block list-block">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-content-inner">
+            <div class="row no-gutter">
+                <div>舱房号</div>
+                <input type="text" value="273842">
+            </div>
+            <div class="row no-gutter">
+              <div class="col-50">
+                <div>出航日期</div>
+                <input type="date">
+              </div>
+              <div class="col-50">
+                <div>搭乘邮轮</div>
+                <select class="nopadding">
+                  <option>不限</option>
+                  <option>海洋量子号</option>
+                  <option>海洋水手号</option>
+                  <option>海洋航行者号</option>
+                  <option>海洋神话号</option>
+                </select>
+              </div>
+            </div>
+            <div class="row no-gutter">
+              <div class="col-50">
+                <div>乘客姓氏拼音</div>
+                <input type="text" value="Hong">
+              </div>
+              <div class="col-50">
+                <div>乘客出生日期</div>
+                <input type="date">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-block list-block">
+      <a href="/checkin/checkin_selectpassenger" class="button button-big button-fill button-success button-round">确认</a>
+    </div>
+  </div>
+</div>
