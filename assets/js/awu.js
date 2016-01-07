@@ -2,12 +2,20 @@
 $(function () {
   'use strict';
 
+  $(document).on("pageAnimationStart", function(e) {
+    if($.device.isWeixin) {
+      $('header.bar').hide();
+      $('.bar-nav ~ .content').css({'top' : '0'});
+    }
+  })
   $(document).on("pageInit", function(e) {
     if($.device.isWeixin) {
+      $('header.bar').hide();
+      $('.bar-nav ~ .content').css({'top' : '0'});
     }
   })
 
-  $(document).on("pageInit", "#page-index", function(e) {
+  $(document).on("pageInit", "#page-index", function(e, pageId, $page) {
     /* 测试用 */
     $(".label").on('touchstart', function(){
       var $span = $(this).find('span'), $inp = $(this).find('input');
@@ -31,23 +39,47 @@ $(function () {
       });
   });
   
-  $(document).on("pageInit", "#page-route", function(e) {
-    $(".popup-ships .content").scroller({
-    	type: 'js'
-    });
-
-	$('.popup-ships .label-checkbox').on('click', function(){
+  $(document).on("pageInit", "#page-route", function(e, pageId, $page) {
+	$('.popup-ships .label-checkbox').not('.item-disabled').on('click', function(){
 		$('.popup-ships .label-checkbox.label-checked').removeClass('label-checked');
+		$('.popup-ships .label-checked').removeClass('label-checked');
 		$(this).addClass('label-checked');
+		var _text = $(this).find('.item-title').text();
+		$('#open-ships-text').text(_text);
 		$.closeModal('.popup-ships'); 
 	});
-	$('.popup-portSelect .label-checkbox').on('click', function(){
+	$('.popup-portSelect .label-checkbox').not('.item-disabled').on('click', function(){
+		$('.popup-portSelect .label-checked').removeClass('label-checked');
 		$(this).addClass('label-checked');
-		$.closeModal('.popup-portSelect');  
+		var _text = $(this).find('.item-title').text();
+		$('#open-portSelect-text').text(_text);
+		$.closeModal('.popup-portSelect'); 
 	});
-	$('.popup-cportSelect .label-checkbox').on('click', function(){
+	$('.popup-cportSelect .label-checkbox').not('.item-disabled').on('click', function(){
+		$('.popup-cportSelect .label-checked').removeClass('label-checked');
 		$(this).addClass('label-checked');
-		$.closeModal('.popup-cportSelect');  
+		var _text = $(this).find('.item-title').text();
+		$('#open-cportSelect-text').text(_text);
+		$.closeModal('.popup-cportSelect');
+	});
+
+	$('.popup-monthSelect .label-checkbox').not('.label-all').on('click', function(){
+		$('.popup-monthSelect .label-all').removeClass('label-checked').find('input').prop("checked", false);
+		if($(this).hasClass('label-checked')){
+			$(this).removeClass('label-checked');
+		}else{
+			$(this).addClass('label-checked');
+		}
+	});
+	//不限制时间
+	$('.popup-monthSelect .label-all').on('click', function(){
+		$('.popup-monthSelect .label-checked').find('input').prop("checked", false);
+		$('.popup-monthSelect .label-checked').removeClass('label-checked');
+		if($(this).hasClass('label-checked')){
+			$(this).removeClass('label-checked');
+		}else{
+			$(this).addClass('label-checked');
+		}
 	});
   });
 
