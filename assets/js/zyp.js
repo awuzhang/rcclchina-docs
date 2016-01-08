@@ -36,7 +36,7 @@ $(function () {
       }
     });
     
-    $('.check_agreement i').on("click",function(){
+    $('.div_agreement i').on("click",function(){
       if ($(this).hasClass('checkbox_on')){
         $(this).addClass('checkbox_off');
         $(this).removeClass('checkbox_on');
