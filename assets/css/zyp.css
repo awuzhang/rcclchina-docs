@@ -1,14 +1,26 @@
 @charset "utf-8";
-.checkin_svg_bg_div {
+.checkin_circle_div {
   width: 8rem;
   height :8rem;
   margin:auto;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #3b68b6;
+  border: 1px solid #678ac7;
 }
-.checkin_svg {
-  fill: #fbb819;
-  width:2rem;
+.checkin_smallimg {
+  height: 50%;
+  margin-top: 25%;
+}
+.checkin_flow_img {
+  width: 50%;
+  position: relative;
+  z-index: 100;
+}
+.checkin_card_img {
+  width: 18%;
+}
+.checkin_logo_img {
+  width: 15%;
 }
 .color_white {
   color: white;
@@ -17,7 +29,7 @@
   color: #000000;
 }
 .checkin .row {
-  padding: 0.5rem;
+  padding: 0.7rem;
 }
 .checkin li {
   border-top: 1px solid #e1e1e1;
@@ -25,21 +37,142 @@
 .checkin li:first-child {
   border-top: none;
 }
-#page-checkin-carbinno .list-block input, .checkin .list-block select {
+#page-checkin-carbinno .list-block input, #page-checkin-carbinno .list-block select {
   padding: 0;
 }
-#page-checkin-supplementary .list-block input, .checkin .list-block select {
+#page-checkin-supplementary .list-block input, #page-checkin-supplementary .list-block select {
+  padding: 0;
+}
+#page-checkin-payment .list-block input, #page-checkin-payment .list-block select {
   padding: 0;
 }
 .clear_pad {
   padding: 0;
 }
+.clear_margin {
+  margin: 0;
+}
 .padding75 {
   padding: 0.75rem;
 }
-#page-checkin-selectpassenger .row {
-  padding: 0.5rem;
+.checkin_title {
+  font-size: 0.7rem;
 }
-.checkin_flow_title {
-  font-size: 0.5rem;
+.checkin_content {
+  font-size: 0.85rem;
+}
+.checkin_ticket_title {
+  font-size: 0.6rem;
+}
+.large_title {
+  font-size: 1rem;
+}
+#page-checkin-payment .list-block .item-inner:after {
+  height: 0;
+}
+.checkbox_on {
+  display: inline-block;
+  background: url(../img/checkbox-true.png) no-repeat;
+  width: 0.85rem;
+  height: 0.85rem;
+  vertical-align:middle;
+  background-size: contain;
+}
+.checkbox_off {
+  display: inline-block;
+  background: url(../img/checkbox-false.png) no-repeat;
+  width: 0.85rem;
+  height: 0.85rem;
+  vertical-align:middle;
+  background-size: contain;
+
+}
+.checkin_flow {
+  position: relative;
+}
+.checkin .pad_top0 {
+  padding-top: 0;
+}
+.checkin .pad_bottom0 {
+  padding-bottom: 0;
+}
+.line_background {
+  border-top:1px dotted #164bc4;
+  position: absolute;
+  width: 70%;
+  top: 44%;
+  left: 15%;
+  z-index: 10;
+}
+.color_process_false {
+  color: #235cde;
+}
+.img_ticket {
+  width: 25%;
+}
+.checkin .buttons-tab {
+  margin: 0 1.5rem;
+}
+.checkin .buttons_tab_creditcard {
+  background:url(/assets/img/creditcard.png) no-repeat;
+  background-size:100%;
+}
+.checkin .buttons_tab_depositcard {
+  background:url(/assets/img/depositcard.png) no-repeat;
+  background-size:100%;
+}
+.checkin .buttons-tab .btn_img {
+  border-bottom：none;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  font-size: 0.7rem;
+  padding-right: 0.7rem;
+  color: #fff;
+}
+.checkin .buttons-tab:after {
+  height: 0;
+}
+.checkin .buttons-tab .button.active {
+  color: #000;
+  border: none;
+}
+.padb5 {
+  padding-bottom: 0.5rem;
+}
+.sail_pass {
+  color: #000036;
+}
+.ticket_content {
+  color: #000546;
+}
+.checkin_success {
+  color: #fbb818;
+  font-size: 1rem;
+}
+.checkin_time_note {
+  color: #fbb818;
+  padding: 0.85rem;
+}
+.img_ticket_success {
+  width: 20%;
+}
+.checkin_tips {
+  padding: 0.5rem 0;
+}
+.goback {
+  padding: 0.7rem;
+}
+.goback a {
+  color: #fbb818;
+}
+.deposit_card_note {
+  padding-top: 1.75rem;
+  color: #fbb818;
+}
+.sel_color {
+  color: #0073bb;
+}
+.check_agreement {
+  padding-top:0.45rem;
+  padding-bottom:0.65rem;
 }

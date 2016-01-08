@@ -1,81 +1,140 @@
 ---
 layout: default
-title: 消费方式
+title: 在线值船
 ---
 <div class="page" id="page-checkin-payment">
   <header class="bar bar-nav">
     <a class="icon icon-left pull-left back"></a>
-    <h1 class="title">消费方式</h1>
+    <h1 class="title">在线值船</h1>
   </header>
   <div class="content">
-    <div class="content-block list-block inset checkin clear_pad">
-      <div class="row text-center checkin_flow_title">
-        <div class="col-25 active">选择乘客</div>
-        <div class="col-25">补充信息</div>
-        <div class="col-25">消费方式</div>
-        <div class="col-25">生成船票</div>
+    <div class="content-block clear_pad checkin">
+      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0">
+        <div class="line_background"></div>
+        <div class="col-25">
+          <div>
+            <img src="/assets/img/small-select.png" class="checkin_flow_img">
+          </div>
+        </div>
+        <div class="col-25">
+          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+        </div>
+        <div class="col-25">
+          <div><img src="/assets/img/big-select.png" class="checkin_flow_img"></div>
+        </div>
+        <div class="col-25">
+          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+        </div>
       </div>
-      <ul>
-        <li>
-          <div class="row no-gutter">
-            <div class="col-50">
-              <div>中文姓</div>
-              <input type="text" value="273842">
-            </div>
-            <div class="col-50">
-              <div>中文名</div>
-              <input type="text" value="丽丝">
+      <div class="row text-center checkin_title checkin_flow pad_top0">
+        <div class="col-25 color_process_false">
+          选择乘客
+        </div>
+        <div class="col-25 color_process_false">
+          补充信息
+        </div>
+        <div class="col-25 color_white">
+          消费方式
+        </div>
+        <div class="col-25 color_process_false">
+          生成船票
+        </div>
+      </div>
+      <div class="buttons-tab buttons_tab_creditcard">
+        <a href="#creditcard" class="tab-link active button btn_img a_btn0">信用卡</a>
+        <a href="#depositcard" class="tab-link button btn_img a_btn1">储蓄卡或现金支付</a>
+      </div>
+      <div class="tabs">
+        <div id="creditcard" class="tab active">
+          <div class="content-block list-block inset checkin clear_pad clear_margin checkin_title">
+            <ul>
+              <li>
+                <div class="row no-gutter">
+                  <div class="padtb5">我们支持以下信用卡</div>
+                  <div class="checkin_tips">
+                    <img src="/assets/img/card-unionpay.png" class="checkin_card_img">
+                    <img src="/assets/img/card-visa.png" class="checkin_card_img">
+                    <img src="/assets/img/card-master.png" class="checkin_card_img">
+                    <img src="/assets/img/card-express.png" class="checkin_card_img">
+                    <img src="/assets/img/card-jcb.png" class="checkin_card_img">
+                  </div>
+                  <div class="padtb5">船上消费以美金结算，汇率按照当天结算汇率</div>
+                </div>
+              </li>
+              <li>
+                <div class="row no-gutter">
+                  <div>信用卡卡号</div>
+                  <input type="text" value="6225 7575 2663 6281">
+                </div>
+              </li>
+              <li>
+                <div class="row no-gutter">
+                  <div class="col-50">
+                    <div>持有人姓名拼音</div>
+                    <input type="text" value="Alice Hong">
+                  </div>
+                  <div class="col-50">
+                    <div>有效期至</div>
+                    <input type="text" class="date-input" />
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="text-center padding75 checkin_content">请选择共享信用卡的同行人员</div>
+            <ul class="checkin_content">
+              <li>
+                <label class="label-checkbox item-content">
+                  <input type="checkbox">
+                  <div class="item-media"><i class="checkbox_on"></i></div>
+                  <div class="item-inner">
+                    <div class="item-subtitle sel_color">艾丽丝 ALICE HONG</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="label-checkbox item-content">
+                  <input type="checkbox">
+                  <div class="item-media"><i class="checkbox_off"></i></div>
+                  <div class="item-inner">
+                    <div class="item-subtitle color_black">吴志娟 ZHIJUAN WU</div>
+                  </div>
+                </label>
+              </li>
+            </ul>
+            <div class="padding75 checkin_content pad_bottom0 ">
+              <i class="checkbox_on check_agreement"></i> <span>我已阅读并同意此<a href="#">用户协议</a></span>
             </div>
           </div>
-        </li>
-        <li>
-          <div class="row no-gutter">
-            <div class="col-50">
-              <div>姓氏拼音</div>
-              <input type="text" value="Hong">
-            </div>
-            <div class="col-50">
-              <div>名字拼音</div>
-              <input type="text" value="Alice">
-            </div>
+        </div>
+        <div id="depositcard" class="tab">
+          <div class="content-block list-block inset checkin clear_pad clear_margin checkin_title">
+            <ul>
+              <li>
+                <div class="row no-gutter">
+                  <div class="checkin_content color_black">储蓄卡</div>
+                  <div class="padtb5">我们支持以下储蓄卡</div>
+                  <div class="checkin_tips">
+                    <img src="/assets/img/card-unionpay.png" class="checkin_card_img">
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row no-gutter">
+                  <div class="checkin_content color_black">现金</div>
+                  <div class="padtb5">现金仅支持美金结算</div>
+                  <div class="deposit_card_note">*选择储蓄卡或现金付款的用户，请于登船现场办理</div>
+                </div>
+              </li>
+            </ul>
           </div>
-        </li>
-        <li>
-          <div class="row no-gutter">
-            <div class="col-33">
-              <div>所属国籍</div>
-              <input type="text" value="中国">
-            </div>
-            <div class="col-33">
-              <div>护照号</div>
-              <input type="text" value="E73829910">
-            </div>
-            <div class="col-33">
-              <div>有效日期</div>
-              <input type="date">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row no-gutter">
-            <div class="col-100">
-              <div>紧急联络人电话</div>
-              <input type="tel" value="13302847360">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row no-gutter">
-            <div class="col-100">
-              <div>会员号码（选填/填写可累积会员积分）</div>
-              <input type="text" value="603382915">
-            </div>
-          </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
-    <div class="content-block list-block">
-      <a href="/checkin/checkin_selectpassenger" class="button button-big button-fill button-success button-round">下一步</a>
+    <div class="content-block clear_margin">
+      <a href="/checkin/checkin_ticket" class="button button-big button-fill button-success button-round">下一步</a>
+    </div>
+    <div class="goback text-center">
+      <a class="back">返回</a>
     </div>
   </div>
 </div>

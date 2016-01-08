@@ -8,7 +8,10 @@ title: 舱房号验证
     <h1 class="title">舱房号验证</h1>
   </header>
   <div class="content">
-    <div class="content-block list-block inset checkin clear_pad">
+    <div class="content-block text-center">
+      <img src="/assets/img/shiplogo.png" class="checkin_logo_img">
+    </div>
+    <div class="content-block list-block inset checkin clear_pad checkin_title">
       <ul>
         <li>
           <div class="row no-gutter">
@@ -22,7 +25,7 @@ title: 舱房号验证
           <div class="row no-gutter">
             <div class="col-50">
               <div>出航日期</div>
-              <input type="date">
+              <input type="text" class="date-input" />
             </div>
             <div class="col-50">
               <div>搭乘游轮</div>
@@ -44,13 +47,13 @@ title: 舱房号验证
             </div>
             <div class="col-50">
               <div>乘客出生日期</div>
-              <input type="date">
+              <input type="text" class="date-input" />
             </div>
           </div>
         </li>
       </ul>
     </div>
-    <div class="content-block list-block">
+    <div class="content-block clear_margin">
       <a href="/checkin/checkin_selectpassenger" class="button button-big button-fill button-success button-round">确认</a>
     </div>
   </div>

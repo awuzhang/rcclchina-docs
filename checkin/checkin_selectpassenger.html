@@ -8,12 +8,37 @@ title: 选择乘客
     <h1 class="title">选择乘客</h1>
   </header>
   <div class="content">
-    <div class="content-block list-block inset clear_pad">
-      <div class="row text-center checkin_flow_title">
-        <div class="col-25 active">选择乘客</div>
-        <div class="col-25">补充信息</div>
-        <div class="col-25">消费方式</div>
-        <div class="col-25">生成船票</div>
+    <div class="content-block list-block inset clear_pad checkin">
+      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0">
+        <div class="line_background"></div>
+        <div class="col-25">
+          <div>
+            <img src="/assets/img/big-select.png" class="checkin_flow_img">
+          </div>
+        </div>
+        <div class="col-25">
+          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+        </div>
+        <div class="col-25">
+          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+        </div>
+        <div class="col-25">
+          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+        </div>
+      </div>
+      <div class="row text-center checkin_title checkin_flow pad_top0">
+        <div class="col-25 color_white">
+          选择乘客
+        </div>
+        <div class="col-25 color_process_false">
+          补充信息
+        </div>
+        <div class="col-25 color_process_false">
+          消费方式
+        </div>
+        <div class="col-25 color_process_false">
+          生成船票
+        </div>
       </div>
       <ul>
         <li>
@@ -57,14 +82,14 @@ title: 选择乘客
           </div>
         </li>
       </ul>
-      <div class="text-center padding75">请选择一位乘客办理登船</div>
+      <div class="text-center padding75 checkin_content">请选择一位乘客办理登船</div>
       <ul>
         <li>
           <div class="row no-gutter">
-            <div class="col-66 color_black">
-              <div>标准海景房</div>
+            <div class="col-50 color_black">
+              <div class="large_title">标准海景房</div>
             </div>
-            <div class="col-33">
+            <div class="col-50">
               <div class="pull-right">房间号7539</div>
             </div>
           </div>
@@ -72,7 +97,7 @@ title: 选择乘客
         <li>
           <div class="row no-gutter">
             <div class="col-66">
-              <div>艾丽丝 ALICE HONG</div>
+              <div class="color_black">艾丽丝 ALICE HONG</div>
             </div>
             <div class="col-33">
               <div class="pull-right">已办理<span class="icon icon-right"></span></div>
@@ -80,7 +105,7 @@ title: 选择乘客
           </div>
         </li>
         <li>
-          <a href="checkin/">
+          <a href="/checkin/checkin_supplementary">
             <div class="row no-gutter">
               <div class="col-66">
                 <div>吴志娟 ZHIJUAN WU</div>
@@ -92,9 +117,6 @@ title: 选择乘客
           </a>
         </li>
       </ul>
-    </div>
-    <div class="content-block list-block">
-      <a href="/checkin/checkin_supplementary" class="button button-big button-fill button-success button-round">下一步</a>
     </div>
   </div>
 </div>

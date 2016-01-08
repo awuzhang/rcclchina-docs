@@ -8,19 +8,44 @@ title: 补充信息
     <h1 class="title">补充信息</h1>
   </header>
   <div class="content">
-    <div class="content-block list-block inset checkin clear_pad">
-      <div class="row text-center checkin_flow_title">
-        <div class="col-25 active">选择乘客</div>
-        <div class="col-25">补充信息</div>
-        <div class="col-25">消费方式</div>
-        <div class="col-25">生成船票</div>
+    <div class="content-block list-block inset checkin clear_pad checkin_title">
+      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0">
+        <div class="line_background"></div>
+        <div class="col-25">
+          <div>
+            <img src="/assets/img/small-select.png" class="checkin_flow_img">
+          </div>
+        </div>
+        <div class="col-25">
+          <div><img src="/assets/img/big-select.png" class="checkin_flow_img"></div>
+        </div>
+        <div class="col-25">
+          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+        </div>
+        <div class="col-25">
+          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+        </div>
+      </div>
+      <div class="row text-center checkin_title checkin_flow pad_top0">
+        <div class="col-25 color_process_false">
+          选择乘客
+        </div>
+        <div class="col-25 color_white">
+          补充信息
+        </div>
+        <div class="col-25 color_process_false">
+          消费方式
+        </div>
+        <div class="col-25 color_process_false">
+          生成船票
+        </div>
       </div>
       <ul>
         <li>
           <div class="row no-gutter">
             <div class="col-50">
               <div>中文姓</div>
-              <input type="text" value="273842">
+              <input type="text" value="洪">
             </div>
             <div class="col-50">
               <div>中文名</div>
@@ -52,7 +77,7 @@ title: 补充信息
             </div>
             <div class="col-33">
               <div>有效日期</div>
-              <input type="date">
+              <input type="text" class="date-input" />
             </div>
           </div>
         </li>
@@ -67,15 +92,18 @@ title: 补充信息
         <li>
           <div class="row no-gutter">
             <div class="col-100">
-              <div>会员号码（选填/填写可累积会员积分）</div>
+              <div>会员号码（选填 / 填写可累积会员积分）</div>
               <input type="text" value="603382915">
             </div>
           </div>
         </li>
       </ul>
     </div>
-    <div class="content-block list-block">
+    <div class="content-block clear_margin">
       <a href="/checkin/checkin_payment" class="button button-big button-fill button-success button-round">下一步</a>
+    </div>
+    <div class="goback text-center">
+      <a class="back">返回</a>
     </div>
   </div>
 </div>
