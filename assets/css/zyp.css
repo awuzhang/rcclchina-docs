@@ -1,7 +1,7 @@
 @charset "utf-8";
 .checkin_circle_div {
-  width: 8rem;
-  height :8rem;
+  width: 6rem;
+  height :6rem;
   margin:auto;
   border-radius: 50%;
   background-color: #3b68b6;
@@ -12,7 +12,7 @@
   margin-top: 25%;
 }
 .checkin_flow_img {
-  width: 50%;
+  width: 35%;
   position: relative;
   z-index: 100;
 }
@@ -29,10 +29,11 @@
   color: #000000;
 }
 .checkin .row {
-  padding: 0.7rem;
+  padding: 0.7rem 0;
 }
 .checkin li {
-  border-top: 1px solid #e1e1e1;
+  border-top: 1px solid #e7e7e7;
+  margin: 0 0.7rem;
 }
 .checkin li:first-child {
   border-top: none;
@@ -52,6 +53,9 @@
 .clear_margin {
   margin: 0;
 }
+.checkin .clear_margin_top {
+  margin-top: 0;
+}
 .padding75 {
   padding: 0.75rem;
 }
@@ -66,6 +70,7 @@
 }
 .large_title {
   font-size: 1rem;
+  font-weight: bold;
 }
 #page-checkin-payment .list-block .item-inner:after {
   height: 0;
@@ -148,13 +153,14 @@
 .checkin_success {
   color: #fbb818;
   font-size: 1rem;
+  padding-top: 0.5rem;
 }
 .checkin_time_note {
   color: #fbb818;
-  padding: 0.85rem;
+  padding: 0.85rem 0;
 }
 .img_ticket_success {
-  width: 20%;
+  width: 10%;
 }
 .checkin_tips {
   padding: 0.5rem 0;
@@ -175,4 +181,48 @@
 .check_agreement {
   padding-top:0.45rem;
   padding-bottom:0.65rem;
+}
+.color_already_do {
+  color: #999999;
+}
+.checkin .row.identifycode_bgcolor {
+  background-color: #f5f5f5;
+  padding: 0.7rem 0.7rem;
+  margin: 0 -0.7rem;
+}
+.circle_right {
+  height: 1rem;
+  width: 0.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  background-color: #061556;
+  margin-top: -0.5rem;
+  margin-left: -0.75rem;
+}
+.circle_left {
+  height: 1rem;
+  width: 0.5rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  background-color: #061556;
+  margin-top: -0.5rem;
+  margin-right: -0.75rem;
+}
+.font2 {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+.font1 {
+  font-size: 1rem;
+}
+.img_barcode {
+  width: 100%;
+  height: 4rem;
+}
+.room_info {
+  position: relative;
+}
+.checkin li.dashed_border_top {
+  border-top: 1px dashed #e7e7e7;
+}
+.yellow_color {
+  color: #fbb818;
 }

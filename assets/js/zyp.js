@@ -14,11 +14,6 @@ $(function () {
   });
   $(document).on("pageInit", "#page-checkin-payment", function(e) {
     $('.date-input').calendar({
-      dateFormat: 'yyyy/mm/dd'
-    });
-  });
-  $(document).on("pageInit", "#page-checkin-payment", function(e) {
-    $('.date-input').calendar({
       dateFormat: 'mm/yy'
     });
 

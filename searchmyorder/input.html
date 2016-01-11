@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 舱房号验证
+title: 查询订单
 ---
-<div class="page" id="page-checkin-carbinno">
+<div class="page" id="page-searchmyorder-input">
   <header class="bar bar-nav">
     <a class="icon icon-left pull-left back"></a>
-    <h1 class="title">舱房号验证</h1>
+    <h1 class="title">查询订单</h1>
   </header>
   <div class="content">
     <div class="content-block text-center">
@@ -15,9 +15,13 @@ title: 舱房号验证
       <ul>
         <li>
           <div class="row no-gutter">
-            <div class="col-100">
-              <div>舱房号</div>
-              <input type="text" value="273842">
+            <div class="col-50">
+              <div>订单号</div>
+              <input type="text" value="2748592">
+            </div>
+            <div class="col-50">
+              <div>乘客姓氏拼音</div>
+              <input type="text" value="Hong">
             </div>
           </div>
         </li>
@@ -40,22 +44,10 @@ title: 舱房号验证
             </div>
           </div>
         </li>
-        <li>
-          <div class="row no-gutter">
-            <div class="col-50">
-              <div>乘客姓氏拼音</div>
-              <input type="text" value="Hong">
-            </div>
-            <div class="col-50">
-              <div>乘客出生日期</div>
-              <input type="date" />
-            </div>
-          </div>
-        </li>
       </ul>
     </div>
     <div class="content-block">
-      <a href="/checkin/checkin_selectpassenger" class="button button-big button-fill button-success button-round">确认</a>
+      <a href="/searchmyorder/result" class="button button-big button-fill button-success button-round">查询</a>
     </div>
   </div>
 </div>
