@@ -1,4 +1,4 @@
-var t; //倒计时时间(
+var t; //倒计时时间
 var minute; //显示时间分
 var second; //显示时间秒
 var timer; //计时器
@@ -6,7 +6,7 @@ var timeoutcnt; //超时次数
 $(function () {
 	'use strict';
 	$(document).on("pageInit", "#page-checkin-carbinno", function(e) {
-		$('.date-input').calendar({
+		$('#page-checkin-carbinno .date-input').calendar({
 			dateFormat: 'yyyy/mm/dd'
 		});
 	});
@@ -20,7 +20,7 @@ $(function () {
 		timer = setInterval("refer()", 1000); //启动1秒定时
 	});
 	$(document).on("pageInit", "#page-checkin-supplementary", function(e) {
-		$('.date-input').calendar({
+		$('#page-checkin-supplementary .date-input').calendar({
 			dateFormat: 'yyyy/mm/dd'
 		});
 		if (timer == null || (typeof(timer) == undefined)) {
@@ -30,7 +30,7 @@ $(function () {
 		timer = setInterval("refer()", 1000); //启动1秒定时
 	});
 	$(document).on("pageInit", "#page-checkin-payment", function(e) {
-		$('.date-input').calendar({
+		$('#page-checkin-payment .date-input').calendar({
 			dateFormat: 'mm/yy'
 		});
 		if (timer == null || (typeof(timer) == undefined)) {
