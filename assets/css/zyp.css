@@ -7,6 +7,16 @@
   background-color: #3b68b6;
   border: 1px solid #678ac7;
 }
+.checkin_linear {
+  background: -webkit-linear-gradient(#121657, #2b6ecc);
+  background: -o-linear-gradient(#121657, #2b6ecc);
+  background: -moz-linear-gradient(#121657, #2b6ecc);
+  background: linear-gradient(#121657, #2b6ecc);
+}
+.bg_img {
+  background:url(../img/bgimg.png) no-repeat;
+  background-size: cover;
+}
 .checkin_smallimg {
   height: 50%;
   margin-top: 25%;
@@ -45,6 +55,9 @@
   padding: 0;
 }
 #page-checkin-payment .list-block input, #page-checkin-payment .list-block select {
+  padding: 0;
+}
+#page-checkin-orderno .list-block input, #page-checkin-payment .list-block select {
   padding: 0;
 }
 .clear_pad {
@@ -119,11 +132,11 @@
   margin: 0 1.5rem;
 }
 .checkin .buttons_tab_creditcard {
-  background:url(/assets/img/creditcard.png) no-repeat;
+  background:url(../img/creditcard.png) no-repeat;
   background-size:100%;
 }
 .checkin .buttons_tab_depositcard {
-  background:url(/assets/img/depositcard.png) no-repeat;
+  background:url(../img/depositcard.png) no-repeat;
   background-size:100%;
 }
 .checkin .buttons-tab .btn_img {

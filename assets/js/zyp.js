@@ -95,7 +95,10 @@ function refer() {
 	t--; // 计数器递减
 	minute = Math.floor(t/60);
     second = t - minute*60;
-    document.getElementById('remainTime').innerHTML = foo(minute) + ":" + foo(second);
+    if (typeof(document.getElementById('remainTime')) == undefined || document.getElementById('remainTime') == null) {
+    } else {
+    	document.getElementById('remainTime').innerHTML = foo(minute) + ":" + foo(second);
+    }
     if (t == 0) {
     	timeoutcnt++;
     	if (timer == null || (typeof(timer) == undefined)) {
