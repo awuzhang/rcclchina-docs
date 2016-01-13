@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 航线
+title: 航线列表
 ---
 <div class="page" id="page-route">
     <header class="bar bar-nav">
@@ -21,78 +21,132 @@ title: 航线
             </label>
         </div>
     </nav>
+    <div class="route-searchbox zx1">
+        <div class="row shopbox">
+            <a href="#" class="open-popup" data-popup=".popup-ships"><img class="shipimg" src="/assets/img/ship.png" alt=""> <span id="open-ships-text">游轮不限</span> <i class="arr-down"></i></a>
+        </div>
+        <div class="row areabox no-gutter ">
+            <div class="col-33">
+                <a href="#" class="open-popup" data-popup=".popup-portSelect">
+                    <label>出发港</label>
+                    <div><span id="open-portSelect-text">上海</span> <i class="arr-down"></i></div>
+                </a>
+            </div>
+            <div class="col-33">
+                <a href="#" class="open-popup" data-popup=".popup-cportSelect">
+                    <label>目的地</label>
+                    <div><span id="open-cportSelect-text">不限</span>  <i class="arr-down"></i></div>
+                </a>
+            </div>
+            <div class="col-33">
+                <a href="#" class="open-popup" data-popup=".popup-monthSelect">
+                    <label>出发时间</label>
+                    <div><span id="open-monthSelect-text">2016年03月</span><i class="arr-down"></i></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <div class="content">
-      <div class="route-searchbox zx1">
-          <div class="row shopbox">
-              <a href="#" class="open-popup" data-popup=".popup-ships"><img class="shipimg" src="/assets/img/ship.png" alt=""> <span id="open-ships-text">游轮不限</span> <i class="arr-down"></i></a>
-          </div>
-          <div class="row areabox no-gutter ">
-              <div class="col-33">
-                  <a href="#" class="open-popup" data-popup=".popup-portSelect">
-                      <label>出发港</label>
-                      <div><span id="open-portSelect-text">上海</span> <i class="arr-down"></i></div>
-                  </a>
-              </div>
-              <div class="col-33">
-                  <a href="#" class="open-popup" data-popup=".popup-cportSelect">
-                      <label>目的地</label>
-                      <div><span id="open-cportSelect-text">不限</span>  <i class="arr-down"></i></div>
-                  </a>
-              </div>
-              <div class="col-33">
-                  <a href="#" class="open-popup" data-popup=".popup-monthSelect">
-                      <label>出发时间</label>
-                      <div>2015年11月...<i class="arr-down"></i></div>
-                  </a>
-              </div>
-          </div>
-      </div>
-      <div class="content native-scroll">
-          <div class="tc">本月(7条航线)</div>
-          <div class="list-block media-list inset">
-              <ul>
-                  <li>
-                      <a href="/route/route_detail" class="item-link item-content">
-                          <div class="item-media">
-                              <img style='width: 4rem;'>
-                          </div>
-                          <div class="item-inner">
-                              <div class="item-title-row">
-                                  <div class="item-title">上海-冲绳-上海 <span>折</span></div>
+        <div class="tc f12 mt10">本月(7条航线)</div>
+        <div class="list-block media-list inset route-list">
+            <ul>
+                <li>
+                    <a href="/route/route_detail" class="item-content">
+                        <div class="item-media">
+                            <img src="/assets/img/sc-p1.jpg">
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">上海-<span class="b">冲绳</span>-上海</div>
+                            </div>
+                            <div class="item-subtitle">
+                              <div class="item-text">
+                                <div>5天4晚</div>
+                                <div>2016/03/25 - 2016/03/29</div>
+                                <div class="mt5">两人同行一人立享 <span class="fyellow">半价50%OFF</span> <br> 
+                                  内舱房 <span class="fyellow">+88元</span> 尽享阳台房</div>
                               </div>
-                              <div class="item-subtitle">
-                                <div class="item-text">5天4晚</div>
-                                <div class="item-text">2016/03/25 - 2016/03/29</div>
-                                <div class="item-text">海洋量子号</div>
-                                <div class="item-after">5,178/人起</div>
+                              <div class="rel mt10">
+                                <div>海洋量子号</div>
+                                <div class="abs r0 t0"><span class="f14">￥5,178</span> /人起</div>
                               </div>
-                          </div>
-                      </a>
-                  </li>
-              </ul>
-          </div>
-      </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="/route/route_detail" class="item-content">
+                        <div class="item-media">
+                            <img src="/assets/img/sc-p2.jpg">
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">上海-<span class="b">冲绳</span>-上海</div>
+                            </div>
+                            <div class="item-subtitle">
+                              <div class="item-text">
+                                <div>5天4晚</div>
+                                <div>2016/03/25 - 2016/03/29</div>
+                                <div class="mt5">两人同行一人立享 <span class="fyellow">半价50%OFF</span> <br> 
+                                  内舱房 <span class="fyellow">+88元</span> 尽享阳台房</div>
+                              </div>
+                              <div class="rel mt10">
+                                <div>海洋量子号</div>
+                                <div class="abs r0 t0"><span class="f14">￥5,178</span> /人起</div>
+                              </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="/route/route_detail" class="item-content">
+                        <div class="item-media">
+                            <img src="/assets/img/sc-p1.jpg">
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">上海-<span class="b">冲绳</span>-上海</div>
+                                <div class="item-after"><span class="tag">旅行社包船</span></div>
+                            </div>
+                            <div class="item-subtitle">
+                              <div class="item-text">
+                                <div>5天4晚</div>
+                                <div>2016/03/25 - 2016/03/29</div>
+                                <div class="mt5">两人同行一人立享 <span class="fyellow">半价50%OFF</span> <br> 
+                                  内舱房 <span class="fyellow">+88元</span> 尽享阳台房</div>
+                              </div>
+                              <div class="rel mt10">
+                                <div>海洋量子号</div>
+                                <div class="abs r0 t0"><span class="f14">￥5,178</span> /人起</div>
+                              </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 
 <div class="popup popup-ships">
   <div class="content">
+	<header class="rel">
+	    <div class="title">邮轮</div>
+	    <a class="left close-popup">取消</a>
+	    <a class="right close-popup select-all">不限</a>
+	</header>
     <div class="list-block media-list">
       <ul>
         <li>
           <label class="label-checkbox item-content">
-            <div class="item-inner">
-              <div class="item-title-row">
-                <div class="item-title">游轮不限</div>
-              </div>
+            <div class="item-media">
+            	<svg> <use xlink:href='/assets/svg.svg#icon-qn'/></svg>
             </div>
-            <input type="radio" name="ship-radio">
-            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-          </label>
-        </li>
-        <li>
-          <label class="label-checkbox item-content">
-            <div class="item-media"><span>Q</span></div>
             <div class="item-inner">
               <div class="item-title-row">
                 <div class="item-title">海洋量子号</div>
@@ -104,12 +158,14 @@ title: 航线
               <div class="f12 fblue mt10"><span>24间餐厅</span> <span>28个游乐</span></div>
             </div>
             <input type="radio" name="ship-radio">
-            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+            <div class="item-media asc"><i class="icon icon-form-checkbox"></i></div>
           </label>
         </li>
         <li>
           <label class="label-checkbox item-content">
-            <div class="item-media"><span>M</span></div>
+            <div class="item-media">
+            	<svg> <use xlink:href='/assets/svg.svg#icon-vy'/></svg>
+            </div>
             <div class="item-inner">
               <div class="item-title-row">
                 <div class="item-title">海洋航行者号</div>
@@ -121,12 +177,14 @@ title: 航线
               <div class="f12 fblue mt10"><span>24间餐厅</span> <span>28个游乐</span></div>
             </div>
             <input type="radio" name="ship-radio">
-            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+            <div class="item-media asc"><i class="icon icon-form-checkbox"></i></div>
           </label>
         </li>
         <li>
           <label class="label-checkbox item-content">
-            <div class="item-media"><span>V</span></div>
+            <div class="item-media">
+            	<svg> <use xlink:href='/assets/svg.svg#icon-ma'/></svg>
+            </div>
             <div class="item-inner">
               <div class="item-title-row">
                 <div class="item-title">海洋水手号</div>
@@ -138,12 +196,14 @@ title: 航线
               <div class="f12 fblue mt10"><span>24间餐厅</span> <span>28个游乐</span></div>
             </div>
             <input type="radio" name="ship-radio">
-            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+            <div class="item-media asc"><i class="icon icon-form-checkbox"></i></div>
           </label>
         </li>
         <li>
-          <label class="label-checkbox item-content">
-            <div class="item-media"><span>L</span></div>
+          <label class="label-checkbox item-content item-disabled">
+            <div class="item-media">
+            	<svg> <use xlink:href='/assets/svg.svg#icon-lg'/></svg>
+            </div>
             <div class="item-inner">
               <div class="item-title-row">
                 <div class="item-title">海洋神话号</div>
@@ -154,8 +214,8 @@ title: 航线
               </div>
               <div class="f12 fblue mt10"><span>24间餐厅</span> <span>28个游乐</span></div>
             </div>
-            <input type="radio" name="ship-radio">
-            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+            <input type="radio" name="ship-radio" disabled="">
+            <div class="item-media asc"><i class="icon icon-form-checkbox"></i></div>
           </label>
         </li>
       </ul>
@@ -164,6 +224,11 @@ title: 航线
 </div>
 <div class="popup popup-portSelect">
   <div class="content">
+	<header class="rel">
+	    <div class="title">出发港</div>
+	    <a class="left close-popup">取消</a>
+	    <a class="right close-popup select-all">不限</a>
+	</header>
     <div class="list-block media-list">
       <ul>
         <li>
@@ -231,19 +296,13 @@ title: 航线
 </div>
 <div class="popup popup-cportSelect">
   <div class="content">
+	<header class="rel">
+	    <div class="title">目的地</div>
+	    <a class="left close-popup">取消</a>
+	    <a class="right close-popup select-all">不限</a>
+	</header>
     <div class="list-block media-list">
       <ul>
-        <li>
-          <label class="label-checkbox item-content">
-            <div class="item-inner">
-              <div class="item-title-row">
-                <div class="item-title">不限目的地</div>
-              </div>
-            </div>
-            <input type="radio" name="cportSelect-radio">
-            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-          </label>
-        </li>
         <li>
           <label class="label-checkbox item-content">
             <div class="item-inner">
@@ -322,20 +381,16 @@ title: 航线
 </div>
 <div class="popup popup-monthSelect">
   <div class="content">
-    <a href="#" class="close-popup abs">确定</a>
+	<header class="rel">
+	    <div class="title">出发时间</div>
+	    <a class="left close-popup">取消</a>
+	    <div class="right">
+		    <a class="select-all ">不限</a>
+		    <a class="close-popup ml20">确定</a>
+	    </div>
+	</header>
     <div class="list-block media-list">
       <ul>
-        <li>
-          <label class="label-checkbox item-content label-all">
-            <div class="item-inner">
-              <div class="item-title-row">
-                <div class="item-title">不限时间</div>
-              </div>
-            </div>
-            <input type="checkbox" name="monthSelect-checkbox">
-            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-          </label>
-        </li>
         <li>
           <label class="label-checkbox item-content">
             <div class="item-inner">
