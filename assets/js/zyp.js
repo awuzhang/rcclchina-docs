@@ -5,11 +5,6 @@ var timer; //计时器
 var timeoutcnt; //超时次数
 $(function () {
 	'use strict';
-	$(document).on("pageInit", "#page-checkin-carbinno", function(e) {
-		$('#page-checkin-carbinno .date-input').calendar({
-			dateFormat: 'yyyy/mm/dd'
-		});
-	});
 	$(document).on("pageInit", "#page-checkin-selectpassenger", function(e) {
 		if (timer == null || (typeof(timer) == undefined)) {
 		} else {
@@ -20,9 +15,6 @@ $(function () {
 		timer = setInterval("refer()", 1000); //启动1秒定时
 	});
 	$(document).on("pageInit", "#page-checkin-supplementary", function(e) {
-		$('#page-checkin-supplementary .date-input').calendar({
-			dateFormat: 'yyyy/mm/dd'
-		});
 		if (timer == null || (typeof(timer) == undefined)) {
 		} else {
 			clearInterval(timer);
@@ -30,15 +22,12 @@ $(function () {
 		timer = setInterval("refer()", 1000); //启动1秒定时
 	});
 	$(document).on("pageInit", "#page-checkin-payment", function(e) {
-		$('#page-checkin-payment .date-input').calendar({
-			dateFormat: 'mm/yy'
-		});
 		if (timer == null || (typeof(timer) == undefined)) {
 		} else {
 			clearInterval(timer);
 		}
 		timer = setInterval("refer()", 1000); //启动1秒定时
-		$('.item-media').on("click",function(){
+		$('#page-checkin-payment .item-media').on("click",function(){
 			if ($(this).children('i').hasClass('checkbox_on')){
 				$(this).children('i').addClass('checkbox_off');
 				$(this).children('i').removeClass('checkbox_on');
@@ -52,7 +41,7 @@ $(function () {
 			}
 		});
 
-		$('.div_agreement i').on("click",function(){
+		$('#page-checkin-payment .div_agreement i').on("click",function(){
 			if ($(this).hasClass('checkbox_on')){
 				$(this).addClass('checkbox_off');
 				$(this).removeClass('checkbox_on');
@@ -62,11 +51,11 @@ $(function () {
 			}
 		});
 
-		$('.a_btn0').on("click",function(){
+		$('#page-checkin-payment .a_btn0').on("click",function(){
 			$('.checkin .buttons-tab').addClass('buttons_tab_creditcard');
 			$('.checkin .buttons-tab').removeClass('buttons_tab_depositcard');
 		});
-		$('.a_btn1').on("click",function(){
+		$('#page-checkin-payment .a_btn1').on("click",function(){
 			$('.checkin .buttons-tab').addClass('buttons_tab_depositcard');
 			$('.checkin .buttons-tab').removeClass('buttons_tab_creditcard');
 		});
