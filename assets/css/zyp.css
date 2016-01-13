@@ -12,7 +12,7 @@
   margin-top: 25%;
 }
 .checkin_flow_img {
-  width: 35%;
+  width: 25%;
   position: relative;
   z-index: 100;
 }
@@ -104,9 +104,9 @@
 .line_background {
   border-top:1px dotted #164bc4;
   position: absolute;
-  width: 70%;
+  width: 65%;
   top: 44%;
-  left: 15%;
+  left: 20%;
   z-index: 10;
 }
 .color_process_false {
@@ -225,4 +225,10 @@
 }
 .yellow_color {
   color: #fbb818;
+}
+.nodisplay {
+  display: none;
+}
+.display {
+  display: block;
 }

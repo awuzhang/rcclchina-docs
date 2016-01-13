@@ -23,7 +23,7 @@ title: 在线值船
           <div><img src="/assets/img/big-select.png" class="checkin_flow_img"></div>
         </div>
       </div>
-      <div class="row text-center checkin_title checkin_flow pad_top0">
+      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0">
         <div class="col-33 color_process_false">
           选择乘客
         </div>
@@ -34,6 +34,7 @@ title: 在线值船
           消费方式
         </div>
       </div>
+      <div class="text-center padding75 checkin_content">剩余时间<span id="remainTime"></span>，请尽快填写</div>
       <div class="buttons-tab buttons_tab_creditcard">
         <a href="#creditcard" class="tab-link active button btn_img a_btn0">信用卡</a>
         <a href="#depositcard" class="tab-link button btn_img a_btn1">储蓄卡或现金支付</a>
@@ -55,13 +56,22 @@ title: 在线值船
                   <div class="padtb5">船上消费以美金结算，汇率按照当天结算汇率</div>
                 </div>
               </li>
-              <li>
+              <li class="nodisplay">
                 <div class="row no-gutter">
+                  <div class="padb5">您已经成功绑定了同行者 <span>王阅微</span> 的信用卡！</div>
                   <div>信用卡卡号</div>
-                  <input type="text" value="6225 7575 2663 6281">
+                  <input type="text" value="6225 7575 2663 6281" readonly="true">
+                  <div>持有人姓名拼音</div>
+                  <input type="text" value="Alice Hong" readonly="true">
                 </div>
               </li>
-              <li>
+              <li class="display">
+                <div class="row no-gutter">
+                  <div>信用卡卡号</div>
+                  <input type="text" value="6225 7575 2663 6281" id="cardno">
+                </div>
+              </li>
+              <li class="display">
                 <div class="row no-gutter">
                   <div class="col-50">
                     <div>持有人姓名拼音</div>
@@ -69,7 +79,7 @@ title: 在线值船
                   </div>
                   <div class="col-50">
                     <div>有效期至</div>
-                    <input type="text" class="date-input" />
+                    <input type="tel" id="validDate" />
                   </div>
                 </div>
               </li>

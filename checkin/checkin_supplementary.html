@@ -23,7 +23,7 @@ title: 补充信息
           <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
         </div>
       </div>
-      <div class="row text-center checkin_title checkin_flow pad_top0">
+      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0">
         <div class="col-33 color_process_false">
           选择乘客
         </div>
@@ -34,6 +34,7 @@ title: 补充信息
           消费方式
         </div>
       </div>
+      <div class="text-center padding75 checkin_content">剩余时间<span id="remainTime"></span>，请尽快填写</div>
       <ul>
         <li>
           <div class="row no-gutter">
@@ -63,7 +64,13 @@ title: 补充信息
           <div class="row no-gutter">
             <div class="col-33">
               <div>所属国籍</div>
-              <input type="text" value="中国">
+              <select class="nopadding">
+                <option>中国</option>
+                <option>美国</option>
+                <option>日本</option>
+                <option>澳大利亚</option>
+                <option>德国</option>
+              </select>
             </div>
             <div class="col-33">
               <div>护照号</div>
