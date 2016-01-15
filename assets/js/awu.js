@@ -117,6 +117,12 @@ $(function () {
 		    $('#open-monthSelect-text').text('不限');
 		});
 	});
+	$(document).on("pageInit", "#page-route-detail", function(e, pageId, $page) {
+		$page.on('click', '.route-detail-info-more', function(e){
+			$('.route-detail-info', $page).css({'overflow':'inherit','height':'inherit'});
+			$(e.target).hide();
+		})
+	})
 
 	$(document).on("pageInit", "#page-route-room", function(e, pageId, $page) {
 		//选择房间
@@ -242,8 +248,8 @@ $(function () {
 		})
 	});
 
-	$(document).on('open', '.popup.popup-customer', function(e, pageId, $page){
-		
+	$(document).on('open', '.popup.popup-customer', function(e){
+		$(e.target).find('.content').scrollTop(0);
 	})
 	/*
 	$(document).on("pageInit", "#page-index", function(e, pageId, $page) {

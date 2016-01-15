@@ -12,7 +12,7 @@
 .w94p{width: 94%;}
 .mt5{margin-top: .25rem;}.mt10{margin-top: .5rem;}.mt15{margin-top: .75rem;}.mt20{margin-top:1rem;}.mt35{margin-top: 1.75rem;}.mt40{margin-top: 2rem;}.mb10{margin-bottom: .5rem;}
 .mb15{margin-bottom: .75rem;}.ml10{margin-left: .5rem;}.ml20{margin-left: 1rem;}.mt-100{margin-top: -5rem;}.mr10{margin-right:.5rem;}
-.pb0{padding-bottom: 0;}.pl72{padding-left: 3.6rem;}.pt40{padding-top: 2rem;}.pb20{padding-bottom: 1rem;}.pt10{padding-top:.5rem;}.pb10{padding-bottom:.5rem;}
+.pb0{padding-bottom: 0;}.pl72{padding-left: 3.6rem;}.pt40{padding-top: 2rem;}.pb20{padding-bottom: 1rem;}.pt10{padding-top:.5rem;}.pb10{padding-bottom:.5rem;}.pb15{padding-bottom:.75rem;}.pb30{padding-bottom:1.5rem;}
 .b{font-weight: bold;}
 .tc{text-align: center;}.tr{text-align: right;}.tl{text-align: left;}
 .r0{right: 0;}.t0{top: 0;}.b0{bottom: 0;}.r10{right: .5rem;}
@@ -135,7 +135,6 @@ label.item-disabled svg{fill: #999;}
 .popup-ships svg{width: 2.75rem;height: 1.5rem;fill:#021257;margin-top: 0.5rem;}
 
 
-
 .popup-ships label.label-checkbox i.icon-form-checkbox,
 .popup-portSelect label.label-checkbox i.icon-form-checkbox,
 .popup-cportSelect label.label-checkbox i.icon-form-checkbox,
@@ -163,6 +162,11 @@ label.item-disabled svg{fill: #999;}
 .popup-portSelect .icon-location {width: .8rem;height: .975rem;}
 .popup-cportSelect .item-inner{width: 50%;} 
 .popup-cportSelect .item-inner + .item-inner {width: 100%;}
+
+#page-route-detail .route-detail-info {height: 3.5rem; overflow: hidden; }
+#page-route-detail .route-detail-info-more{background-color: #fff; position: absolute;right:.75rem;bottom:.25rem;}
+
+
 
 .route-detail-tit{text-align: center; position: relative; margin-top: .5rem;}
 .route-detail-tit:after{ content: ''; position: absolute; left: 0; top: 50%; right: auto; height: 1px; width: 100%; background-color: #e1e1e1; display: block; -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%;}
@@ -274,6 +278,10 @@ height: 446px;height: calc(100vw * 1.18933333);}
 #page-route-room-select-end .button-success {height: 2.35rem;line-height: 2.35rem;border-radius: 1.175rem; }
 
 #page-booking .card, .popup-customer .card{margin:.75rem;}
+#page-booking .list-block {margin-bottom:0.75rem;}
+#page-booking .tab-item {padding-left:.75rem;padding-right: .75rem;}
+#page-booking .line_background {width: 76%;top: 37.5%;left: 2.4rem;}
+#page-booking .button-success {height: 2.35rem;line-height: 2.35rem;border-radius: 1.175rem; }
 
 .popup-customer{background-color: #061556}
 .popup-customer .content-block-title {margin-top: 0;background-color: #f5f5f5; height: 4rem; line-height: 4rem; margin-left: 0; margin-right: 0;padding-left: 1rem;padding-right: 1rem; border-top-left-radius: .2rem; border-top-right-radius: .2rem;}
