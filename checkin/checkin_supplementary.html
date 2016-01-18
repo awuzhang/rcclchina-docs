@@ -34,7 +34,7 @@ title: 补充信息
           消费方式
         </div>
       </div>
-      <div class="text-center padding75 checkin_content">剩余时间<span id="remainTime"></span>，请尽快填写</div>
+      <div class="text-center padding75 checkin_content">剩余时间<span id="remainTime" class="yellow_color"></span>，请尽快填写</div>
       <ul>
         <li>
           <div class="row no-gutter">
@@ -62,7 +62,7 @@ title: 补充信息
         </li>
         <li>
           <div class="row no-gutter">
-            <div class="col-33">
+            <div class="col-100">
               <div>所属国籍</div>
               <select class="nopadding">
                 <option>中国</option>
@@ -72,14 +72,18 @@ title: 补充信息
                 <option>德国</option>
               </select>
             </div>
-            <div class="col-33">
+          </div>
+        </li>
+        <li>
+          <div class="row no-gutter">
+            <div class="col-50">
               <div>护照号</div>
               <input type="text" value="E73829910">
             </div>
-            <div class="col-33">
+            <div class="col-50">
               <div>有效日期</div>
               <!-- <input type="text" class="date-input" /> -->
-              <input type="date">
+              <input type="tel" id="validDate" maxlength="5" />
             </div>
           </div>
         </li>
@@ -95,7 +99,7 @@ title: 补充信息
           <div class="row no-gutter">
             <div class="col-100">
               <div>会员号码（选填 / 填写可累积会员积分）</div>
-              <input type="text" value="603382915">
+              <input type="number" value="603382915">
             </div>
           </div>
         </li>

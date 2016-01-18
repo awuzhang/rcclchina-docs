@@ -17,7 +17,7 @@ title: 舱房号验证
           <div class="row no-gutter">
             <div class="col-100">
               <div>舱房号</div>
-              <input type="text" value="273842">
+              <input type="number" value="273842">
             </div>
           </div>
         </li>
@@ -25,18 +25,23 @@ title: 舱房号验证
           <div class="row no-gutter">
             <div class="col-50">
               <div>出航日期</div>
-              <!-- <input type="text" class="date-input" /> -->
-              <input type="date" />
+              <div class="item-media">
+                <input type="text" ontouchstart="this.type='date';" name="sailingdate" placeholder="请输入" class="select_date">
+                <i class="arr-down"></i>
+              </div>
             </div>
             <div class="col-50">
               <div>搭乘邮轮</div>
-              <select class="nopadding">
-                <option>海洋量子号</option>
-                <option>海洋水手号</option>
-                <option>海洋航行者号</option>
-                <option>海洋神话号</option>
-                <option>海洋赞礼号</option>
-              </select>
+              <div class="item-media">
+                <select class="nopadding select_ship">
+                  <option>海洋量子号</option>
+                  <option>海洋水手号</option>
+                  <option>海洋航行者号</option>
+                  <option>海洋神话号</option>
+                  <option>海洋赞礼号</option>
+                </select>
+                <i class="arr-down"></i>
+              </div>
             </div>
           </div>
         </li>
@@ -48,7 +53,10 @@ title: 舱房号验证
             </div>
             <div class="col-50">
               <div>乘客出生日期</div>
-              <input type="date" />
+              <div class="item-media">
+                <input type="text" ontouchstart="this.type='date';if(this.value == ''){this.value='1980-01-01';}" name="birthdate" placeholder="请输入" class="select_date">
+                <i class="arr-down"></i>
+              </div>
             </div>
           </div>
         </li>
