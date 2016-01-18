@@ -2,10 +2,10 @@
 layout: default
 title: 预定船票
 ---
-<div id="page-booking" class="page">
+<div id="page-order-booking" class="page">
   <nav class="bar bar-tab">
 	<div class="tab-item">
-    	<a href="/order/order_contact" class="button button-big button-fill button-success">下一步</a>
+    	<a href="/order/order_contact" class="button button-fill button-success">下一步</a>
 	</div>
   </nav>
   <div class="content">
@@ -79,8 +79,8 @@ title: 预定船票
 						<div class="item-title">
 							<a href="#"><span class="name">添加乘客1</span></a>
 						</div>
-          				<!-- hidden是当前乘客的参数 -->
-						<input type="hidden" name="cnfamilyname" value=""><input type="hidden" name="cnname"><input type="hidden" name="lastname"><input type="hidden" name="firstname"><input type="hidden" name="birthdate"><input type="hidden" name="gender"><input type="hidden" name="isContacts"><input type="hidden" name="phone"><input type="hidden" name="email"><input type="hidden" name="membership">
+          				<!-- hidden是当前乘客的参数 (ps: 第一个乘客默认是联系人 所以 isContacts=true)-->
+						<input type="hidden" name="cnfamilyname" value=""><input type="hidden" name="cnname"><input type="hidden" name="lastname"><input type="hidden" name="firstname"><input type="hidden" name="birthdate"><input type="hidden" name="gender"><input type="hidden" name="isContacts" value="true"><input type="hidden" name="phone"><input type="hidden" name="email"><input type="hidden" name="membership">
 					</div>
 				</li>
 				<li class="item-content item-link">

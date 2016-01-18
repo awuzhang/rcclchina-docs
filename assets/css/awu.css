@@ -4,15 +4,15 @@
 /**/
 .zx1{z-index:1;}.zx2{z-index:2;}.zx0{z-index:0;}
 .b{font-weight: bold;}
-.f12{font-size: .6rem;}.f12i{font-size: .6rem !important;}.f13{font-size: .65rem;}.f14{font-size:.7rem;}.f15{font-size:.7.5rem;}.f15i{font-size:.75rem !important;}.f16{font-size:.8rem;}.f20{font-size:1rem;}.f24{font-size:1.2rem;}
+.f12{font-size: .6rem;}.f12i{font-size: .6rem !important;}.f13{font-size: .65rem;}.f14{font-size:.7rem;}.f15{font-size:.7.5rem;}.f15i{font-size:.75rem !important;}.f16{font-size:.8rem;}.f18{font-size:.9rem;}.f20{font-size:1rem;}.f24{font-size:1.2rem;}
 .fblue{color: #0795ff;}.fff{color: #fff;}.ccc{color: #ccc;}.fgreen{color: #39ab29;}.fyellow{color: #fbc400;}
 .db{display: block;}.dn{display: none;}
 .abs{position: absolute;}.rel{position: relative;}
 .lh2{line-height: 2;}
 .w94p{width: 94%;}
-.mt5{margin-top: .25rem;}.mt10{margin-top: .5rem;}.mt15{margin-top: .75rem;}.mt20{margin-top:1rem;}.mt35{margin-top: 1.75rem;}.mt40{margin-top: 2rem;}.mb10{margin-bottom: .5rem;}
+.mt5{margin-top: .25rem;}.mt10{margin-top: .5rem;}.mt15{margin-top: .75rem;}.mt20{margin-top:1rem;}.mt35{margin-top: 1.75rem;}.mt40{margin-top: 2rem;}.mb10{margin-bottom: .5rem;}.mb20{margin-bottom: 1rem;}.ml0{margin-left: 0;}
 .mb15{margin-bottom: .75rem;}.ml10{margin-left: .5rem;}.ml20{margin-left: 1rem;}.mt-100{margin-top: -5rem;}.mr10{margin-right:.5rem;}
-.pb0{padding-bottom: 0;}.pl72{padding-left: 3.6rem;}.pt40{padding-top: 2rem;}.pb20{padding-bottom: 1rem;}.pt10{padding-top:.5rem;}.pb10{padding-bottom:.5rem;}.pb15{padding-bottom:.75rem;}.pb30{padding-bottom:1.5rem;}
+.pl0{padding-left: 0;}.pb0{padding-bottom: 0;}.pl72{padding-left: 3.6rem;}.pt40{padding-top: 2rem;}.pb20{padding-bottom: 1rem;}.pt10{padding-top:.5rem;}.pb10{padding-bottom:.5rem;}.pb15{padding-bottom:.75rem;}.pb30{padding-bottom:1.5rem;}
 .b{font-weight: bold;}
 .tc{text-align: center;}.tr{text-align: right;}.tl{text-align: left;}
 .r0{right: 0;}.t0{top: 0;}.b0{bottom: 0;}.r10{right: .5rem;}
@@ -40,7 +40,12 @@
 .t-ell{flex-shrink: 1;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 /**/
 .card{border-radius: 0.2rem; }
-.bar-tab .button {display: block; color:#100f4f; border-radius: 1.35rem; top: 0; height: 1.8rem;line-height: 1.8rem;}
+
+.bar-tab {padding: 0 .5rem;  }
+.bar-tab a{color:#fbc400; font-size: .7rem;}
+.bar-tab .button {display: block; color:#100f4f; border-radius: 1.35rem; top: 0; height: 1.8rem;line-height: 1.8rem;font-size: .7rem;}
+
+
 .modal-button {color: #0073bb}
 label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-checkbox, 
 label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-checkbox
@@ -53,7 +58,6 @@ label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-check
 
 .arr-down,.arr-up,.arr-down-g0{width: 0;height: 0;border:4px solid;display:inline-block;border-color: #fff transparent transparent transparent;}
 .arr-up {border-color: transparent transparent #fff transparent;}
-
 
 .ui-checkbox input{ display: inline-block; width: .9rem; height: .05rem; position: relative; overflow: visible; border: 0; background: transparent; -webkit-appearance: none; outline: 0; margin-right:.4rem; vertical-align: middle;}
 .ui-checkbox input:before{content: ""; border:1px solid #999;width: .9rem;height: .9rem; border-radius: .1rem;display:block;background-color: #fff;margin-top: -.5rem;}
@@ -96,7 +100,6 @@ content: ''; position: absolute; left: 0; top: 0; bottom: auto; right: auto; wid
 }
 #page-route .bar-tab input[type='checkbox']:checked:after{content: ""; width: .425rem; height: .3rem;left: .2rem; top: .28rem;
  background:url('data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAMCAMAAACz+6aNAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAh1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD////33A0zAAAAK3RSTlMAAYyJBKChCrOxAxLGwR3V0g8/v5Uq4tsYgLoROO3pJNklSfTwLfr1Qf1Opy9g+wAAAAFiS0dELLrdcasAAAAJcEhZcwAACxIAAAsSAdLdfvwAAABqSURBVAjXVc5XDoNADARQQ+ihhJ6lJwECzP3vx4IQ8vrH1rM1MhEvTcdDAcOEpXGwHbgeh6ePwOYQRnjFx5CkmXH0vED5PlcCqGqipkXXX9eShs/3h3G6AySNM/4Ly5SEdVM+kyRILcFgB8drB8OOR5alAAAAAElFTkSuQmCC');background-size: cover;}
-
 
 .route-searchbox .areabox a{ color: #000;font-size: .7rem;display: block;}
 .route-searchbox .areabox label {color: #666;font-size: .6rem;}
@@ -184,20 +187,11 @@ label.item-disabled svg{fill: #999;}
 content: '';display: -webkit-box; 
 width: 1.8rem;height: 1.8rem; border:1px solid #021257; border-radius: 50%;  position:absolute;left: 0;top: 0;}
 
-
 .route-detail-card a {color:inherit;}
 .route-detail-card .card-header {font-size: .8rem;}
 
-
 .route-detail-bg {background-repeat:no-repeat; background-size: cover;
 	width:100%;height:7rem;height:calc(100vw * 0.37333333);  border-radius: 0 0 0.2rem 0.2rem;}
-
-/*
-.route-detail-p1,.route-detail-p2,.route-detail-p3,.route-detail-p4,
-.route-detail-p5,.route-detail-p6,.route-detail-p7,.route-detail-p8
-{background-repeat:no-repeat; background-size: cover;
-	width:100%;height:7rem;height:calc(100vw * 0.37333333);  border-radius: 0 0 0.2rem 0.2rem;}
-*/
 
 .route-detail-p1 {background-image:url(/assets/img/hx-p1.jpg);}
 .route-detail-p2 {background-image:url(/assets/img/hx-p2.jpg);}
@@ -245,7 +239,6 @@ height: 446px;height: calc(100vw * 1.18933333);}
 
 .navBarDetail{position: fixed;background-color: rgba(16,11,80,.95); bottom: 3rem; width: 100%;z-index: 20;}
 .navBarDetail .content-block{margin:.75rem 0;}
-#page-route-room .bar-tab .detail {color:inherit;}
 #page-route-room .bar-tab .arr {width: .85rem; transform: rotateZ(180deg);}
 #page-route-room .bar-tab .r180 .arr { transform: rotateZ(0deg);}
 #page-route-room .route-detail-bg {border-radius: 0;}
@@ -277,11 +270,12 @@ height: 446px;height: calc(100vw * 1.18933333);}
 #page-route-room-select-end .soldimg {width: 3.55rem;}
 #page-route-room-select-end .button-success {height: 2.35rem;line-height: 2.35rem;border-radius: 1.175rem; }
 
-#page-booking .card, .popup-customer .card{margin:.75rem;}
-#page-booking .list-block {margin-bottom:0.75rem;}
-#page-booking .tab-item {padding-left:.75rem;padding-right: .75rem;}
-#page-booking .line_background {width: 76%;top: 37.5%;left: 2.4rem;}
-#page-booking .button-success {height: 2.35rem;line-height: 2.35rem;border-radius: 1.175rem; }
+#page-order-booking .line_background ,
+#page-order-contact .line_background {width: 76%;top: 37.5%;left: 2.4rem;}
+
+
+#page-order-booking .card, .popup-customer .card{margin:.75rem;}
+#page-order-booking .list-block {margin-bottom:0.75rem;}
 
 .popup-customer{background-color: #061556}
 .popup-customer .content-block-title {margin-top: 0;background-color: #f5f5f5; height: 4rem; line-height: 4rem; margin-left: 0; margin-right: 0;padding-left: 1rem;padding-right: 1rem; border-top-left-radius: .2rem; border-top-right-radius: .2rem;}
@@ -289,4 +283,23 @@ height: 446px;height: calc(100vw * 1.18933333);}
 .popup-customer input,.popup-customer select{padding-left: 0  !important;}
 .popup-customer .list-block .item-title.label {width: 100%;}
 .popup-customer .button {display: block;color: #100f4f;border-radius: 1.35rem;height: 1.8rem;line-height: 1.8rem;}
+
+#page-order-contact .db .item-inner{display: block;}
+#page-order-contact input,.popup-customer select{padding-left: 0  !important;}
+#page-order-contact .list-block .item-title.label {width: 100%;}
+
+#page-order-confirmation .no-border .item-inner:after{height: 0;}
+#page-order-confirmation .item-content.db .item-inner{display: block;}
+#page-order-confirmation .inside-ul {padding-left: 0;}
+#page-order-confirmation .inside-ul .item-content{padding-left: 0;padding-right: 0;}
+#page-order-confirmation .item-media{width: 3rem;}
+#page-order-confirmation .item-link .item-inner {background-position: 97% .6rem;background-image: url("/assets/img/list-chevron-down.png");}
+#page-order-confirmation .item-link .item-inner.open {background-image: url("/assets/img/list-chevron-up.png");}
+
+#page-order-confirmation .no-link .item-inner {background-image: none;}
+
+#page-order-pay .passenger-ticket-contract .card-content{ padding:1.25rem .75rem;}
+#page-order-pay .button-pay {  height: 1.8rem;line-height: 1.8rem;border-radius: .9rem;padding: 0 1rem;display: inline-block;}
+
+
 

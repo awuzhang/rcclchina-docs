@@ -1,61 +1,143 @@
 ---
 layout: default
-title: 预定船票
+title: 添加联系人
 ---
-<div id="page-contact" class="page">
+<div id="page-order-contact" class="page">
   <nav class="bar bar-tab">
-    <a href="/order/order_confirmation" class="button button-big button-fill button-success">保存</a>
+
+    <div class="tab-item">
+        <a href="#" class="back">上一步</a>
+    </div>
+    <div class="tab-item">
+        <a href="/order/order_confirmation" class="button button-fill button-success">下一步</a>
+    </div>
+    
   </nav>
   <div class="content">
     <div class="content-block">
-      <div class="row">
-        <div class="col-33">
-          <div>1</div>
-          <div>填写乘客信息</div>
+      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0">
+        <div class="line_background"></div>
+        <div class="col-25">
+          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
         </div>
-        <div class="col-33">
-          <div>2</div>
-          <div>填写联系人</div>
+        <div class="col-25">
+          <div><img src="/assets/img/big-select.png" class="checkin_flow_img"></div>
         </div>
-        <div class="col-33">
-          <div>3</div>
-          <div>支付</div>
+        <div class="col-25">
+          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+        </div>
+        <div class="col-25">
+          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+        </div>
+      </div>
+      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0 f12">
+        <div class="col-25 color_process_false">
+          填写乘客信息
+        </div>
+        <div class="col-25 color_white">
+          添加联系人
+        </div>
+        <div class="col-25 color_process_false">
+          确认订单
+        </div>
+        <div class="col-25 color_process_false">
+          支付订单
         </div>
       </div>
     </div>
+    <div class="f14 tc"><span class="fff o4">剩余时间</span><span class="fyellow">13:57</span><span class="fff o4">，请尽快填写</span></div>
+
+	<div class="tc f14 fff o4 mt10">联系人必填信息</div>
+    <div class="card">
     <div class="list-block">
       <ul>
         <li>
-          <div class="item-content">
+          <div class="item-content db">
             <div class="item-inner">
-              <div class="item-title label">联系人姓名</div>
+              <div class="item-title label">中文姓</div>
               <div class="item-input">
-                <input type="text" placeholder="请输入">
+                <input type="text" name="cnfamilyname" placeholder="请输入">
+              </div>
+            </div>
+            <div class="item-inner bl1">
+              <div class="item-title label">中文名</div>
+              <div class="item-input">
+                <input type="text" name="cnname" placeholder="请输入">
               </div>
             </div>
           </div>
         </li>
         <li>
-          <div class="item-content">
+          <div class="item-content db">
             <div class="item-inner">
-              <div class="item-title label">联系人电话</div>
+              <div class="item-title label">姓氏拼音</div>
               <div class="item-input">
-                <input type="text" placeholder="请输入">
+                <input type="text" name="lastname" placeholder="请输入">
+              </div>
+            </div>
+            <div class="item-inner bl1">
+              <div class="item-title label">名字拼音</div>
+              <div class="item-input">
+                <input type="text" name="firstname" placeholder="请输入">
               </div>
             </div>
           </div>
         </li>
         <li>
-          <div class="item-content">
-            <div class="item-inner">
-              <div class="item-title label">联系人邮箱</div>
+          <div class="item-content db">
+          	<div class="item-inner">
+              <div class="item-title label">性别</div>
               <div class="item-input">
-                <input type="email" placeholder="请输入">
+                <select name="gender" class="o6" ontouchstart="this.setAttribute('class','');">
+                  <option value="" class="dn" disabled selected>请输入</option>  
+                  <option>男</option>
+                  <option>女</option>
+                </select>
+              </div>
+            </div>
+            <div class="item-inner bl1">
+              <div class="item-title label">出生年月</div>
+              <div class="item-input">
+                <input type="text" ontouchstart="this.type='date';if(this.value == ''){this.value='1980-01-01';}" name="birthdate" placeholder="请输入">
               </div>
             </div>
           </div>
         </li>
       </ul>
     </div>
+	</div>
+
+	<div class="tc f14 fff o4">请验证联系信息</div>
+	<div class="card">
+		<div class="card-content list-block">
+			<ul>
+				<li class="item-content db">
+					<div class="item-inner ">
+						<div class="item-title"> 电子邮箱 </div>
+						<div class="item-input"> <input type="email" name="email" placeholder="请输入"> </div>
+					</div>
+				</li>
+				<li class="item-content db">
+					<div class="item-inner ">
+						<div class="item-title"> 手机号码 </div>
+						<div class="item-input"> <input type="text" name="phone" placeholder="请输入"> </div>
+					</div>
+				</li>
+				<li class="item-content db">
+					<div class="item-inner ">
+						<div class="item-title"> 图形验证码 </div>
+						<div class="item-input"> <input type="text" name="code" placeholder="请输入图片中的数字"> </div>
+					</div>
+				</li>
+				<li class="item-content db">
+					<div class="item-inner ">
+						<div class="item-title"> 短信验证码 </div>
+						<div class="item-input"> <input type="number" name="mobilecode" placeholder="请输入4位验证码"> </div>
+            <div class="item-after"> <a href="#" class="button">获取验证码</a> </div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
   </div>
 </div>

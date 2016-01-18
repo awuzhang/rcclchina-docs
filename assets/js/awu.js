@@ -221,7 +221,7 @@ $(function () {
 
 	});
 
-	$(document).on("pageInit", "#page-booking", function(e, pageId, $page) {
+	$(document).on("pageInit", "#page-order-booking", function(e, pageId, $page) {
 		$page.on('click', '.open-popup[data-popup=".popup-customer"]', function(e){
 		  $('.popup-customer').data('param', this);
 		  $(this).children('input').forEach(function(el){ //给表单赋值
@@ -250,32 +250,78 @@ $(function () {
 
 	$(document).on('open', '.popup.popup-customer', function(e){
 		$(e.target).find('.content').scrollTop(0);
-	})
-	/*
-	$(document).on("pageInit", "#page-index", function(e, pageId, $page) {
-	  // 测试用 
-	  $(".label").on('touchstart', function(){
-	    var $span = $(this).find('span'), $inp = $(this).find('input');
-	    $span.addClass('animated s50p').on('webkitTransitionEnd transitionend', function(){
-	    });
-	  });
-	  $(".label2").on('touchstart', function(){
-	    $(this).addClass('label3');
-	  });
-	  $("#picker").picker({
-	      toolbarTemplate: '<header class="bar bar-nav">\
-	      <button class="button button-link pull-right close-picker">确定</button>\
-	      <h1 class="title">标题</h1>\
-	      </header>',
-	      cols: [
-	        {
-	          textAlign: 'center',
-	          values: ['1','2','3','4']
-	        }
-	      ]
-	    });
 	});
-	*/
+
+	$(document).on("pageInit", "#page-order-confirmation", function(e, pageId, $page) {
+		$page.on('click', '.item-link > .item-inner', function(e){
+			$(this).toggleClass('open');
+			$(this).find('.inside-ul').toggleClass('dn');
+		});
+	});
+	$(document).on("pageInit", "#page-order-pay", function(e, pageId, $page) {
+		$page.on('click', '#disagree', function(e){
+			$.confirm('不同意《乘客票据合同》 <br /> 将使您无法购票',
+		        function () {
+		        	window.location.href = "/";
+		        }
+		    );
+		});
+		$page.on('click', '#agree', function(e){
+			$('.bar-tab', $page).remove();
+			$('.passenger-ticket-contract', $page).remove();
+			$('.paybox', $page).show();
+		});
+	});
+	
+
+	$(document).on("pageInit", "#page-index", function(e, pageId, $page) {
+		var device = $.param($.device);
+		device = device.replace(/&/g,'<br>')
+		$page.find('#device').html(device);
+
+		check_webp_feature('lossy',function(feature, result){
+			$('#webP').html('webP:'+ result);
+		})
+		function check_webp_feature(feature, callback) {
+		    var kTestImages = {
+		        lossy: "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
+		        lossless: "UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
+		        alpha: "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",
+		        animation: "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"
+		    };
+		    var img = new Image();
+		    img.onload = function () {
+		        var result = (img.width > 0) && (img.height > 0);
+		        callback(feature, result);
+		    };
+		    img.onerror = function () {
+		        callback(feature, false);
+		    };
+		    img.src = "data:image/webp;base64," + kTestImages[feature];
+		}
+	  // 测试用 
+	//   $(".label").on('touchstart', function(){
+	//     var $span = $(this).find('span'), $inp = $(this).find('input');
+	//     $span.addClass('animated s50p').on('webkitTransitionEnd transitionend', function(){
+	//     });
+	//   });
+	//   $(".label2").on('touchstart', function(){
+	//     $(this).addClass('label3');
+	//   });
+	//   $("#picker").picker({
+	//       toolbarTemplate: '<header class="bar bar-nav">\
+	//       <button class="button button-link pull-right close-picker">确定</button>\
+	//       <h1 class="title">标题</h1>\
+	//       </header>',
+	//       cols: [
+	//         {
+	//           textAlign: 'center',
+	//           values: ['1','2','3','4']
+	//         }
+	//       ]
+	//     });
+	});
+
 });
 
 
