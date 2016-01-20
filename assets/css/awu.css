@@ -39,6 +39,11 @@
 
 .t-ell{flex-shrink: 1;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 /**/
+.err {color: red !important;}
+.err input, .err select{color: red !important;}
+.err.item-inner:after {background-color: red;}
+.err .item-err {position: absolute; bottom: -.75rem;font-size:.55rem;}
+
 .card{border-radius: 0.2rem; }
 
 .bar-tab {padding: 0 .5rem;  }
@@ -54,6 +59,17 @@ label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-check
   background: #0795ff;border-radius: 50%;margin-top: -0.25rem;margin-left: -0.25rem;width: 0.5rem;height: 0.5rem;
 }
 .button.disabled.button-fill, .button.button-primary.disabled.button-fill, .button.button-success.disabled.button-fill, .button.button-danger.disabled.button-fill, .button.button-warning.disabled.button-fill {color:#100f4f; background-color: #fbb818; opacity: .4;}
+
+/*
+.item-media{position: relative;}
+.item-media:after {content: '';position: absolute;left: 0;bottom: 0;right: auto;top: auto;height: 1px;width: 100%;background-color: #e7e7e7;display: block;z-index: 15;-webkit-transform-origin: 50% 100%;transform-origin: 50% 100%;}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .item-media:after{transform: scaleY(0.5);}
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .item-media:after{transform: scaleY(0.33);} 
+}
+*/
 /**/
 
 .arr-down,.arr-up,.arr-down-g0{width: 0;height: 0;border:4px solid;display:inline-block;border-color: #fff transparent transparent transparent;}
@@ -67,6 +83,7 @@ label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-check
 /**/
 
 #page-route {background-color:#efefef; }
+#page-route header.bar-nav { position: fixed;}
 .route-searchbox {position: fixed; background-color: #fff; width: 100%;}
 .list-block .item-content {padding-right: 0.75rem;}
 
@@ -284,8 +301,10 @@ height: 446px;height: calc(100vw * 1.18933333);}
 .popup-customer .list-block .item-title.label {width: 100%;}
 .popup-customer .button {display: block;color: #100f4f;border-radius: 1.35rem;height: 1.8rem;line-height: 1.8rem;}
 
-#page-order-contact .db .item-inner{display: block;}
-#page-order-contact input,.popup-customer select{padding-left: 0  !important;}
+#page-order-contact .db .item-inner{display: block; overflow: inherit; margin-bottom: .8rem; padding-top: 0;}
+#page-order-contact .list-block ul {padding:.5rem 0}
+
+#page-order-contact input,.popup-customer select{padding-left: 0  !important;height: 1.4rem;line-height: 1.4rem;margin-top: .4rem;}
 #page-order-contact .list-block .item-title.label {width: 100%;}
 
 #page-order-confirmation .no-border .item-inner:after{height: 0;}
@@ -297,9 +316,17 @@ height: 446px;height: calc(100vw * 1.18933333);}
 #page-order-confirmation .item-link .item-inner.open {background-image: url("/assets/img/list-chevron-up.png");}
 
 #page-order-confirmation .no-link .item-inner {background-image: none;}
+#page-order-confirmation .dl{margin: 0.5rem}
 
 #page-order-pay .passenger-ticket-contract .card-content{ padding:1.25rem .75rem;}
 #page-order-pay .button-pay {  height: 1.8rem;line-height: 1.8rem;border-radius: .9rem;padding: 0 1rem;display: inline-block;}
 
-
-
+#page-shorex .shorex {width: 40%;display: inline-block; background-position: center top; background-size: cover; color: #fff; text-align: center;}
+#page-shorex .shorex1 {background-image: url(/assets/img/shorex1.jpg)}
+#page-shorex .shorex2 {background-image: url(/assets/img/shorex2.jpg)}
+#page-shorex .shorex3 {background-image: url(/assets/img/shorex3.jpg)}
+#page-shorex .shorex4 {background-image: url(/assets/img/shorex4.jpg)}
+#page-shorex .shorex5 {background-image: url(/assets/img/shorex5.jpg)}
+#page-shorex .shorex6 {background-image: url(/assets/img/shorex6.jpg)}
+#page-shorex .shorex7 {background-image: url(/assets/img/shorex7.jpg)}
+#page-shorex .shorex8 {background-image: url(/assets/img/shorex8.jpg)}

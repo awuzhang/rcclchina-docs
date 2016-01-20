@@ -222,6 +222,7 @@ $(function () {
 	});
 
 	$(document).on("pageInit", "#page-order-booking", function(e, pageId, $page) {
+		window.localStorage.setItem('contact', JSON.stringify({}));
 		$page.on('click', '.open-popup[data-popup=".popup-customer"]', function(e){
 		  $('.popup-customer').data('param', this);
 		  $(this).children('input').forEach(function(el){ //给表单赋值
@@ -233,17 +234,31 @@ $(function () {
 		  }else{
 		  	$('.popup-customer input[name="isContacts"]').prop( 'checked', false ); 
 		  }
+		  //popup 头部信息修改
+		  var defaultName = $(this).find('input[name="defaultName"]').val(),
+		  	  room = $(this).find('input[name="room"]').val();
+		  $('.popup-customer .defaultName').html(defaultName);
+		  $('.popup-customer .room').html(room);
 		});
 
 		$('.popup-customer .button-success').on('click', function(){
-		  var $popup = $('.popup-customer') , $item = $popup.data('param');
+		  var $popup = $('.popup-customer') , $item = $popup.data('param'), param = {};
 		  $popup.find('input, select').forEach(function(el){
 		    $('[name="'+el.name+'"]', $item).val( el.value );
+		    param[el.name] = el.value;
 		  });
 
 		  var strname = $.trim($('input[name="cnfamilyname"]', $popup).val() + $('input[name="cnname"]', $popup).val());
 		  if( strname.length > 0){ $('.name', $item).html(strname); }
-		  $('input[name="isContacts"]', $item).val($('input[name="isContacts"]', $popup).is(':checked'));
+
+		  var isContacts = $('input[name="isContacts"]', $popup).is(':checked') ;
+		  if(isContacts) {
+		  	//排他
+		  	$('input[name="isContacts"][value="true"]', $page).val('false');
+		  	//保存 思路获取form的值
+		  	window.localStorage.setItem('contact', JSON.stringify(param));
+		  }
+		  $('input[name="isContacts"]', $item).val(isContacts);
 
 		})
 	});
@@ -251,6 +266,50 @@ $(function () {
 	$(document).on('open', '.popup.popup-customer', function(e){
 		$(e.target).find('.content').scrollTop(0);
 	});
+
+
+	$(document).on('pageInit', '#page-order-contact', function(e, pageId, $page){
+		var contact = JSON.parse( window.localStorage.getItem('contact') );
+		var name = contact['cnfamilyname'] || '';
+		if(name != ''){
+			$page.find('input, select').forEach(function(el){
+				$(el).val( contact[el.name] || '');
+		  	});
+		}
+
+		$page.one('click', '#nextBtn', function(){
+			$.ajax({
+		        url: '/assets/json/err.json',
+		        success:function(data){
+		        	if(data.err.length > 0){
+		        		for(var index in data.err){
+							var ele = $page.find('[name="'+ data.err[index].name +'"]'),
+								eleParent = ele.parents('.item-inner'),
+								errbox = eleParent.children('.item-err'),
+								errmsg = data.err[index].errmsg;
+							eleParent.addClass('err');
+
+							if(!errbox.hasClass('item-err')) { 
+								errbox = $('<div class="item-err"></div>'); 
+								eleParent.append(errbox); 
+							}
+							errbox.html(errmsg);
+
+							//跳转链接
+							$page.find('#nextBtn').attr('href', '/order/order_confirmation')
+						}
+		        	}
+		        }
+		    });
+
+		})
+	    
+
+
+
+	});
+
+
 
 	$(document).on("pageInit", "#page-order-confirmation", function(e, pageId, $page) {
 		$page.on('click', '.item-link > .item-inner', function(e){
@@ -270,9 +329,65 @@ $(function () {
 			$('.bar-tab', $page).remove();
 			$('.passenger-ticket-contract', $page).remove();
 			$('.paybox', $page).show();
+			$('#booking-timerbox').hide();
+			bookingTimerControl.getInstance().stop();
 		});
 	});
 	
+	//booking时间控制    （由于页面允许通过链接直接访问step2,3,4 所以每个页面都需尝试初始化时间函数）
+	$(document).on("pageAnimationStart", "#page-order-booking", function(e, pageId, $page) {
+		$page.find('#booking-timer').html( bookingTimerControl.getInstance().endTimeString() );
+	});
+	$(document).on("pageAnimationStart", "#page-order-contact", function(e, pageId, $page) {
+ 		$page.find('#booking-timer').html( bookingTimerControl.getInstance().endTimeString() );
+	});
+	$(document).on("pageAnimationStart", "#page-order-confirmation", function(e, pageId, $page) {
+ 		$page.find('#booking-timer').html( bookingTimerControl.getInstance().endTimeString() );
+	});
+	$(document).on("pageAnimationStart", "#page-order-pay", function(e, pageId, $page) {
+		$page.find('#booking-timer').html( bookingTimerControl.getInstance().endTimeString() );
+	});
+
+
+	$(document).on("pageInit", "#page-order-booking", function(e, pageId, $page) {
+		bookingTimerControl.getInstance().run();
+		bookingTimerControl.getInstance().addEvent(function(){
+			$page.find('#booking-timer').html( bookingTimerControl.getInstance().endTimeString() );
+		});
+	});
+	$(document).on("pageInit", "#page-order-contact", function(e, pageId, $page) {
+		bookingTimerControl.getInstance().run();
+		bookingTimerControl.getInstance().addEvent(function(){
+			$page.find('#booking-timer').html( bookingTimerControl.getInstance().endTimeString() );
+		});
+	});
+	$(document).on("pageInit", "#page-order-confirmation", function(e, pageId, $page) {
+		bookingTimerControl.getInstance().run();
+		bookingTimerControl.getInstance().addEvent(function(){
+			$page.find('#booking-timer').html( bookingTimerControl.getInstance().endTimeString() );
+		});
+	});
+	$(document).on("pageInit", "#page-order-pay", function(e, pageId, $page) {
+		bookingTimerControl.getInstance().run();
+		bookingTimerControl.getInstance().addEvent(function(){
+			$page.find('#booking-timer').html( bookingTimerControl.getInstance().endTimeString() );
+		});
+	});
+
+ 	$(document).on("pageReinit", "#page-order-booking", function(e, pageId, $page) {
+		bookingTimerControl.getInstance().removeEvent();
+	});
+	$(document).on("pageReinit", "#page-order-contact", function(e, pageId, $page) {
+		bookingTimerControl.getInstance().removeEvent();
+	});
+	$(document).on("pageReinit", "#page-order-confirmation", function(e, pageId, $page) {
+		bookingTimerControl.getInstance().removeEvent();
+	});
+	$(document).on("pageReinit", "#page-order-pay", function(e, pageId, $page) {
+		bookingTimerControl.getInstance().removeEvent();
+	});
+	//时间控制结束
+
 
 	$(document).on("pageInit", "#page-index", function(e, pageId, $page) {
 		var device = $.param($.device);
@@ -497,6 +612,108 @@ var PickOfRoomsControl = function() {
 		return self.dataRooms;
 	}
 }
+
+//
+var bookingModal = {
+	'nextConfirm' : function(){
+		$.confirm('时间已到，您还没有完成预订，<br/>是否继续预订？',
+			function () {
+				//点确定时 替换结束时的提醒 ，重置时间，开始
+				bookingTimerControl.getInstance().setEndEvent(bookingModal.endConfirm);
+				bookingTimerControl.getInstance().setTime(13);
+				bookingTimerControl.getInstance().run();
+			},
+			function() {
+				window.location = "/route/route_room_select";
+			}
+		);
+	},
+	'endConfirm' : function(){
+		$.alert('时间已到，您还没有完成预订，<br/>请重新预约',
+			function () {
+				window.location = "/route/route_room_select";
+			}
+		);
+	}
+}
+    
+//订单时间控制 (单例)；
+var bookingTimerControl = (function () {
+    var instantiated;
+    function init() {
+    	this.isRun = false; 
+    	this.count = 60 * 13 ; //默认13分钟 60 = 秒；
+    	this.interval = 1000; //每秒触发一次；
+    	this.timer;
+    	this.endTime = new Date().getTime() + (1000 * this.count);
+    	this.events = [];
+    	this.endEvents = bookingModal.nextConfirm;   //倒计时时结束触发 （ps:约定 未运行时才允许设置, 避免了加载其他页面时初始化该事件)；
+
+    	endTimeString = function(){
+    		var t = endTime - new Date();
+    		var m=Math.floor(t/1000/60%60), m = m.toString().length == 1 ? "0"+m : m; 
+            var s=Math.floor(t/1000%60), s = s.toString().length == 1 ? "0"+s : s; 
+            return (m + ':' + s);
+    	}
+    	dispatchEvent = function(){
+    		for(var index in events){
+				events[index]();
+			}
+			count -= 1;
+			if(count === 1) { //等于1时结束了
+				clearInterval(timer);
+				isRun = false;
+				endEvents();
+			}
+    	}
+    	setTime =  function (n) {
+    		if(isRun) return;
+        	count = 60 * n;
+        	endTime = new Date().getTime() + (1000 * count);
+        }
+        run = function(){
+        	if(isRun) {return;}
+        	isRun = true;
+        	timer = setInterval(function(){
+        		dispatchEvent();
+        	}, interval)
+        }
+		addEvent = function(event){
+        	events.push(event);
+        }
+        removeEvent = function() {
+        	events.pop();
+        }
+        setEndEvent = function(event){
+        	if(isRun) return;
+        	endEvents = event;
+        }
+        stop = function(){
+        	isRun = false;
+        	clearInterval(timer);
+        }
+        return {
+            setTime : setTime,
+            run : run,
+            addEvent: addEvent,
+            removeEvent : removeEvent,
+            endTimeString : endTimeString,
+            setEndEvent : setEndEvent,
+            stop: stop
+        };
+    }
+
+    return {
+        getInstance: function () {
+            if (!instantiated) {
+                instantiated = init();
+            }
+            return instantiated;
+        }
+    };
+})();
+
+
 
 
 

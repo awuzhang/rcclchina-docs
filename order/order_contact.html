@@ -9,7 +9,7 @@ title: 添加联系人
         <a href="#" class="back">上一步</a>
     </div>
     <div class="tab-item">
-        <a href="/order/order_confirmation" class="button button-fill button-success">下一步</a>
+        <a href="#" id="nextBtn" class="button button-fill button-success">下一步</a>
     </div>
     
   </nav>
@@ -45,7 +45,7 @@ title: 添加联系人
         </div>
       </div>
     </div>
-    <div class="f14 tc"><span class="fff o4">剩余时间</span><span class="fyellow">13:57</span><span class="fff o4">，请尽快填写</span></div>
+    <div class="f14 tc"><span class="fff o4">剩余时间</span><span class="fyellow" id="booking-timer">13:00</span><span class="fff o4">，请尽快填写</span></div>
 
 	<div class="tc f14 fff o4 mt10">联系人必填信息</div>
     <div class="card">
@@ -128,12 +128,17 @@ title: 添加联系人
 						<div class="item-title"> 图形验证码 </div>
 						<div class="item-input"> <input type="text" name="code" placeholder="请输入图片中的数字"> </div>
 					</div>
+          <div class="item-media">
+            <a href="#" class="button">1234</a>
+          </div>
 				</li>
 				<li class="item-content db">
 					<div class="item-inner ">
 						<div class="item-title"> 短信验证码 </div>
-						<div class="item-input"> <input type="number" name="mobilecode" placeholder="请输入4位验证码"> </div>
-            <div class="item-after"> <a href="#" class="button">获取验证码</a> </div>
+						<div class="item-input"> <input type="number" onkeypress="value=/^.{1,3}/.exec(value)" name="mobilecode" placeholder="请输入4位验证码"> </div>
+					</div>
+					<div class="item-media">
+						<a href="#" class="button">获取验证码</a>
 					</div>
 				</li>
 			</ul>
