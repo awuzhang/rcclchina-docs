@@ -57,7 +57,7 @@
 #page-checkin-payment .list-block input, #page-checkin-payment .list-block select {
   padding: 0;
 }
-#page-checkin-orderno .list-block input, #page-checkin-payment .list-block select {
+#page-checkin-orderno .list-block input, #page-checkin-orderno .list-block select {
   padding: 0;
 }
 .clear_pad {
@@ -272,7 +272,7 @@
   color: #061556;
 }
 .home_downarrow{
-  width:5%; display: block;margin:auto; padding: 0.5rem 0;
+  width:5%; display: block;margin:auto; 
 }
 .home_lbnav{
   position: absolute;
@@ -313,10 +313,10 @@
   text-align: center;
 }
 .home_sline {
-  width: 25%; margin-bottom:.3rem
+  width: 32%; margin-bottom:.3rem
 }
-.home_sline22 {
-  width: 22%; margin-bottom:.3rem
+.home_sline28 {
+  width: 28%; margin-bottom:.3rem
 }
 .home_shead{
   line-height: 3rem; margin:0.2rem; color: #061556; font-weight: 700;text-align: center;
@@ -407,7 +407,7 @@
   font-size:0.7rem;
   color: #bbb;
 }
-.home_content_block{
+.content-block1{
   padding: 0;
   margin-top: 0.5rem;
 }
@@ -424,7 +424,6 @@
   padding-top:1rem;
   padding-bottom: 1rem; 
   width: 100%;
-  height: 4rem;
   z-index: 222;
 }
 .home_lbnav2 img{
@@ -471,6 +470,455 @@ background-color: #000;
 .home_ckgdbt .button-big{
   height: 2.2rem; line-height: 2.2rem;
 }
-.home_fullheight {
-  height: 100%;
+/*餐厅详情*/
+#page-restaurant{
+  overflow-y:scroll;
+}
+.restaurant_bgc{
+  background-color: #efefef;
+}
+.restaurant_head{
+  position: relative;
+}
+.restaurant_headbg img{
+  width: 100%;
+}
+.restaurant_headdt{
+  position:absolute; bottom: 1rem; color: white; width: 100%;
+}
+.restaurant_4f{
+  float:right;margin-right:1rem; font-size: 0.7rem;position: relative;margin-top: 0.15rem;
+}
+.restaurant_4f img{
+   margin-right: 0.2rem; width:44%; display: block; 
+   position:absolute; bottom:0.3rem;left:-0.6rem;z-index: 11
+}
+.restaurant_price1{
+  float: left;margin-left:1rem;font-size: 0.9rem;
+}
+.restaurant_price1xh{
+  font-size: 0.7rem;
+}
+.restaurant_kf{
+  background-image: url(/assets/img/restaurant2.png); width: 96%; margin:auto; border-radius:0.3rem; height: 3rem;  font-size: 0.7rem; text-indent: 1rem; line-height: 3rem; border-left-radius: 1px solid #e8e8e8;border-right-radius: 1px solid #e8e8e8;box-shadow:0rem 0.05rem 0.1rem #ddd; background-repeat: no-repeat;
+}
+.restaurant_ticolor{
+  text-align: center;
+  color:#000;
+  opacity: 0.4;
+  line-height: 2.6rem;
+  font-size: 0.7rem;
+}
+.restaurant_box{
+  width: 96%;margin:auto;border-radius:0.3rem; background-color: #fff;border-left-radius: 1px solid #e8e8e8;border-right-radius: 1px solid #e8e8e8;box-shadow:0rem 0.05rem 0.1rem #ddd;padding: 0.8rem; position: relative;
+}
+.restaurant_box img{
+  width: 100%;
+}
+.restaurant_cont{
+  text-align: left;
+  font-size: 0.7rem;
+}
+.restaurant_more{
+  float: right;font-size: 0.7rem; bottom: 1rem; right:1rem; 
+}
+.mgt_20{
+  margin-bottom: 1rem;
+}
+
+.mg_l0{
+  margin-left: 0
+}
+.mg_l6{
+  margin-left:0.6rem;
+}
+.restaurant_tscdt{
+  text-align: center; color: #fbb818; font-size: 0.8rem; line-height: 2rem;
+}
+.restaurant_tscdd{
+  text-align: center;
+  font-size: 0.7rem; line-height: 1.2rem;margin-bottom: 1.5rem;
+}
+.restaurant_ydfs{
+  font-size: 0.7rem;
+}
+.restaurant_mg_b3{
+  margin-bottom:3rem;
+}
+.restaurant_bli img{
+  width: 47%;display: block; margin-right: auto; float:left;
+}
+.restaurant_glpr{
+  position: relative;
+}
+.restaurant_glpa{
+  position: absolute;
+  bottom: 1rem;
+  font-size: 0.7rem;
+  color: white;
+  left:1rem;
+  opacity: 0.7
+}
+.restaurant_bri{
+  width: 47%;display: block; margin-left: auto;
+}
+/*船上网络*/
+#page-shipwefi{
+  overflow: scroll;
+}
+.shipwefi_head img{
+  width: 100%;
+}
+.mg_b1{
+  margin-bottom:1rem; 
+}
+.shipwifi_cb{
+  color: #000;font-size: 0.7rem;
+}
+.shipwifi_cb70{
+  color: #000;opacity: 0.7;font-size: 0.7rem;
+}
+.shipwifi_fr{
+ font-size: 0.7rem; float: right; margin-top: -0.1rem;
+}
+.shipwifi_price{
+  color:#fbb818; font-size: 0.75rem;
+}
+.shipwifi_bo{
+  background-color: #12205e; margin-top: 1rem; height: 4rem;position: relative;
+}
+.shipwifi_ydwifi{
+  width: 50%; background-color: #fbc400; color: #100f4f; height: 2rem;position: absolute;bottom:1rem;
+  left: 25%;line-height: 2rem;font-size: 0.7rem;border-radius: 1rem;
+}
+/*认识游轮*/
+.knowship_head img{
+  position: relative;
+  width: 100%
+}
+.knowship_headt{
+  position: absolute; top:0rem;
+}
+.knowship_head{
+  font-size: 0.8rem; color: #000; font-weight: 700;
+}
+.knowship_h{
+  line-height: 10rem; text-align: center; color: white;
+}
+.knowship_text{
+  font-size: 0.7rem; color: #000; opacity: 0.7;margin-top: 0.5rem;position:relative;
+}
+.knowship_dashed{
+  width: 100%;border-bottom:1px dashed #b3b3b3; margin-top: 1rem;
+}
+.knowship_box{
+ left: 2%; width: 96%;margin:auto;border-radius:0.3rem; background-color: #fff;border-left-radius: 1px solid #e8e8e8;border-right-radius: 1px solid #e8e8e8;box-shadow:0rem 0.05rem 0.1rem #ddd;padding: 1rem;
+}
+.knowship_more{
+  font-size: 0.7rem; bottom: 1rem; right:1rem;float: right;
+}
+.knowship_tac{
+  text-align: center; margin-top: 0.5rem;
+}
+.knowship_yszt0{
+  color: #fab818;font-size:0.8rem;
+}
+.knowship_yszt1{
+  color: #000;font-size: .5rem;
+}
+.knowship_yszt2{
+  color: #000;font-size: .6rem;
+}
+.ks_cd img{
+  width: 32%; height: 0.05rem;opacity: 0.4
+}
+.ks_cd{
+  text-align: center;color: #6d6d72;
+  padding: 0.5rem 0;
+}
+.knowship_hjcd{
+  text-align: center; 
+}
+.knowship_lline{
+  float: left; margin-top: 0.6rem; display: block; margin-left: 1rem;
+}
+.knowship_rline{
+  float: right; margin-top: 0.6rem;display: block;margin-right: 1rem;
+}
+.knowship_con{
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+.knowship_img1{
+  background-image: url(/assets/img/knowship_2.png);
+}
+.knowship_img2{
+  background-image: url(/assets/img/knowship_4.png);
+}
+.knowship_img3{
+  background-image: url(/assets/img/knowship_6.png);
+}
+.knowship_img4{
+  background-image: url(/assets/img/knowship_8.png);
+}
+.knowship_img5{
+  background-image: url(/assets/img/knowship_01.png);
+}
+.knowship_box1{
+   -webkit-background-size: 6rem 6rem;
+   background-size: 6rem 6rem;
+   background-color: #fff;
+    width: 96%; margin:auto; border-radius:0.3rem; height: 6rem;  font-size: 0.7rem; text-indent: 1rem; line-height: 3rem; border-left-radius: 1px solid #e8e8e8;border-right-radius: 1px solid #e8e8e8;box-shadow:0rem 0.05rem 0.1rem #ddd; background-repeat: no-repeat;
+}
+.knowship_box1_1{
+  position: absolute; left: 7rem; bottom:0.7rem;
+}
+.knowship_box1_1 img{
+  width: 50%;
+}
+.knowship_fs8{
+  font-size: 0.8rem; color:#061556;
+}
+.knowship_fs7{
+  font-size: 0.7rem;
+  font-style: italic;
+}
+.knowship_box1_2{
+  position: absolute; right: 1rem;bottom: 2rem;
+}
+.knowship_box1_2 img{
+  width: 60%;
+}
+/*免预约活动*/
+#page-noorderactive{
+  background-color: #efefef;overflow: scroll;
+}
+/*预约活动*/
+#page-orderactive{
+  background-color: #efefef;overflow: scroll;
+}
+.orderactive_line{
+  border-right: 1px solid #c3c3c3;
+}
+/*免税购物*/
+#page-shopping{
+  background-color: #efefef;
+}
+.shopping_lbt img{ 
+  width: 100%
+}
+#page-shopping .swiper-container-horizontal > .swiper-pagination{
+  bottom: 2rem;
+}
+.sp_lb{
+  position: relative;
+}
+.shopping_4f{
+  color: white;position: absolute;
+ z-index: 1; bottom: 2rem; right:1rem; font-size: 0.7rem;
+
+}
+.shopping_4f img{
+   margin-right: 0.2rem; width:22%; display: block; 
+   position:absolute; bottom:0.3rem;left:-0.6rem;z-index: 11
+}
+.shopping_box{
+  width: 96%;margin:auto;border-radius:0.3rem; background-color: #fff;border-left-radius: 1px solid #e8e8e8;border-right-radius: 1px solid #e8e8e8;box-shadow:0rem 0.05rem 0.1rem #ddd;
+}
+.sp_logo img{
+  width: 100%; display: block; margin:auto;
+}
+.splogo_rb{
+  padding:1rem 0.5rem 1rem 0.5rem ;border-right: 1px solid #efefef;border-bottom: 1px solid #efefef; 
+}
+.splogo_b{
+  padding:1rem 0.5rem 1rem 0.5rem ;border-bottom: 1px solid #efefef;
+}
+.splogo_r{
+  padding: 1rem 0.5rem 1rem 0.5rem ;border-right: 1px solid #efefef;
+}
+.splogo_n{
+   padding: 1rem 0.5rem 1rem 0.5rem ;
+}
+.mg_0{
+  margin:0;
+}
+/*船只详情*/
+
+.rt_2{
+  right: -2%
+}
+.mgt_1{
+  margin-top: 1rem;
+}
+.mgt_10{
+  margin-top: 0.5rem;
+}
+.mgt_2{
+  margin-top: 2rem;
+}
+.ys_b{
+  color: black;
+}
+.ys_w{
+  color:white;
+}
+.opc_70{
+  opacity: 0.7; 
+}
+.shipdetail_rarrow img{
+  width: 60%;margin-top: 1rem; margin-left: 0.5rem
+}
+.shipdetail_head img{
+  width: 100%;
+}
+.shipdetail_head{
+ position: relative;
+}
+.shipdetail_headcz{
+  position: absolute;
+  bottom: 0rem;
+  color: white;
+  text-align: center;
+}
+.shipdetail_headcz img{
+  width: 46%
+}
+.shipdetail_title{
+  font-size: 0.8rem; 
+  font-weight: 700;
+}
+.shipdetail_lookall{
+  float: right;
+}
+.shipdetail_lookall img{
+  width: 9%;
+}
+.pad_0{
+  padding: 0
+}
+.shipdetail_at{
+  padding: 0.8rem;
+}
+.shipdetail_yt{
+  position: relative;
+}
+.shipdetail_ytr{
+  position: absolute; bottom: 0.5rem;left: 1rem; color: #fff;font-size: 0.7rem;
+}
+.shipdetail_roomin{
+  color: #000; padding: 0.5rem 0.8rem 0rem 0.8rem; font-size: 0.7rem;
+}
+.shipdetail_roomin_b{
+   color: #000; padding: 0.2rem 0.8rem 0.8rem 0.8rem; font-size: 0.7rem;
+}
+.shipdetail_roomdt{
+  font-size: 0.6rem; color: #000; opacity: 0.7;padding: 0.5rem 0.8rem 0.8rem 0.8rem;
+}
+.knowship_yszt11{
+  color: #000;font-size: .5rem;
+}
+.knowship_yszt21{
+  color: #000;font-size: .6rem;
+}
+.pad_b5{
+  padding-bottom: 0.5rem;
+}
+.shipwifi_bo1{
+ margin-top: 1rem; height: 4rem;position: relative;
+}
+/*船型介绍*/
+
+#page-shiptype{
+  overflow: scroll;
+}
+.shiptype_bf img{
+  width: 20%; margin-bottom: 0.5rem;
+}
+/*餐厅列表*/
+#page-restaurantlist{
+  background-color: #efefef; overflow: scroll;
+}
+.restaurantlist img{
+  width: 96%; display: block; margin: auto; padding: 0.5rem 0rem 0rem 0rem;
+}
+.restaurantlist{
+  position: relative;
+}
+.restaurantlist_4f{
+  float:right;margin-right:1rem; font-size: 0.7rem;position: relative; color: white;position: absolute;top: 1rem;right: 1rem
+}
+.restaurantlist_4f img{
+   margin-right: 0.2rem; width:50%; display: block; 
+   position:absolute; bottom:0.35rem;left:-0.6rem;
+}
+.restaurantlist_dt{
+  text-align: center; color:white;position: absolute; bottom:1rem;left: 25%;width: 50%
+}
+.restaurantlist_dt img{
+  width: 50%;margin-bottom: 0.15rem;
+}
+.restaurantlist_name{
+  font-size: 0.8rem;
+}
+.restaurantlist_type{
+  font-size: 0.7rem;
+}
+.restaurantlist_free{
+  width: 30%; background-color: #fbc400; color: #100f4f; height: 1.2rem;
+  left: 35%;line-height: 1.2rem;font-size: 0.6rem;border-radius: 0.6rem; border: none;margin-top: 0.5rem;
+}
+.restaurantlist_unfree{
+  width: 30%; background-color:none; color: #fff; height: 1.2rem;border: 1px solid #fff;
+  left: 35%;line-height: 1.2rem;font-size: 0.6rem;border-radius: 0.6rem;margin-top: 0.5rem;
+}
+/*预约活动列表*/
+.orderactlist_btbg{
+  background-color: #fff;padding: 0.5rem 0rem 0.5rem 0rem;
+}
+.bt_sty{
+ width: 80%;display: block; margin-left: 10%;margin-top: 0; margin-bottom: 0;
+}
+.bt_sty .button{
+  border: 1px solid #0795ff;color: #0795ff
+}
+.bt_sty .bt_sty_act{
+  background-color: #0795ff; color:white;
+}
+#page-orderactlist{
+  background-color: #efefef;overflow: scroll;
+}
+.mg_b1{
+  margin-bottom: 1rem;
+}
+/*尊享客房*/
+#page-Premierroom{
+  overflow: scroll;
+}
+.pdb_1{
+  padding-bottom: 1rem;
+}
+.pdb_2{
+  padding-bottom: 2rem
+}
+.Premierroom_fz6{
+  font-size: 0.6rem;
+  bottom:1rem;
+  width: 80%;
+}
+.Premierroom_fz5{
+  font-size: 0.5rem;
+  bottom:1rem;
+  width: 80%;
+}
+.Premierroom_add img{
+ width: 1.2rem; height: 0.95rem; position: absolute; right: 1rem; bottom: 1rem;
+}
+
+.css_point3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }

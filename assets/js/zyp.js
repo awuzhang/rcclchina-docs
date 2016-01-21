@@ -79,6 +79,33 @@ $(function () {
 			t = 900;
 		}
 	});
+
+	$(document).on("pageInit", "#page-orderactlist", function(e) {
+		$('.bt1').click(function(){
+			$('.bt1').addClass('bt_sty_act');
+			$('.bt2').removeClass('bt_sty_act');
+			$('.nondod').addClass('hidden');
+			$('.ndod').removeClass('hidden');
+		});
+		$('.bt2').click(function(){
+			$('.bt2').addClass('bt_sty_act');
+			$('.bt1').removeClass('bt_sty_act');
+			$('.ndod').addClass('hidden');
+			$('.nondod').removeClass('hidden');
+
+		});
+	});
+	$(document).on("pageInit", "#page-knowship", function(e) {
+		$('.ks_ck').click(function(){
+			$('.ks_t1').addClass('hidden');
+			$('.ks_t2').removeClass('hidden');
+		});
+		$('.ks_ck2').click(function(){
+			$('.ks_t2').addClass('hidden');
+			$('.ks_t1').removeClass('hidden');
+		});
+	});
+
 	$(document).on("pageInit", "#page-home", function(e) {
 		$('.home_cddj').click(function(){
 			if($('.panel-left').hasClass('active')){
@@ -152,65 +179,65 @@ $(function () {
 		      	$.alert('确认拨打');
 		  	});
 		});
-     		//全局变量，触摸开始位置
-            var startX = 0, startY = 0;
-            //touchstart事件
-            function touchSatrtFunc(evt) {
-                try
-                {
-                    var touch = evt.touches[0]; //获取第一个触点
-                    var y = touch.pageY; //页面触点Y坐标
-                    //记录触点初始位置
-                    startY = y;
-                }
-                catch (e) {
-                }
+ 		//全局变量，触摸开始位置
+        var startX = 0, startY = 0;
+        //touchstart事件
+        function touchSatrtFunc(evt) {
+            try
+            {
+                var touch = evt.touches[0]; //获取第一个触点
+                var y = touch.pageY; //页面触点Y坐标
+                //记录触点初始位置
+                startY = y;
             }
-            //touchmove事件，这个事件无法获取坐标
-            function touchMoveFunc(evt) {
-                try
-                {
-                    var touch = evt.touches[0]; //获取第一个触点
-                    var y = touch.pageY; //页面触点Y坐标
+            catch (e) {
+            }
+        }
+        //touchmove事件，这个事件无法获取坐标
+        function touchMoveFunc(evt) {
+            try
+            {
+                var touch = evt.touches[0]; //获取第一个触点
+                var y = touch.pageY; //页面触点Y坐标
 
-                    if (y - startY < 0) {
-                        $('.home_btbg').addClass('hidden');
-                    } else {
-                    	$('.home_btbg').removeClass('hidden');
-                    }
-                    startY = y;
+                if (y - startY < 0) {
+                    $('.home_btbg').addClass('hidden');
+                } else {
+                	$('.home_btbg').removeClass('hidden');
                 }
-                catch (e) {
-                }
+                startY = y;
             }
+            catch (e) {
+            }
+        }
 
-            //touchend事件
-            function touchEndFunc(evt) {
-                try {
-                }
-                catch (e) {
-                }
+        //touchend事件
+        function touchEndFunc(evt) {
+            try {
             }
-            //绑定事件
-            function bindEvent(f) {
-                if(f==1){
-                }else{
-                    document.addEventListener('touchstart', touchSatrtFunc, false);
-                    document.addEventListener('touchmove', touchMoveFunc, false);
-                    document.addEventListener('touchend', touchEndFunc, false);
-                }
+            catch (e) {
             }
-            //判断是否支持触摸事件
-            function isTouchDevice() {
-                try {
-                    document.createEvent("TouchEvent");
-                    //alert("支持TouchEvent事件！");
-                    bindEvent(); //绑定事件
-                }
-                catch (e) {
-                }
+        }
+        //绑定事件
+        function bindEvent(f) {
+            if(f==1){
+            }else{
+                document.addEventListener('touchstart', touchSatrtFunc, false);
+                document.addEventListener('touchmove', touchMoveFunc, false);
+                document.addEventListener('touchend', touchEndFunc, false);
             }
-        	window.onload = isTouchDevice;
+        }
+        //判断是否支持触摸事件
+        function isTouchDevice() {
+            try {
+                document.createEvent("TouchEvent");
+                //alert("支持TouchEvent事件！");
+                bindEvent(); //绑定事件
+            }
+            catch (e) {
+            }
+        }
+    	window.onload = isTouchDevice;
 	});
 });
 function refer() {
