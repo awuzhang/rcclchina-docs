@@ -24,13 +24,9 @@ $(function(){
 	        var noButtons = !params.buttons || params.buttons.length === 0 ? 'modal-no-buttons' : '';
 	        var verticalButtons = params.verticalButtons ? 'modal-buttons-vertical' : '';
 	        modalHTML = '<div class="modal ' + noButtons + ' '+ (params.extraClass || '') +'"><div class="modal-inner">' + (titleHTML + textHTML + afterTextHTML) + '</div><div class="modal-buttons ' + verticalButtons + '">' + buttonsHTML + '</div></div>';
-
 	        _modalTemplateTempDiv.innerHTML = modalHTML;
-
 	        var modal = $(_modalTemplateTempDiv).children();
-
 	        $(defaults.modalContainer).append(modal[0]);
-
 	        // Add events on buttons
 	        modal.find('.modal-button').each(function (index, el) {
 	            $(el).on('click', function (e) {
@@ -125,7 +121,6 @@ $(function () {
 	})
 
 	$(document).on("pageInit", "#page-route-room", function(e, pageId, $page) {
-
 		//图片swiper
 		$('#page-route-room .photos').on('click', function () {
 	    var modal = $.modal({
@@ -141,51 +136,8 @@ $(function () {
             extraClass : 'room-photoModal'
 	    })
 	    $.swiper($(modal).find('.swiper-container'), {pagination: '.swiper-pagination'});});
-
 	});
 	$(document).on("pageInit", "#page-route-room-select", function(e, pageId, $page) {
-		$page.on('click', '.delRoom', function(e){
-			$.confirm('确定删除该房间?', function () {
-				$(e.target).parents('.route-room-select-card').remove();
-			});
-		});
-		$page.on('click', '.card-tab-bar a', function(e){
-
-			var $_prev = $(e.target).parents('.route-room-select-card').prev();
-			if(!$_prev.hasClass('route-room-select-card') || $_prev.find('input').not(function(){ return !this.checked }).length > 0){
-
-				var $_currbox = $(e.target).parents('.card-tab-bar'),
-				$_detailbox = $_currbox.next(),
-				$_allCard = $('#page-route-room-select .route-room-select-card');
-				$('.media-list', $_allCard).hide();
-				$('.card-tab-bar', $_allCard).show();
-				$_currbox.hide();
-				$_detailbox.show('slow');
-			}
-			
-		});
-
-		$page.on('change', '.route-room-select-card input[type="radio"]', function(e){
-			var $lab = $(this).parent(),
-				tit = $lab.find('.item-title').text(),
-				price = $lab.find('.item-after').text(),
-				temp = tit + '<span class="ml20">'+ price +'</span>',
-				$titbox = $lab.parents('.route-room-select-card').find('.bar-tit'),
-				sum = 0, count = 0;
-			
-			$titbox.html(temp).removeClass('ccc');
-
-			var sum = 0;
-			$('input[type="radio"]:checked', $page).forEach(function(item, index){
-				count += 1;
-				sum += $(item).parents('.item-content').find('.price').text().replace(/,/g,"") - 0;
-			});
-
-			$page.find('.navBarDetail .navBarDetailCon').text( 
-				'已选'+ count +'间  票价合计：¥' + sum.toString().replace(/\d+?(?=(?:\d{3})+$)/img, "$&,")
-			);
-
-		});
 
 	});
 
@@ -262,7 +214,6 @@ $(function () {
 								eleParent.append(errbox); 
 							}
 							errbox.html(errmsg);
-
 							//跳转链接
 							$page.find('#nextBtn').attr('href', '/order/order_confirmation')
 						}
@@ -286,7 +237,6 @@ $(function () {
 			$('.bar-tab', $page).show();
 			$('.passenger-ticket-contract', $page).show();
 		})
-
 		$page.on('click', '#disagree', function(e){
 			$.confirm('不同意《乘客票据合同》 <br /> 将使您无法购票',
 		        function () {
@@ -294,7 +244,6 @@ $(function () {
 		        }
 		    );
 		});
-
 		$page.on('click', '#agree', function(e){
 			$('.bar-tab', $page).hide();
 			$('.passenger-ticket-contract', $page).hide();
@@ -318,7 +267,6 @@ $(function () {
 	$(document).on("pageAnimationStart", "#page-order-pay", function(e, pageId, $page) {
 		$page.find('#booking-timer').html( bookingTimerControl.getInstance().endTimeString() );
 	});
-
 
 	$(document).on("pageInit", "#page-order-booking", function(e, pageId, $page) {
 		bookingTimerControl.getInstance().run();
@@ -344,7 +292,6 @@ $(function () {
 			$page.find('#booking-timer').html( bookingTimerControl.getInstance().endTimeString() );
 		});
 	});
-
  	$(document).on("pageReinit", "#page-order-booking", function(e, pageId, $page) {
 		bookingTimerControl.getInstance().removeEvent();
 	});
@@ -359,6 +306,27 @@ $(function () {
 	});
 	//时间控制结束
 
+	$(document).on("pageInit", "#page-device", function(e, pageId, $page) {
+		function orientationHandler(event){   
+	        document.getElementById("gamma").innerHTML = Math.floor(event.gamma);
+	        var m = Math.floor(event.gamma) > 80 ? 80 : Math.floor(event.gamma);
+	        	m = m < -80 ? -80 : m;
+	        $('#page-device').css({'-webkit-transform': 'translate3d('+ m/2 +'px,0,0)' })
+	    }
+	    function motionHandler(event){  
+	        var acc = event.acceleration, accGravity = event.accelerationIncludingGravity;  
+	        document.getElementById("y").innerHTML = acc.y;  
+	        document.getElementById("yg").innerHTML = accGravity.y;  
+	        document.getElementById("interval").innerHTML = event.interval;  
+	    }
+	    if (window.DeviceMotionEvent){  
+	        window.addEventListener("devicemotion", motionHandler, false);  
+	    }
+	    if (window.DeviceOrientationEvent){  
+	        window.addEventListener("deviceorientation", orientationHandler, false);  
+	    }
+	    $page.css({'width':'120%','margin-left':'-10%'});
+	});
 
 	$(document).on("pageInit", "#page-index", function(e, pageId, $page) {
 		var device = $.param($.device);
@@ -407,182 +375,7 @@ $(function () {
 	//       ]
 	//     });
 	});
-
 });
-
-
-
-// var pickOfRoom = new PickOfRoom();
-// pickOfRoom.getRresult();
-// 返回
-// [ 
-// 	{ 'type':'内舱房' ,
-// 	  'room' : [
-// 		{‘d’:’3’, ’x’:’0’},
-// 		{‘d’:’1’, ’x’:’1’},
-// 		{‘d’:’2’, ’x’:’0’}
-// 	  ]
-// 	},
-// 	{ 'type':'海景房' ,
-// 	  'room' : [
-// 		{‘d’:’3’, ’x’:’0’},
-// 		{‘d’:’1’, ’x’:’1’},
-// 		{‘d’:’2’, ’x’:’0’}
-// 	  ]
-// 	},
-// ]
-
-
-var PickOfRoomsControl = function() {
-	var self = this;
-	self.dataRooms = [];
-
-	this.init = function(pageId){
-		self.pageId = '#'+pageId;
-		self.$navBarLink = $(self.pageId + ' .detail');
-		self.$navBarDetail = $(self.pageId + ' .navBarDetailCon');
-		self.$navBarNextBtn = $(self.pageId + ' #nextBtn');
-		self.roomItemHtml = '<div class="item-content"> <div class="item-inner"> <div class="item-media">第 <span class="room_no">1</span> 间</div> <div class="item-media"> 成人<select class="selectD"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select> <i class="arr-down"></i> </div> <div class="item-media selectXBox"> 儿童 <select class="selectX" disabled="disabled"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select> <i class="arr-down"></i> </div> <div class="item-media"><a href="#" class="del"><img src="/assets/img/icon-del.png"></a></div> </div> </div>';
-
-		//根据当前HTML设置默认dataRooms数据；
-		$(self.pageId + ' .card-header .tit').forEach(function(item, index){
-			self.dataRooms.push( { 'type': $(item).text() , 'room' : [] } );
-		});
-
-		self._handleFun(pageId);
-	};
-	this._handleFun = function(){
-		$(self.pageId).on('click', self.pageId +' .addRoom', function(e){ self._addRoom(e); });
-		$(self.pageId).on('click', self.pageId + ' .del', function(e){ self._removeRoom(e); });
-		$(self.pageId).on('change', self.pageId + ' select', function(e) { 
-			if(e.target.className == 'selectD') { self._setD(e); } else { self._setX(e) ;}
-		});
-		$(self.pageId).on('dataChange', function(e){ 
-			self._updateDetailView();
-		});
-	};
-	this._addRoom = function(e){
-		var cardIndex = $(e.target).parents('.route-detail-card').index() ;
-		var _item = {'d':'0','x':'0'};
-		self.dataRooms[cardIndex].room.push( _item );
- 		$(self.pageId).trigger('dataChange');
-
-		self._addRoomHTML(e);
-	};
-	this._addRoomHTML = function(e){
-		var $listBlock = $(e.target).parents('.addRoomBox').prev(),
-			num = $listBlock.children().length + 1,
-			$ele = $(self.roomItemHtml),
-			$num = $ele.find('.room_no');
-		$num.html(num);
-		$listBlock.append($ele);
-	};
-	//设置大人
-	this._setD = function(e){
-		var $slt = $(e.target), $xSlt = $slt.parent().next().find('select'),
-			itemIndex = $slt.parents('.item-content').index(),
-			cardIndex = $slt.parents('.route-detail-card').index() ;
-
-		if ($slt.val() != 0) { 
-			$xSlt.removeAttr('disabled');
-		}else{
-			self.dataRooms[cardIndex].room[itemIndex]['x'] = 0;
-			$xSlt.val(0).attr('disabled', 'disabled');
-		}
-
-		self.dataRooms[cardIndex].room[itemIndex]['d'] = $slt.val();
- 		$(self.pageId).trigger('dataChange');
-	};
-	//设置小孩
-	this._setX = function(e){
-		var $xSlt = $(e.target),
-			itemIndex = $xSlt.parents('.item-content').index(),
-			cardIndex = $xSlt.parents('.route-detail-card').index();
-
-		self.dataRooms[cardIndex].room[itemIndex]['x'] = $xSlt.val();
- 		$(self.pageId).trigger('dataChange');
-	};
-	this._removeRoom = function(e){
-		var $target = $(e.target),
-			$item = $target.parents('.item-content'),
-			itemIndex = $target.parents('.item-content').index(),
-			cardIndex = $target.parents('.route-detail-card').index();
-
-		self.dataRooms[cardIndex].room.splice(itemIndex, 1);
-		this._removeRoomHTML($item);
-		this._updateRoomNo(e);
- 		$(self.pageId).trigger('dataChange');
-	};
-	this._removeRoomHTML = function($item){
-		$item.remove();
-	};
-	this._updateRoomNo = function(e){
-		//修改房间序号 1，2，3 
-		$.each($(e.target).children(), function(index, item){
-		  $(item).find('.room_no').html(index+1);
-		})
-	};
-
-	this._updateDetailView = function(){
-		var rCount = self._getRoomCount(),
-			uCount = self._getuserCount(),
-			_temp = '';
-
-		//更新底部左下角菜单
-		self.$navBarLink.find('.roomCount').text(rCount);
-		self.$navBarLink.find('.userCount').text(uCount);
-
-		//更新左下角展开的内容
-		for (var roomsIndex in self.dataRooms){
-			var type = self.dataRooms[roomsIndex].type,
-				n = 0;
-			for(var roomItemIndex in self.dataRooms[roomsIndex].room){
-				var d = self.dataRooms[roomsIndex].room[roomItemIndex].d,
-					x = self.dataRooms[roomsIndex].room[roomItemIndex].x;
-					
-				if (self.dataRooms[roomsIndex].room[roomItemIndex].d > 0 ){
-					n += 1;
-					_temp += '<div><span>'+ type + ' ' + n +'</span><span class="ml10">成人 '+ d +'</span><span class="ml10">儿童 '+ x +'</span></div>';
-				}
-			}
-		}
-		self.$navBarDetail.html(_temp);
-		
-		//设置是否允许下一步
-		if (rCount > 0 && self.$navBarNextBtn.hasClass('disabled')) {
-			self.$navBarNextBtn.removeClass('disabled');
-		}else if(rCount == 0 && !self.$navBarNextBtn.hasClass('disabled')) {
-			self.$navBarNextBtn.addClass('disabled');
-		}
-	};
-
-	this._getRoomCount = function(){
-		var roomCount = 0;
-		for (var roomsIndex in self.dataRooms){
-			for(var roomItemIndex in self.dataRooms[roomsIndex].room){
-				if (self.dataRooms[roomsIndex].room[roomItemIndex].d > 0 ){
-					roomCount +=1;
-				}
-			}
-		}
-		return roomCount;
-	};
-	this._getuserCount = function(){
-		var userCount = 0;
-		for (var roomsIndex in self.dataRooms){
-			for(var roomItemIndex in self.dataRooms[roomsIndex].room){
-				if (self.dataRooms[roomsIndex].room[roomItemIndex].d > 0 ){
-					userCount += self.dataRooms[roomsIndex].room[roomItemIndex].d - 0;
-					userCount += self.dataRooms[roomsIndex].room[roomItemIndex].x - 0;
-				}
-			}
-		}
-		return userCount;
-	};
-	this.getRresult = function(){
-		return self.dataRooms;
-	}
-}
 
 //
 var bookingModal = {
@@ -607,7 +400,7 @@ var bookingModal = {
 		);
 	}
 }
-    
+
 //订单时间控制 (单例)；
 var bookingTimerControl = (function () {
     var instantiated;

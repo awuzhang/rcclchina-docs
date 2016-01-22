@@ -60,16 +60,6 @@ label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-check
 }
 .button.disabled.button-fill, .button.button-primary.disabled.button-fill, .button.button-success.disabled.button-fill, .button.button-danger.disabled.button-fill, .button.button-warning.disabled.button-fill {color:#100f4f; background-color: #fbb818; opacity: .4;}
 
-/*
-.item-media{position: relative;}
-.item-media:after {content: '';position: absolute;left: 0;bottom: 0;right: auto;top: auto;height: 1px;width: 100%;background-color: #e7e7e7;display: block;z-index: 15;-webkit-transform-origin: 50% 100%;transform-origin: 50% 100%;}
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
-  .item-media:after{transform: scaleY(0.5);}
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 3) {
-  .item-media:after{transform: scaleY(0.33);} 
-}
-*/
 /**/
 
 .arr-down,.arr-up,.arr-down-g0{width: 0;height: 0;border:4px solid;display:inline-block;border-color: #fff transparent transparent transparent;}
@@ -261,7 +251,10 @@ height: 446px;height: calc(100vw * 1.18933333);}
 #page-route-room .bar-tab .r180 .arr { transform: rotateZ(0deg);}
 #page-route-room .route-detail-bg {border-radius: 0;}
 
-.room-photoModal {width: 16.35rem; margin-left:-8.175rem; margin-top:-6rem !important}
+#page-route-room .db .item-inner{display: block; overflow: inherit; margin-bottom: .8rem; padding-top: 0;}
+#page-route-room .list-block ul {padding:.5rem 0}
+
+.room-photoModal {width: 16.35rem; margin-left:-8.175rem; margin-top:-6rem !important;}
 .room-photoModal .swiper-container {padding-bottom:0; border:2px solid #fff;}
 .room-photoModal .swiper-pagination{bottom: 0;}
 .room-photoModal .modal-inner{padding: 0;}
@@ -285,12 +278,11 @@ height: 446px;height: calc(100vw * 1.18933333);}
 
 #page-route-room-select > .content {padding-bottom: 3rem;}
 #page-route-room-select-end {background-color: #efefef;}
-#page-route-room-select-end .soldimg {width: 3.55rem;}
+#page-route-room-select-end .soldimg {width: 3.55rem; height:2.75rem;fill:#fbba2b;}
 #page-route-room-select-end .button-success {height: 2.35rem;line-height: 2.35rem;border-radius: 1.175rem; }
 
 #page-order-booking .line_background ,
 #page-order-contact .line_background {width: 76%;top: 37.5%;left: 2.4rem;}
-
 
 #page-order-booking .card, .popup-customer .card{margin:.75rem;}
 #page-order-booking .list-block {margin-bottom:0.75rem;}
@@ -343,5 +335,4 @@ height: 446px;height: calc(100vw * 1.18933333);}
 header.bar ~ .order-header {top:2.2rem;}
 .order-header .content-block {margin-bottom: .5rem;}
 .order-header + .content  {margin-top: 5.5rem;}
-/*.order-header + .paybox {margin-top: 7.5rem;}*/
 #booking-timer {color: #fbc400; z-index: 999; visibility: visible; position: relative;}
