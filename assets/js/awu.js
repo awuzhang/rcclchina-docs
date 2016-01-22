@@ -53,11 +53,12 @@ $(function () {
 		}
 	})
 	$(document).on("pageInit", function(e) {
+		//微信打开不用header
 		if($.device.isWeixin) {
 			$('header.bar').remove();
 			$('.bar-nav ~ .content').css({'top' : '0'});
 		}
-
+		//点击遮罩关闭弹窗
 		$(document).on('click', '.modal-overlay', function(){
 			$.closeModal();
 		})
@@ -142,6 +143,11 @@ $(function () {
 	});
 
 	$(document).on("pageInit", "#page-order-booking", function(e, pageId, $page) {
+		//低版本android打开时间控件
+		if($.device.android && $.compareVersion('5.0', $.device.osVersion)){
+			$('.popup.popup-customer input[name="birthdate"]').calendar({value: ['1980-01-01']});
+		}
+
 		window.localStorage.setItem('contact', JSON.stringify({}));
 		$page.on('click', '.open-popup[data-popup=".popup-customer"]', function(e){
 		  $('.popup-customer').data('param', this);
@@ -189,6 +195,11 @@ $(function () {
 
 
 	$(document).on('pageInit', '#page-order-contact', function(e, pageId, $page){
+		//低版本android打开时间控件
+		if($.device.android && $.compareVersion('5.0', $.device.osVersion)){
+			$('input[name="birthdate"]', $page).calendar({value: ['1980-01-01']});
+		}
+
 		var contact = JSON.parse( window.localStorage.getItem('contact') );
 		var name = contact['cnfamilyname'] || '';
 		if(name != ''){
