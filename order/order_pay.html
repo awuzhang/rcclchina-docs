@@ -3,49 +3,105 @@ layout: default
 title: 支付订单
 ---
 <div id="page-order-pay" class="page">
-  <nav class="bar bar-tab">
-	<div class="tab-item">
-    	<a href="#" id="disagree">不同意</a>
+	<header class="bar bar-nav">
+	    <a class="icon icon-left pull-left back">返回</a>
+	    <h1 class="title">预订船票</h1>
+	</header>
+	<nav class="bar bar-tab dn">
+		<div class="tab-item">
+			<a href="#" id="disagree">不同意</a>
+		</div>
+		<div class="tab-item">
+			<a href="#" id="agree" class="button button-fill button-success">同意</a>
+		</div>
+	</nav>
+	<div class="order-header">
+		<div class="content-block">
+			<div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0">
+			<div class="line_background"></div>
+			<div class="col-25">
+			  <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+			</div>
+			<div class="col-25">
+			  <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+			</div>
+			<div class="col-25">
+			  <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+			</div>
+			<div class="col-25">
+			  <div> <img src="/assets/img/big-select.png" class="checkin_flow_img"> </div>
+			</div>
+			</div>
+			<div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0 f12">
+			<div class="col-25 color_process_false">
+			  填写乘客信息
+			</div>
+			<div class="col-25 color_process_false">
+			  添加联系人
+			</div>
+			<div class="col-25 color_process_false">
+			  确认订单
+			</div>
+			<div class="col-25 color_white">
+			  支付订单
+			</div>
+		</div>
 	</div>
-	<div class="tab-item">
-    	<a href="#" id="agree" class="button button-fill button-success">同意</a>
-	</div>
-  </nav>
-  <div class="content">
-    <div class="content-block">
-      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0">
-        <div class="line_background"></div>
-        <div class="col-25">
-          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
-        </div>
-        <div class="col-25">
-          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
-        </div>
-        <div class="col-25">
-          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
-        </div>
-        <div class="col-25">
-          <div> <img src="/assets/img/big-select.png" class="checkin_flow_img"> </div>
-        </div>
-      </div>
-      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0 f12">
-        <div class="col-25 color_process_false">
-          填写乘客信息
-        </div>
-        <div class="col-25 color_process_false">
-          添加联系人
-        </div>
-        <div class="col-25 color_process_false">
-          确认订单
-        </div>
-        <div class="col-25 color_white">
-          支付订单
-        </div>
-      </div>
+    <div class="f14 tc" id="booking-timerbox">
+    	<span class="fff o4">剩余时间</span><span class="fyellow" id="booking-timer">13:00</span><span class="fff o4">，请尽快填写</span>
     </div>
-    <div class="f14 tc" id="booking-timerbox"><span class="fff o4">剩余时间</span><span class="fyellow" id="booking-timer">13:00</span><span class="fff o4">，请尽快填写</span></div>
-
-	<div class="card passenger-ticket-contract">
+ 	<div class="f14 fff o4 tc dn" id="reminderPayment">
+		您的订单已经生成，请在24小时内完成支付 <br> 如果支付遇到问题，请记下订单号，联系客服.
+	</div>
+  </div>
+  <div class="content">
+	<div class="paybox">
+		<div class="f14 fff tc mt10 mb20">
+			<span class="o4">客服热线</span> <a href="tel:400-8850-277" mce_href="tel:400-8850-277" class="external">400-8850-277</a>
+		</div>
+		<div class="card bl5yellow">
+			<div class="card-header f14 o8">
+				订单号 748292 <div>总额 ¥34,640</div>
+			</div>
+			<div class="card-content list-block">
+				<ul>
+					<li class="item-content">
+						<div class="item-inner ">
+							<div class="item-title">
+								<div class="f16">标准内舱房</div>
+								<div class="f14 o8">房间号 7535</div>
+							</div>
+							<div class="item-after">
+								<svg class="icon-right" > <use xlink:href='/assets/svg.svg#icon-right'/></svg>
+								<span class="fyellow"> 已支付</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="card bl5yellow">
+			<div class="card-header f14 o8">
+				订单号 748292 <div>总额 ¥34,640</div>
+			</div>
+			<div class="card-content list-block">
+				<ul>
+					<li class="item-content">
+						<div class="item-inner ">
+							<div class="item-title">
+								<div class="f16">标准海景房</div>
+								<div class="f14 o8">房间号 7535</div>
+							</div>
+							<div class="item-after"><a href="#" class="button button-big button-fill button-success f14 button-pay">支付</a></div>
+						</div>
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+		<div class="tc"><a class="f16 fyellow mt20" href="#">暂不支付，返回首页</a></div>
+	</div>
+	<div class="card passenger-ticket-contract dn">
 		<div class="card-content ">
 			<p>Guest Ticket Contract incorporating the Guest Conduct Policy and Refusal to Transport Policy <br>
 			乘客票据合同（包括乘客行为守则和拒绝承运政策）</p>
@@ -250,53 +306,6 @@ title: 支付订单
 			</p>
 
 		</div>
-	</div>
-	<div class="paybox dn">
-		<div class="f14 fff o4 tc">
-			您的订单已经生成，请在24小时内完成支付 <br> 如果支付遇到问题，请记下订单号，联系客服.
-		</div>
-		<div class="f14 fff tc mt10 mb20">
-			<span class="o4">客服热线</span> <a href="tel:400-8850-277" mce_href="tel:400-8850-277" class="external">400-8850-277</a>
-		</div>
-		<div class="card bl5yellow">
-			<div class="card-header f14 o8">
-				订单号 748292 <div>总额 ¥34,640</div>
-			</div>
-			<div class="card-content list-block">
-				<ul>
-					<li class="item-content">
-						<div class="item-inner ">
-							<div class="item-title">
-								<div class="f16">标准内舱房</div>
-								<div class="f14 o8">房间号 7535</div>
-							</div>
-							<div class="item-after"><span class="fyellow">已支付</span></div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div class="card bl5yellow">
-			<div class="card-header f14 o8">
-				订单号 748292 <div>总额 ¥34,640</div>
-			</div>
-			<div class="card-content list-block">
-				<ul>
-					<li class="item-content">
-						<div class="item-inner ">
-							<div class="item-title">
-								<div class="f16">标准海景房</div>
-								<div class="f14 o8">房间号 7535</div>
-							</div>
-							<div class="item-after"><a href="#" class="button button-big button-fill button-success f14 button-pay">支付</a></div>
-						</div>
-					</li>
-				</ul>
-				
-			</div>
-		</div>
-		<div class="tc"><a class="f16 fyellow mt20" href="#">暂不支付，返回首页</a></div>
-
 	</div>
 	
   </div>

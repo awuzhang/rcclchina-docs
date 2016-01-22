@@ -3,19 +3,21 @@ layout: default
 title: 预定船票
 ---
 <div id="page-order-booking" class="page">
-  <nav class="bar bar-tab">
-	<div class="tab-item">
-    	<a href="/order/order_contact" class="button button-fill button-success">下一步</a>
-	</div>
-  </nav>
-  <div class="content">
+	<header class="bar bar-nav">
+	    <a class="icon icon-left pull-left back">返回</a>
+	    <h1 class="title">预订船票</h1>
+	</header>
+	<nav class="bar bar-tab">
+		<div class="tab-item">
+			<a href="/order/order_contact" class="button button-fill button-success">下一步</a>
+		</div>
+	</nav>
+  <div class="order-header">
     <div class="content-block">
       <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0">
         <div class="line_background"></div>
         <div class="col-25">
-          <div>
-            <img src="/assets/img/big-select.png" class="checkin_flow_img">
-          </div>
+          <div><img src="/assets/img/big-select.png" class="checkin_flow_img"></div>
         </div>
         <div class="col-25">
           <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
@@ -42,8 +44,10 @@ title: 预定船票
         </div>
       </div>
     </div>
-
-    <div class="f14 tc"><span class="fff o4">剩余时间</span><span class="fyellow" id="booking-timer">13:00</span><span class="fff o4">，请尽快填写</span></div>  
+    <div class="f14 tc" style="position: relative;"><span class="fff o4">剩余时间</span><span class="fyellow" id="booking-timer">13:00</span><span class="fff o4">，请尽快填写</span></div>
+</div>
+  <div class="content">
+    
 
 	<div class="list-block inset">
 		<ul>
@@ -52,7 +56,7 @@ title: 预定船票
 				<div class="item-inner">上海 - 冲绳 - 香港</div>
 			</li>
 			<li class="item-content">
-				<div class="item-media">船型</div>
+				<div class="item-media">游轮</div>
 				<div class="item-inner">海洋量子号</div>
 			</li>
 			<li class="item-content">
@@ -98,37 +102,6 @@ title: 预定船票
 			</ul>
 		</div>
 	</div>
-
-	<div class="card">
-		<div class="card-header no-border">
-			<div class="">高级海景房 <span class="f14">| 房间号7538</span></div>
-			<div class="f14">¥5,178/人</div>
-		</div>
-		<div class="card-content list-block">
-			<ul>
-				<li class="item-content item-link">
-					<div class="item-inner open-popup" data-popup=".popup-customer">
-						<div class="item-title">
-							<a href="#"><span class="name">添加乘客1</span></a>
-						</div>
-						<input type="hidden" name="defaultName" value="乘客1">
-          				<input type="hidden" name="room" value="标准内舱房7538">
-						<input type="hidden" name="cnfamilyname" value=""><input type="hidden" name="cnname"><input type="hidden" name="lastname"><input type="hidden" name="firstname"><input type="hidden" name="birthdate"><input type="hidden" name="gender"><input type="hidden" name="isContacts"><input type="hidden" name="phone"><input type="hidden" name="email"><input type="hidden" name="membership">
-					</div>
-				</li>
-				<li class="item-content item-link">
-					<div class="item-inner open-popup" data-popup=".popup-customer">
-						<div class="item-title">
-							<a href="#"><span class="name">添加乘客2</span></a>
-						</div>
-						<input type="hidden" name="defaultName" value="乘客2">
-          				<input type="hidden" name="room" value="标准内舱房7538">
-						<input type="hidden" name="cnfamilyname" value=""><input type="hidden" name="cnname"><input type="hidden" name="lastname"><input type="hidden" name="firstname"><input type="hidden" name="birthdate"><input type="hidden" name="gender"><input type="hidden" name="isContacts"><input type="hidden" name="phone"><input type="hidden" name="email"><input type="hidden" name="membership">
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
   </div>
 </div>
 
@@ -143,13 +116,13 @@ title: 预定船票
             <div class="item-inner">
               <div class="item-title label">中文姓</div>
               <div class="item-input">
-                <input type="text" name="cnfamilyname" placeholder="请输入">
+                <input type="text" name="cnfamilyname" placeholder="例“郑”">
               </div>
             </div>
             <div class="item-inner bl1">
               <div class="item-title label">中文名</div>
               <div class="item-input">
-                <input type="text" name="cnname" placeholder="请输入">
+                <input type="text" name="cnname" placeholder="例“和”">
               </div>
             </div>
           </div>
@@ -159,13 +132,13 @@ title: 预定船票
             <div class="item-inner">
               <div class="item-title label">姓氏拼音</div>
               <div class="item-input">
-                <input type="text" name="lastname" placeholder="请输入">
+                <input type="text" name="lastname" placeholder="例“ZHENG”">
               </div>
             </div>
             <div class="item-inner bl1">
               <div class="item-title label">名字拼音</div>
               <div class="item-input">
-                <input type="text" name="firstname" placeholder="请输入">
+                <input type="text" name="firstname" placeholder="例“HE”">
               </div>
             </div>
           </div>
@@ -176,16 +149,16 @@ title: 预定船票
               <div class="item-title label">性别</div>
               <div class="item-input">
                 <select name="gender" class="o6" ontouchstart="this.setAttribute('class','');">
-                  <option value="" class="dn" disabled selected>请输入</option>  
+                  <option value="" class="dn" disabled selected>请选择性别</option>  
                   <option>男</option>
                   <option>女</option>
                 </select>
               </div>
             </div>
             <div class="item-inner bl1">
-              <div class="item-title label">出生年月</div>
+              <div class="item-title label">请选择出生日期</div>
               <div class="item-input">
-                <input type="text" ontouchstart="this.type='date';if(this.value == ''){this.value='1980-01-01';}" name="birthdate" placeholder="请输入">
+                <input type="text" ontouchstart="this.type='date';if(this.value == ''){this.value='1980-01-01';}" name="birthdate" placeholder="请选择出生日期">
               </div>
             </div>
           </div>
@@ -217,13 +190,13 @@ title: 预定船票
 				<li class="item-content db">
 					<div class="item-inner ">
 						<div class="item-title"> 电子邮箱 </div>
-						<div class="item-input"> <input type="email" name="email" placeholder="请输入"> </div>
+						<div class="item-input"> <input type="email" name="email" placeholder="请输入邮箱地址"> </div>
 					</div>
 				</li>
 				<li class="item-content db">
 					<div class="item-inner ">
 						<div class="item-title"> 手机号码 </div>
-						<div class="item-input"> <input type="text" name="phone" placeholder="请输入"> </div>
+						<div class="item-input"> <input type="text" pattern="[0-9]*" name="phone" placeholder="请输入11位手机号码"> </div>
 					</div>
 				</li>
 			</ul>
@@ -235,7 +208,7 @@ title: 预定船票
 				<li class="item-content db">
 					<div class="item-inner ">
 						<div class="item-title"> 会员号码（选填） </div>
-						<div class="item-input"> <input type="number" name="membership" placeholder="输入会员号码享受优惠"> </div>
+						<div class="item-input"> <input type="text" pattern="[0-9]*" name="membership" placeholder="输入会员号码享受优惠"> </div>
 					</div>
 				</li>
 			</ul>
@@ -243,7 +216,7 @@ title: 预定船票
 	</div>
 	<div class="list-block inset tc ">
 	    <a href="#" class="close-popup button button-fill button-success f16">提交</a>
-	    <a href="#" class="close-popup fyellow mt10 db f16">返回</a>
+	    <a href="#" class="close-popup fyellow mt10 db f16">取消</a>
 	</div>
   </div>
 </div>

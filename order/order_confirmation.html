@@ -3,48 +3,53 @@ layout: default
 title: 确认订单
 ---
 <div id="page-order-confirmation" class="page">
-  <nav class="bar bar-tab">
-	<div class="tab-item">
-	    <a href="#" class="back">上一步</a>
+	<header class="bar bar-nav">
+	    <a class="icon icon-left pull-left back">返回</a>
+	    <h1 class="title">预订船票</h1>
+	</header>
+	<nav class="bar bar-tab">
+		<div class="tab-item">
+		    <a href="#" class="back">上一步</a>
+		</div>
+		<div class="tab-item">
+		    <a href="/order/order_pay" class="button button-fill button-success">下一步</a>
+		</div>
+	</nav>
+    <div class="order-header">
+	    <div class="content-block">
+	      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0">
+	        <div class="line_background"></div>
+	        <div class="col-25">
+	          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+	        </div>
+	        <div class="col-25">
+	          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+	        </div>
+	        <div class="col-25">
+	          <div><img src="/assets/img/big-select.png" class="checkin_flow_img"></div>
+	        </div>
+	        <div class="col-25">
+	          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
+	        </div>
+	      </div>
+	      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0 f12">
+	        <div class="col-25 color_process_false">
+	          填写乘客信息
+	        </div>
+	        <div class="col-25 color_process_false">
+	          添加联系人
+	        </div>
+	        <div class="col-25 color_white">
+	          确认订单
+	        </div>
+	        <div class="col-25 color_process_false">
+	          支付订单
+	        </div>
+	      </div>
+	    </div>
+	    <div class="f14 tc"><span class="fff o4">剩余时间</span><span class="fyellow" id="booking-timer">13:00</span><span class="fff o4">，请尽快填写</span></div>
 	</div>
-	<div class="tab-item">
-	    <a href="/order/order_pay" class="button button-fill button-success">下一步</a>
-	</div>
-  </nav>
   <div class="content">
-
-    <div class="content-block">
-      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0">
-        <div class="line_background"></div>
-        <div class="col-25">
-          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
-        </div>
-        <div class="col-25">
-          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
-        </div>
-        <div class="col-25">
-          <div><img src="/assets/img/big-select.png" class="checkin_flow_img"></div>
-        </div>
-        <div class="col-25">
-          <div><img src="/assets/img/small-select.png" class="checkin_flow_img"></div>
-        </div>
-      </div>
-      <div class="row text-center checkin_title checkin_flow pad_bottom0 pad_top0 f12">
-        <div class="col-25 color_process_false">
-          填写乘客信息
-        </div>
-        <div class="col-25 color_process_false">
-          添加联系人
-        </div>
-        <div class="col-25 color_white">
-          确认订单
-        </div>
-        <div class="col-25 color_process_false">
-          支付订单
-        </div>
-      </div>
-    </div>
-    <div class="f14 tc"><span class="fff o4">剩余时间</span><span class="fyellow" id="booking-timer">13:00</span><span class="fff o4">，请尽快填写</span></div>
 
 	<div class="card">
 		<div class="card-content list-block no-border">
@@ -54,12 +59,12 @@ title: 确认订单
 		          <div class="item-inner"> 上海 - 冲神 - 上海 </div>
 		        </li>
 		        <li class="item-content">
-		          <div class="item-media">邮轮 </div>
+		          <div class="item-media">游轮 </div>
 		          <div class="item-inner"> 海洋量子号 </div>
 		        </li>
 		        <li class="item-content">
 		          <div class="item-media"> 日期 </div>
-		          <div class="item-inner"> 2015/12/12 - 2015/12/16 </div>
+		          <div class="item-inner"> 2015 11-12 至 11-16 </div>
 		        </li>
 		        <li class="item-content">
 		          <div class="item-media">时长 </div>
@@ -144,70 +149,7 @@ title: 确认订单
 		    </ul>
 		</div>
 	</div>
-	<div class="card">
-		<div class="card-header no-border">
-			标准海景房 <div class="f14">房间号7539</div>
-		</div>
-		<div class="card-content list-block">
-			<ul>
-		        <li class="item-content  item-link db">
-		        	<div class="item-inner"> 
-		        		<div class="item-title">俞哲斌  ZHEBIN YU</div>
-		        		<ul class="inside-ul no-border no-link dn">
-					        <li class="item-content">
-								<div class="item-media">性别 </div>
-								<div class="item-inner">男</div>
-					        </li>
-					        <li class="item-content">
-								<div class="item-media">出生日期</div>
-								<div class="item-inner">1987/12/23</div>
-					        </li>
-					        <li class="item-content">
-								<div class="item-media">手机号码 </div>
-								<div class="item-inner">18673829935</div>
-					        </li>
-					        <li class="item-content">
-								<div class="item-media">电子邮箱 </div>
-								<div class="item-inner">Alice.hong@gmail.com</div>
-					        </li>
-					        <li class="item-content">
-								<div class="item-media">会员号码 </div>
-								<div class="item-inner">324459</div>
-					        </li>
-				        </ul>
-		        	</div>
-		        </li>
-		        <li class="item-content  item-link db">
-		        	<div class="item-inner"> 
-		        		<div class="item-title">王悦威 YUEWEI WANG </div>
-		        		<ul class="inside-ul no-border no-link dn">
-					        <li class="item-content">
-								<div class="item-media">性别 </div>
-								<div class="item-inner">男</div>
-					        </li>
-					        <li class="item-content">
-								<div class="item-media">出生日期</div>
-								<div class="item-inner">1987/12/23</div>
-					        </li>
-					        <li class="item-content">
-								<div class="item-media">手机号码 </div>
-								<div class="item-inner">18673829935</div>
-					        </li>
-					        <li class="item-content">
-								<div class="item-media">电子邮箱 </div>
-								<div class="item-inner">Alice.hong@gmail.com</div>
-					        </li>
-					        <li class="item-content">
-								<div class="item-media">会员号码 </div>
-								<div class="item-inner">324459</div>
-					        </li>
-				        </ul>
-		        	</div>
-		        </li>
-
-		    </ul>
-		</div>
-	</div>
+	
 	<div class="card">
 		<div class="card-header no-border">
 			联系人

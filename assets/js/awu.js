@@ -125,21 +125,6 @@ $(function () {
 	})
 
 	$(document).on("pageInit", "#page-route-room", function(e, pageId, $page) {
-		//选择房间
-		var pickOfRoomsControl = new PickOfRoomsControl();
-		pickOfRoomsControl.init(pageId);
-
-		//下方导航条菜单
-		$page.on('click', '.detail', function(){
-			var $navBarDetail = $('.navBarDetail', $page);
-			$navBarDetail.toggleClass('dn');
-			$(this).toggleClass('r180')
-		});
-		//无大人时弹窗
-		$page.on('click','.selectXBox', function(){
-			if(!($(this).find('.selectX').attr('disabled') == 'disabled')) {return;}
-			$.alert('每个房间须有至少1名成人，<br/> 请先选择成人');
-		});
 
 		//图片swiper
 		$('#page-route-room .photos').on('click', function () {
@@ -157,23 +142,6 @@ $(function () {
 	    })
 	    $.swiper($(modal).find('.swiper-container'), {pagination: '.swiper-pagination'});});
 
-		//会员弹窗
-		$page.on('click', '#nextBtn', function(){
-			if( $(this).hasClass('disabled') ) return;
-
-			var memberModal = $.modal({
-		      extraClass: "room-memberModal",
-			  title: '有会员号或优惠码享受优惠哦！',
-			  text:  '<div>'+
-		                '<div class="bb1"><label class="f12 db">会员号 <input type="text" value="94823728388"/></label></div>'+
-		                '<div class="bb1"><label class="f12 db">优惠劵代码 <input type="text" value="847229381"/></label></div>'+
-		              '</div>' +
-		              '<div class="btns">'+
-		                '<div><a href="javascript:$.closeModal();$.router.loadPage(\'/route/route_room_select\')" class="f16 external button button-fill button-success">提 交</a></div>'+
-		                '<div class="tc mt10"><a href="javascript:$.closeModal();$.router.loadPage(\'/route/route_room_select\')" class="external f16 fyellow">跳 过</a></div>'+
-		              '</div>'
-			});
-		})
 	});
 	$(document).on("pageInit", "#page-route-room-select", function(e, pageId, $page) {
 		$page.on('click', '.delRoom', function(e){
@@ -304,12 +272,7 @@ $(function () {
 
 		})
 	    
-
-
-
 	});
-
-
 
 	$(document).on("pageInit", "#page-order-confirmation", function(e, pageId, $page) {
 		$page.on('click', '.item-link > .item-inner', function(e){
@@ -318,18 +281,26 @@ $(function () {
 		});
 	});
 	$(document).on("pageInit", "#page-order-pay", function(e, pageId, $page) {
+		$page.on('click', '.button-pay', function(e){
+			$('.paybox', $page).hide();
+			$('.bar-tab', $page).show();
+			$('.passenger-ticket-contract', $page).show();
+		})
+
 		$page.on('click', '#disagree', function(e){
 			$.confirm('不同意《乘客票据合同》 <br /> 将使您无法购票',
 		        function () {
-		        	window.location.href = "/";
+					bookingTimerControl.getInstance().stop();
 		        }
 		    );
 		});
+
 		$page.on('click', '#agree', function(e){
-			$('.bar-tab', $page).remove();
-			$('.passenger-ticket-contract', $page).remove();
+			$('.bar-tab', $page).hide();
+			$('.passenger-ticket-contract', $page).hide();
 			$('.paybox', $page).show();
 			$('#booking-timerbox').hide();
+			$('#reminderPayment').show();
 			bookingTimerControl.getInstance().stop();
 		});
 	});
@@ -620,7 +591,7 @@ var bookingModal = {
 			function () {
 				//点确定时 替换结束时的提醒 ，重置时间，开始
 				bookingTimerControl.getInstance().setEndEvent(bookingModal.endConfirm);
-				bookingTimerControl.getInstance().setTime(13);
+				bookingTimerControl.getInstance().setTime(13); //再次计时 13分钟
 				bookingTimerControl.getInstance().run();
 			},
 			function() {
@@ -642,25 +613,24 @@ var bookingTimerControl = (function () {
     var instantiated;
     function init() {
     	this.isRun = false; 
-    	this.count = 60 * 13 ; //默认13分钟 60 = 秒；
     	this.interval = 1000; //每秒触发一次；
     	this.timer;
-    	this.endTime = new Date().getTime() + (1000 * this.count);
+    	this.minute = 13; //默认13分钟
+    	this.endTime = new Date().getTime() + (minute * 60 * 1000) ;
     	this.events = [];
     	this.endEvents = bookingModal.nextConfirm;   //倒计时时结束触发 （ps:约定 未运行时才允许设置, 避免了加载其他页面时初始化该事件)；
 
     	endTimeString = function(){
-    		var t = endTime - new Date();
+    		var t = (endTime - new Date()) > 0 ? endTime - new Date() : 0;
     		var m=Math.floor(t/1000/60%60), m = m.toString().length == 1 ? "0"+m : m; 
             var s=Math.floor(t/1000%60), s = s.toString().length == 1 ? "0"+s : s; 
-            return (m + ':' + s);
+            return ( m + ':' + s);
     	}
     	dispatchEvent = function(){
     		for(var index in events){
 				events[index]();
 			}
-			count -= 1;
-			if(count === 1) { //等于1时结束了
+			if((endTime - new Date().getTime()) < 0) {
 				clearInterval(timer);
 				isRun = false;
 				endEvents();
@@ -668,12 +638,12 @@ var bookingTimerControl = (function () {
     	}
     	setTime =  function (n) {
     		if(isRun) return;
-        	count = 60 * n;
-        	endTime = new Date().getTime() + (1000 * count);
+        	endTime = new Date().getTime() + (n * 60 * 1000);
         }
         run = function(){
         	if(isRun) {return;}
         	isRun = true;
+        	endTime = new Date().getTime() + (minute * 60 * 1000);
         	timer = setInterval(function(){
         		dispatchEvent();
         	}, interval)

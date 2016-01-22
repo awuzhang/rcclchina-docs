@@ -11,7 +11,7 @@
 .lh2{line-height: 2;}
 .w94p{width: 94%;}
 .mt5{margin-top: .25rem;}.mt10{margin-top: .5rem;}.mt15{margin-top: .75rem;}.mt20{margin-top:1rem;}.mt35{margin-top: 1.75rem;}.mt40{margin-top: 2rem;}.mb10{margin-bottom: .5rem;}.mb20{margin-bottom: 1rem;}.ml0{margin-left: 0;}
-.mb15{margin-bottom: .75rem;}.ml10{margin-left: .5rem;}.ml20{margin-left: 1rem;}.mt-100{margin-top: -5rem;}.mr10{margin-right:.5rem;}
+.mb15{margin-bottom: .75rem;}.ml10{margin-left: .5rem;}.ml20{margin-left: 1rem;}.mt-100{margin-top: -5rem;}.mr10{margin-right:.5rem;}.mr15{margin-right: .75rem;}
 .pl0{padding-left: 0;}.pb0{padding-bottom: 0;}.pl72{padding-left: 3.6rem;}.pt40{padding-top: 2rem;}.pb20{padding-bottom: 1rem;}.pt10{padding-top:.5rem;}.pb10{padding-bottom:.5rem;}.pb15{padding-bottom:.75rem;}.pb30{padding-bottom:1.5rem;}
 .b{font-weight: bold;}
 .tc{text-align: center;}.tr{text-align: right;}.tl{text-align: left;}
@@ -83,8 +83,7 @@ label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-check
 /**/
 
 #page-route {background-color:#efefef; }
-#page-route header.bar-nav { position: fixed;}
-.route-searchbox {position: fixed; background-color: #fff; width: 100%;}
+.route-searchbox {position:absolute; background-color: #fff; width: 100%;}
 .list-block .item-content {padding-right: 0.75rem;}
 
 .route-searchbox ~ .content {top:4.7rem;}
@@ -148,11 +147,11 @@ content: ''; position: absolute; left: 0; top: 0; bottom: auto; right: auto; wid
 
 label.item-disabled {color: #999 !important;}
 label.item-disabled .fblue{color: #999;}
-label.item-disabled svg{fill: #999;}
+label.item-disabled img{ opacity:.2}
 
 .popup-ships .ships-tit-img {width: 1.625rem;}
 .popup-ships .item-media {align-self: flex-start;}.popup-ships .asc {align-self: center;}
-.popup-ships svg{width: 2.75rem;height: 1.5rem;fill:#021257;margin-top: 0.5rem;}
+.popup-ships .item-media img{width: 3.5rem;height: 3.5rem;}
 
 
 .popup-ships label.label-checkbox i.icon-form-checkbox,
@@ -186,7 +185,8 @@ label.item-disabled svg{fill: #999;}
 #page-route-detail .route-detail-info {height: 3.5rem; overflow: hidden; }
 #page-route-detail .route-detail-info-more{background-color: #fff; position: absolute;right:.75rem;bottom:.25rem;}
 
-
+#page-route-detail .content-block {margin: 1.25rem 0;}
+#page-route-detail .payBtn { height: 1.5rem;line-height: 1.5rem; border-radius: .75rem;} 
 
 .route-detail-tit{text-align: center; position: relative; margin-top: .5rem;}
 .route-detail-tit:after{ content: ''; position: absolute; left: 0; top: 50%; right: auto; height: 1px; width: 100%; background-color: #e1e1e1; display: block; -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%;}
@@ -206,6 +206,7 @@ width: 1.8rem;height: 1.8rem; border:1px solid #021257; border-radius: 50%;  pos
 
 .route-detail-card a {color:inherit;}
 .route-detail-card .card-header {font-size: .8rem;}
+.route-detail-card .card-footer {background-color: #f5f5f5; border-bottom-left-radius: .2rem; border-bottom-right-radius: .2rem; display: block;}
 
 .route-detail-bg {background-repeat:no-repeat; background-size: cover;
 	width:100%;height:7rem;height:calc(100vw * 0.37333333);  border-radius: 0 0 0.2rem 0.2rem;}
@@ -243,7 +244,7 @@ height: 446px;height: calc(100vw * 1.18933333);}
 .roue-detail-qa .item-inner:after{height: 0;}
 .roue-detail-qa  .item-after{color: #505b88;}
 
-.route-detail-card select {width: 1.2rem; padding-left: .5rem;margin-right: .3rem;}
+.route-detail-card select {width: 2.2rem; padding-left: .5rem;margin-right: -.5rem;}
 .route-detail-card select:disabled {color: #ccc;}
 .route-detail-card .arr-down {border-top-color: #000;}
 .route-detail-card .list-block-room .item-inner {border:1px dashed #d2d2d2;border-radius: .15rem;padding: 0;font-size:.6rem; padding-left: 1rem;padding-right: 1rem; margin-bottom:.5rem;}
@@ -294,18 +295,22 @@ height: 446px;height: calc(100vw * 1.18933333);}
 #page-order-booking .card, .popup-customer .card{margin:.75rem;}
 #page-order-booking .list-block {margin-bottom:0.75rem;}
 
+#page-order-booking .db .item-inner{display: block; overflow: inherit; margin-bottom: .8rem; padding-top: 0;}
+#page-order-booking .list-block ul {padding:.5rem 0}
+
 .popup-customer{background-color: #061556}
 .popup-customer .content-block-title {margin-top: 0;background-color: #f5f5f5; height: 4rem; line-height: 4rem; margin-left: 0; margin-right: 0;padding-left: 1rem;padding-right: 1rem; border-top-left-radius: .2rem; border-top-right-radius: .2rem;}
 .popup-customer .db .item-inner{display: block;}
 .popup-customer input,.popup-customer select{padding-left: 0  !important;}
 .popup-customer .list-block .item-title.label {width: 100%;}
+.popup-customer .db .item-inner{display: block; overflow: inherit; margin-bottom: .8rem; padding-top: 0;}
+.popup-customer .list-block ul {padding:.5rem 0}
 .popup-customer .button {display: block;color: #100f4f;border-radius: 1.35rem;height: 1.8rem;line-height: 1.8rem;}
 
+#page-order-contact .list-block .item-title.label {width: 100%;}
 #page-order-contact .db .item-inner{display: block; overflow: inherit; margin-bottom: .8rem; padding-top: 0;}
 #page-order-contact .list-block ul {padding:.5rem 0}
 
-#page-order-contact input,.popup-customer select{padding-left: 0  !important;height: 1.4rem;line-height: 1.4rem;margin-top: .4rem;}
-#page-order-contact .list-block .item-title.label {width: 100%;}
 
 #page-order-confirmation .no-border .item-inner:after{height: 0;}
 #page-order-confirmation .item-content.db .item-inner{display: block;}
@@ -320,6 +325,8 @@ height: 446px;height: calc(100vw * 1.18933333);}
 
 #page-order-pay .passenger-ticket-contract .card-content{ padding:1.25rem .75rem;}
 #page-order-pay .button-pay {  height: 1.8rem;line-height: 1.8rem;border-radius: .9rem;padding: 0 1rem;display: inline-block;}
+#page-order-pay .icon-right {fill:#fbb818; width: 1rem;height: 1rem;display: inline-block; margin-right: .5rem;}
+
 
 #page-shorex .shorex {width: 40%;display: inline-block; background-position: center top; background-size: cover; color: #fff; text-align: center;}
 #page-shorex .shorex1 {background-image: url(/assets/img/shorex1.jpg)}
@@ -330,3 +337,11 @@ height: 446px;height: calc(100vw * 1.18933333);}
 #page-shorex .shorex6 {background-image: url(/assets/img/shorex6.jpg)}
 #page-shorex .shorex7 {background-image: url(/assets/img/shorex7.jpg)}
 #page-shorex .shorex8 {background-image: url(/assets/img/shorex8.jpg)}
+
+
+.order-header {position: absolute;left: 0;top: 0;z-index: 22; background-color:#061556;width: 100%; padding-bottom: .5rem;}
+header.bar ~ .order-header {top:2.2rem;}
+.order-header .content-block {margin-bottom: .5rem;}
+.order-header + .content  {margin-top: 5.5rem;}
+/*.order-header + .paybox {margin-top: 7.5rem;}*/
+#booking-timer {color: #fbc400; z-index: 999; visibility: visible; position: relative;}
