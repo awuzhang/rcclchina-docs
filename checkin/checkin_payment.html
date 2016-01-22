@@ -60,26 +60,26 @@ title: 在线值船
                 <div class="row no-gutter">
                   <div class="padb5">您已经成功绑定了同行者 <span>王阅微</span> 的信用卡！</div>
                   <div>信用卡卡号</div>
-                  <input type="tel" value="6225 7575 2663 6281" readonly="true">
+                  <input type="tel" value="6225 7575 2663 6281" readonly="true" placeholder="请输入卡号">
                   <div>持有人姓名拼音</div>
-                  <input type="text" value="Alice Hong" readonly="true">
+                  <input type="text" value="Alice Hong" readonly="true" placeholder='例如"ZHANGYI"'>
                 </div>
               </li>
               <li class="display">
                 <div class="row no-gutter">
                   <div>信用卡卡号</div>
-                  <input type="tel" value="6225 7575 2663 6281" id="cardno">
+                  <input type="tel" value="6225 7575 2663 6281" id="cardno" placeholder="请输入卡号">
                 </div>
               </li>
               <li class="display">
                 <div class="row no-gutter">
                   <div class="col-50">
                     <div>持有人姓名拼音</div>
-                    <input type="text" value="Alice Hong">
+                    <input type="text" value="Alice Hong"  placeholder='例如"ZHANGYI"'>
                   </div>
                   <div class="col-50">
                     <div>有效期至</div>
-                    <input type="tel" id="validDate" maxlength="5" />
+                    <input type="text" placeholder='例"02/24"' onkeyup="value=regDate(value)">
                   </div>
                 </div>
               </li>
@@ -104,7 +104,7 @@ title: 在线值船
               </li>
             </ul>
             <div class="padding75 checkin_content pad_bottom0 div_agreement">
-              <i class="checkbox_on check_agreement"></i> <span>我已阅读并同意此<a href="#">用户协议</a></span>
+              <span class="agree"><i class="checkbox_on check_agreement"></i>我已阅读并同意此</span><a href="#">用户协议</a>
             </div>
           </div>
         </div>

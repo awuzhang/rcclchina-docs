@@ -1,32 +1,7 @@
-var t; //倒计时时间
-var minute; //显示时间分
-var second; //显示时间秒
-var timer; //计时器
-var timeoutcnt; //超时次数
 $(function () {
 	'use strict';
-	$(document).on("pageInit", "#page-checkin-selectpassenger", function(e) {
-		if (timer == null || (typeof(timer) == undefined)) {
-		} else {
-			clearInterval(timer);
-		}
-		timeoutcnt = 0;
-		t = 900; //倒计时时间15分钟
-		timer = setInterval("refer()", 1000); //启动1秒定时
-	});
-	$(document).on("pageInit", "#page-checkin-supplementary", function(e) {
-		if (timer == null || (typeof(timer) == undefined)) {
-		} else {
-			clearInterval(timer);
-		}
-		timer = setInterval("refer()", 1000); //启动1秒定时
-	});
+
 	$(document).on("pageInit", "#page-checkin-payment", function(e) {
-		if (timer == null || (typeof(timer) == undefined)) {
-		} else {
-			clearInterval(timer);
-		}
-		timer = setInterval("refer()", 1000); //启动1秒定时
 		$('#page-checkin-payment .label-checkbox').on("click",function(){
 			if ($(this).find('i').hasClass('checkbox_on')){
 				$(this).find('i').addClass('checkbox_off');
@@ -41,13 +16,13 @@ $(function () {
 			}
 		});
 
-		$('#page-checkin-payment .div_agreement i').on("click",function(){
-			if ($(this).hasClass('checkbox_on')){
-				$(this).addClass('checkbox_off');
-				$(this).removeClass('checkbox_on');
+		$('#page-checkin-payment .div_agreement span.agree').on("click",function(){
+			if ($(this).children('i').hasClass('checkbox_on')){
+				$(this).children('i').addClass('checkbox_off');
+				$(this).children('i').removeClass('checkbox_on');
 			} else {
-				$(this).addClass('checkbox_on');
-				$(this).removeClass('checkbox_off');
+				$(this).children('i').addClass('checkbox_on');
+				$(this).children('i').removeClass('checkbox_off');
 			}
 		});
 
@@ -63,21 +38,6 @@ $(function () {
 		$('#cardno').on("blur",function(){
 			$('#cardno').val($('#cardno').val().replace(/\s/g,'').replace(/(\d{4})(?=\d)/g,"$1 "));
 		});
-
-		$('#validDate').on("keyup",function(){
-			var month = $('#validDate').val();
-			if (month == "01" || month == "02" || month == "03" || month == "04" || month == "05" || month == "06"
-			|| month == "07" || month == "08" || month == "09" || month == "10" || month == "11" || month == "12") {
-				$('#validDate').val($('#validDate').val() + "/");
-			}
-		});
-	});
-	$(document).on("pageRemoved", "#page-checkin-payment", function(e) {
-		if (timer == null || (typeof(timer) == undefined)) {
-		} else {
-			clearInterval(timer);
-			t = 900;
-		}
 	});
 
 	$(document).on("pageInit", "#page-orderactlist", function(e) {
@@ -105,6 +65,45 @@ $(function () {
 			$('.ks_t1').removeClass('hidden');
 		});
 	});
+
+	//checkin时间控制    （由于页面允许通过链接直接访问step2,3,4 所以每个页面都需尝试初始化时间函数）
+	$(document).on("pageAnimationStart", "#page-checkin-selectpassenger", function(e, pageId, $page) {
+		$page.find('#remainTime').html(checkinTimerControl.getInstance().endTimeString() );
+	});
+	$(document).on("pageAnimationStart", "#page-checkin-supplementary", function(e, pageId, $page) {
+ 		$page.find('#remainTime').html(checkinTimerControl.getInstance().endTimeString() );
+	});
+	$(document).on("pageAnimationStart", "#page-checkin-payment", function(e, pageId, $page) {
+ 		$page.find('#remainTime').html(checkinTimerControl.getInstance().endTimeString() );
+	});
+	$(document).on("pageInit", "#page-checkin-selectpassenger", function(e, pageId, $page) {
+		checkinTimerControl.getInstance().run();
+		checkinTimerControl.getInstance().addEvent(function(){
+			$page.find('#remainTime').html(checkinTimerControl.getInstance().endTimeString() );
+		});
+	});
+	$(document).on("pageInit", "#page-checkin-supplementary", function(e, pageId, $page) {
+		checkinTimerControl.getInstance().run();
+		checkinTimerControl.getInstance().addEvent(function(){
+			$page.find('#remainTime').html(checkinTimerControl.getInstance().endTimeString() );
+		});
+	});
+	$(document).on("pageInit", "#page-checkin-payment", function(e, pageId, $page) {
+		checkinTimerControl.getInstance().run();
+		checkinTimerControl.getInstance().addEvent(function(){
+			$page.find('#remainTime').html(checkinTimerControl.getInstance().endTimeString() );
+		});
+	});
+	$(document).on("pageReinit", "#page-checkin-selectpassenger", function(e, pageId, $page) {
+		checkinTimerControl.getInstance().removeEvent();
+	});
+	$(document).on("pageReinit", "#page-checkin-supplementary", function(e, pageId, $page) {
+		checkinTimerControl.getInstance().removeEvent();
+	});
+	$(document).on("pageReinit", "#page-checkin-payment", function(e, pageId, $page) {
+		checkinTimerControl.getInstance().removeEvent();
+	});
+	//时间控制结束
 
 	$(document).on("pageInit", "#page-home", function(e) {
 		$('.home_cddj').click(function(){
@@ -240,44 +239,115 @@ $(function () {
     	window.onload = isTouchDevice;
 	});
 });
-function refer() {
-	t--; // 计数器递减
-	minute = Math.floor(t/60);
-    second = t - minute*60;
-    if (typeof(document.getElementById('remainTime')) == undefined || document.getElementById('remainTime') == null) {
-    } else {
-    	document.getElementById('remainTime').innerHTML = foo(minute) + ":" + foo(second);
-    }
-    if (t == 0) {
-    	timeoutcnt++;
-    	if (timer == null || (typeof(timer) == undefined)) {
-	    } else {
-			clearInterval(timer);
-		}
-		if (timeoutcnt == 1) {
-	        $.confirm('时间已到，您还没有完成办理，<br/>是否继续办理？',
-				function () {
-					t = 900;
-					timer = setInterval("refer()", 1000); //启动1秒定时
-				},
-				function() {
-					window.location = "../../index.html";
-				}
-			);
-		} else {
-			$.confirm('时间已到，您还没有完成办理，<br/>请重新验证办理',
-				function () {
-					window.location = "../../checkin/checkin_carbinno.html";
-				},
-				function() {
-					window.location = "../../index.html";
-				}
-			);
-		}
-		exit;
-    }
+
+function regDate(str) {
+    str = str.replace(/\//, '').substring(0,4);
+    if(isNaN(str)) return '';
+    var reg = /(\d{2})(\d{1,2})/;
+    return(str.replace 
+        (reg, 
+            function($0,$1,$2) { 
+                return  ($1 +"/" + $2);
+            } 
+        )
+    ); 
+} 
+
+var checkinModal = {
+	'nextConfirm' : function(){
+		$.confirm('时间已到，您还未完成办理，<br/>是否继续办理？',
+			function () {
+				//点确定时 替换结束时的提醒 ，重置时间，开始
+				checkinTimerControl.getInstance().setEndEvent(checkinModal.endConfirm);
+				checkinTimerControl.getInstance().setTime(15);
+				checkinTimerControl.getInstance().run();
+			},
+			function() {
+				window.location = "../../index.html";
+			}
+		);
+	},
+	'endConfirm' : function(){
+		$.alert('时间已到，您还办理完成办理，<br/>请重新验证办理',
+			function () {
+				window.location = "/checkin/checkin_carbinno.html";
+			}
+		);
+	}
 }
-function foo(str){
-    str ='00'+str;
-    return str.substring(str.length-2,str.length);
-}
+    
+//订单时间控制 (单例)；
+var checkinTimerControl = (function () {
+    var instantiated;
+    function init() {
+    	this.isRun = false; 
+    	this.count = 60 * 15 ; //默认15分钟 60 = 秒；
+    	this.interval = 1000; //每秒触发一次；
+    	this.timer;
+    	this.endTime = new Date().getTime() + (1000 * this.count);
+    	this.events = [];
+    	this.endEvents = checkinModal.nextConfirm;   //倒计时时结束触发 （ps:约定 未运行时才允许设置, 避免了加载其他页面时初始化该事件)；
+
+    	endTimeString = function(){
+    		var t = endTime - new Date();
+    		var m=Math.floor(t/1000/60%60), m = m.toString().length == 1 ? "0"+m : m; 
+            var s=Math.floor(t/1000%60), s = s.toString().length == 1 ? "0"+s : s; 
+            return (m + ':' + s);
+    	}
+    	dispatchEvent = function(){
+    		for(var index in events){
+				events[index]();
+			}
+			count -= 1;
+			if(count === 1) { //等于1时结束了
+				clearInterval(timer);
+				isRun = false;
+				endEvents();
+			}
+    	}
+    	setTime =  function (n) {
+    		if(isRun) return;
+        	count = 60 * n;
+        	endTime = new Date().getTime() + (1000 * count);
+        }
+        run = function(){
+        	if(isRun) {return;}
+        	isRun = true;
+        	timer = setInterval(function(){
+        		dispatchEvent();
+        	}, interval)
+        }
+		addEvent = function(event){
+        	events.push(event);
+        }
+        removeEvent = function() {
+        	events.pop();
+        }
+        setEndEvent = function(event){
+        	if(isRun) return;
+        	endEvents = event;
+        }
+        stop = function(){
+        	isRun = false;
+        	clearInterval(timer);
+        }
+        return {
+            setTime : setTime,
+            run : run,
+            addEvent: addEvent,
+            removeEvent : removeEvent,
+            endTimeString : endTimeString,
+            setEndEvent : setEndEvent,
+            stop: stop
+        };
+    }
+
+    return {
+        getInstance: function () {
+            if (!instantiated) {
+                instantiated = init();
+            }
+            return instantiated;
+        }
+    };
+})();

@@ -2,142 +2,236 @@
 layout: default
 title: 查询订单
 ---
-<div class="page" id="page-checkin-selectpassenger">
-  <header class="bar bar-nav">
-    <a class="icon icon-left pull-left back"></a>
-    <h1 class="title">查询订单</h1>
-  </header>
+<div class="page" id="page-searchmyorder-result">
+  <nav class="bar bar-tab">
+  <div class="tab-item">
+      <a href="#" class="back">上一步</a>
+  </div>
+  <div class="tab-item">
+      <a href="/order/order_pay" class="button button-fill button-success">下一步</a>
+  </div>
+  </nav>
   <div class="content">
-    <div class="content-block list-block inset clear_pad checkin">
-      <div class="text-center padding75 checkin_content">订单信息</div>
+  <div class="card">
+    <div class="card-content list-block no-border">
       <ul>
-        <li>
-          <div class="row no-gutter">
-            <div class="col-33">
-              <div>订单号</div>
-            </div>
-            <div class="col-66 color_black">
-              <div>2678365</div>
-            </div>
-          </div>
-          <div class="row no-gutter">
-            <div class="col-33">
-              <div>下单时间</div>
-            </div>
-            <div class="col-66 color_black">
-              <div>2015/12/02</div>
-            </div>
-          </div>
-          <div class="row no-gutter">
-            <div class="col-33">
-              <div>订单状态</div>
-            </div>
-            <div class="col-66 color_black">
-              <div class="yellow_color">未支付</div>
-            </div>
-          </div>
-          <div class="row no-gutter">
-            <div class="col-33">
-              <div>订单总额</div>
-            </div>
-            <div class="col-66">
-              <div><span class="color_black">¥31,050</span></div>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <div class="text-center padding75 checkin_content">行程信息</div>
-      <ul>
-        <li>
-          <div class="row no-gutter">
-            <div class="col-33">
-              <div>航线</div>
-            </div>
-            <div class="col-66 color_black">
-              <div>上海－冲绳－香港</div>
-            </div>
-          </div>
-          <div class="row no-gutter">
-            <div class="col-33">
-              <div>邮轮</div>
-            </div>
-            <div class="col-66 color_black">
-              <div>海洋量子号</div>
-            </div>
-          </div>
-          <div class="row no-gutter">
-            <div class="col-33">
-              <div>日期</div>
-            </div>
-            <div class="col-66 color_black">
-              <div>2015/12/12-2015/12/16</div>
-            </div>
-          </div>
-          <div class="row no-gutter">
-            <div class="col-33">
-              <div>时长</div>
-            </div>
-            <div class="col-66 color_black">
-              <div>4天5晚</div>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <div class="text-center padding75 checkin_content">舱房信息</div>
-      <ul>
-        <li>
-          <div class="row no-gutter">
-            <div class="col-50 color_black">
-              <div class="large_title">标准海景房</div>
-            </div>
-            <div class="col-50">
-              <div class="pull-right">房间号7539</div>
-            </div>
-          </div>
-          <div class="row no-gutter">
-            <div class="col-25">
-              <div class="color_black">艾丽丝</div>
-            </div>
-            <div class="col-75">
-              <div><span class="color_black">ALICE HONG</span><span class="pull-right icon icon-down"></span></div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row no-gutter">
-            <div class="col-25">
-              <div class="color_black">吴志娟</div>
-            </div>
-            <div class="col-75">
-              <div><span class="color_black">ZHIJUAN WU</span><span class="pull-right icon icon-down"></span></div>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <div class="text-center padding75 checkin_content">联系人信息</div>
-      <ul>
-        <li>
-          <div class="row no-gutter">
-            <div class="col-100 color_black">
-              <div class="large_title">联系人</div>
-            </div>
-          </div>
-          <div class="row no-gutter">
-            <div class="col-25 color_black">
-              <div>艾丽丝</div>
-            </div>
-            <div class="col-75">
-              <div><span class="color_black">ALICE HONG</span><span class="pull-right icon icon-down"></span></div>
-            </div>
-          </div>
-        </li>
-      </ul>
+            <li class="item-content">
+              <div class="item-media">航线 </div>
+              <div class="item-inner"> 上海 - 冲神 - 上海 </div>
+            </li>
+            <li class="item-content">
+              <div class="item-media">邮轮 </div>
+              <div class="item-inner"> 海洋量子号 </div>
+            </li>
+            <li class="item-content">
+              <div class="item-media"> 日期 </div>
+              <div class="item-inner"> 2015/12/12 - 2015/12/16 </div>
+            </li>
+            <li class="item-content">
+              <div class="item-media">时长 </div>
+              <div class="item-inner">5天4晚 </div>
+            </li>
+            <li class="item-content">
+              <div class="item-media">船票总计 </div>
+              <div class="item-inner">¥31,050 </div>
+            </li>
+            <li class="item-content">
+              <div class="item-media">港务税费 </div>
+              <div class="item-inner"><span>¥3,590 <span class="o4">(¥718/人)</span></span></div>
+            </li>
+            <li class="item-content">
+              <div class="item-media">费用总计 </div>
+              <div class="item-inner"><span class="fyellow f18">¥34,640</span> </div>
+            </li>
+        </ul>
     </div>
-    <div class="content-block clear_margin">
-      <a href="/searchmyorder/input" class="button button-big button-fill button-success button-round">继续支付</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header no-border">
+      标准内舱房 <div class="f14">房间号7537</div>
     </div>
-    <div class="goback text-center">
-      <a class="back">上一步</a>
+    <div class="card-content list-block">
+      <ul>
+            <li class="item-content item-link db">
+              <div class="item-inner"> 
+                <div class="item-title">艾丽丝 ALICE HONG </div>
+                <ul class="inside-ul no-border no-link dn">
+                  <li class="item-content">
+                <div class="item-media">性别 </div>
+                <div class="item-inner">女</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">出生日期</div>
+                <div class="item-inner">1987/12/23</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">手机号码 </div>
+                <div class="item-inner">18673829935</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">电子邮箱 </div>
+                <div class="item-inner">Alice.hong@gmail.com</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">会员号码 </div>
+                <div class="item-inner">324459</div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="item-content item-link db">
+              <div class="item-inner"> 
+                <div class="item-title">吴志娟 ZHIJUAN WU </div>
+                <ul class="inside-ul no-border no-link dn">
+                  <li class="item-content">
+                <div class="item-media">性别 </div>
+                <div class="item-inner">女</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">出生日期</div>
+                <div class="item-inner">1987/12/23</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">手机号码 </div>
+                <div class="item-inner">18673829935</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">电子邮箱 </div>
+                <div class="item-inner">Alice.hong@gmail.com</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">会员号码 </div>
+                <div class="item-inner">324459</div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+        </ul>
     </div>
+  </div>
+  <div class="card">
+    <div class="card-header no-border">
+      标准海景房 <div class="f14">房间号7539</div>
+    </div>
+    <div class="card-content list-block">
+      <ul>
+            <li class="item-content  item-link db">
+              <div class="item-inner"> 
+                <div class="item-title">俞哲斌  ZHEBIN YU</div>
+                <ul class="inside-ul no-border no-link dn">
+                  <li class="item-content">
+                <div class="item-media">性别 </div>
+                <div class="item-inner">男</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">出生日期</div>
+                <div class="item-inner">1987/12/23</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">手机号码 </div>
+                <div class="item-inner">18673829935</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">电子邮箱 </div>
+                <div class="item-inner">Alice.hong@gmail.com</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">会员号码 </div>
+                <div class="item-inner">324459</div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="item-content  item-link db">
+              <div class="item-inner"> 
+                <div class="item-title">王悦威 YUEWEI WANG </div>
+                <ul class="inside-ul no-border no-link dn">
+                  <li class="item-content">
+                <div class="item-media">性别 </div>
+                <div class="item-inner">男</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">出生日期</div>
+                <div class="item-inner">1987/12/23</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">手机号码 </div>
+                <div class="item-inner">18673829935</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">电子邮箱 </div>
+                <div class="item-inner">Alice.hong@gmail.com</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">会员号码 </div>
+                <div class="item-inner">324459</div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+        </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header no-border">
+      联系人
+    </div>
+    <div class="card-content list-block">
+      <ul>
+            <li class="item-content  item-link db">
+              <div class="item-inner"> 
+                <div class="item-title">艾丽丝 ALICE HONG </div>
+                <ul class="inside-ul no-border no-link dn">
+                  <li class="item-content">
+                <div class="item-media">性别 </div>
+                <div class="item-inner">女</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">出生日期</div>
+                <div class="item-inner">1987/12/23</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">手机号码 </div>
+                <div class="item-inner">18673829935</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">电子邮箱 </div>
+                <div class="item-inner">Alice.hong@gmail.com</div>
+                  </li>
+                  <li class="item-content">
+                <div class="item-media">会员号码 </div>
+                <div class="item-inner">324459</div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+        </ul>
+    </div>
+  </div>
+    <div class="content-block fff f12">
+      <dl>
+        <dt class="f14 o8">退票政策</dt>
+        <dd class="o4 ml0">开航前45-30天：收取1000元人民币/人的取消费用 <br> 开航前30-7天：取消费用全款的50%（不包括港务税费) <br> 开航前7-0天：取消费用全款的100%（不包括港务税费)
+      </dd>
+      </dl>
+      <dl>
+        <dt class="f14 o8">航线更改政策</dt>
+        <dd class="o4 ml0">开航前45-30天：收取1000元人民币/人的取消费用 <br> 开航前30-7天：取消费用全款的50%（不包括港务税费) <br> 开航前7-0天：取消费用全款的100%（不包括港务税费)
+      </dd>
+      </dl>
+      <dl>
+        <dt class="f14 o8">费用包含</dt>
+        <dd class="o4 ml0">1.游轮船票（含住宿、指定餐厅免费膳食、指定的船上设施、船上娱乐节目及活动）<br>2.游轮港务税费。
+      </dd>
+      </dl>
+      <dl>
+        <dt class="f14 o8">费用不包含</dt>
+        <dd class="o4 ml0">1.游轮服务费，参考费用：内舱、海景、阳台及套房JS、SJ、FJ、FC舱位每人每晚12.95美金，其他套房每人每晚15.95美金。此费用为船上现付，显示在乘客本人的“船上消费账单”中，乘客需要在下船前将账单结清。（具体请以船上收费为准）
+      </dd>
+      </dl>
+    </div>
+
   </div>
 </div>
