@@ -186,7 +186,7 @@ label.item-disabled img{ opacity:.2}
 .route-detail-tit2:after{ content: ''; position: absolute; left: 0; top: 50%; right: auto; height: 1px; width: 100%; background-color: #6a739a; display: block; -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%;}
 .route-detail-tit2 div{display: inline-block;background-color: #061556;margin:0 auto;position: relative;z-index: 1;padding: 0 .5rem;}
 
-.route-detail-sh-img {background: url(/assets/img/hx-sh.jpg) no-repeat; background-size: cover;width:100%;height: 299px;height:calc(100vw * 0.79736842); }
+.route-detail-sh-img {background: url(/assets/img/hx-sh.jpg) no-repeat; background-size: cover;width:100%;height: 14.95rem;height:calc(100vw * 0.79736842); }
 .day-by-day .line {border-top: 2px dotted #ccc; width:calc(100vw - 2.5rem); top: 1.5rem;}
 .day-by-day .item-media {display: block; text-align: center;}
 .day-by-day .circle{ width: 2rem;height: 2rem;color: #021257;position: relative;margin-bottom: .5rem; background-color: #fff;line-height: 2rem;}
@@ -211,12 +211,12 @@ width: 1.8rem;height: 1.8rem; border:1px solid #021257; border-radius: 50%;  pos
 .route-detail-p8 {background-image:url(/assets/img/hx-p9.jpg);}
 
 .route-detail-p1 .card-content-inner,.route-detail-p2 .card-content-inner,
-.route-detail-p3 .card-content-inner,.route-detail-p4 .card-content-inner {height: 146px;height:calc(100vw * 0.38997214);}
+.route-detail-p3 .card-content-inner,.route-detail-p4 .card-content-inner {height: 7.3rem;height:calc(100vw * 0.38997214);}
 .route-detail-p5 .card-content-inner,.route-detail-p6 .card-content-inner, 
-.route-detail-p7 .card-content-inner,.route-detail-p8 .card-content-inner {height: 147px;height:calc(100vw * 0.39275766);}
+.route-detail-p7 .card-content-inner,.route-detail-p8 .card-content-inner {height: 7.35rem;height:calc(100vw * 0.39275766);}
 
 .route-detail-shipdetail {background:url(/assets/img/hx-p5.jpg) center top no-repeat; background-size: cover; position: relative;
-height: 446px;height: calc(100vw * 1.18933333);}
+height: 22.3rem;height: calc(100vw * 1.18933333);}
 .route-detail-shipdetail-footer {position: absolute; bottom: 0;left: 0; width: 100%}
 .route-detail-shipdetail-footer > div {display: inline-block;margin: 0 .5rem;}
 .route-detail-travel .card-header {display: block;background-color: #f0f0f0}
