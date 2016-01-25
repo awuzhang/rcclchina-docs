@@ -144,7 +144,7 @@ $(function () {
 
 	$(document).on("pageInit", "#page-order-booking", function(e, pageId, $page) {
 		//低版本android打开时间控件
-		if($.device.android && $.compareVersion('5.0', $.device.osVersion)){
+		if($.device.android && $.compareVersion('4.6', $.device.osVersion)){
 			$('.popup.popup-customer input[name="birthdate"]').calendar({value: ['1980-01-01']});
 		}
 
@@ -196,7 +196,7 @@ $(function () {
 
 	$(document).on('pageInit', '#page-order-contact', function(e, pageId, $page){
 		//低版本android打开时间控件
-		if($.device.android && $.compareVersion('5.0', $.device.osVersion)){
+		if($.device.android && $.compareVersion('4.6', $.device.osVersion)){
 			$('input[name="birthdate"]', $page).calendar({value: ['1980-01-01']});
 		}
 
@@ -317,28 +317,69 @@ $(function () {
 	});
 	//时间控制结束
 
+	$(document).on("pageInit", "#page-shorex-citydetail", function(e, pageId, $page) {
+		$page.on('click', '.tipsBtn', function(){
+			var memberModal = $.modal({
+		      extraClass: "room-memberModal",
+			  title: '旅行贴士',
+			  text:  '<div>'+
+		                '<div class="f16 tc">天气与穿衣</div>' +
+		                '<div class="f14 mt10">冲绳位于亚热带，全年平均气温有23度，春季多雨，夏季晴朗炎热，夏秋偶尔会有台风。一般而言，春末和秋天是最佳的旅行季节。需要着冬装的日子只有12-3月这段时间，并且不用穿得很厚。只要长袖短外套和羊毛衫即可。除此之外的季节，穿T恤衫和短裤等等夏装即可舒爽度过。不过，冲绳的紫外线很强，所以太阳镜、帽子和防晒霜等是必备之一。</div>' +
+		                '<div class="f16 mt20 tc">旅行必备</div>' +
+		                '<div class="f14 mt10">冲绳大部分商家不支持银联卡、VSIA、万事达卡，所以需要准备足量现金。</div>' +
+		              '</div>'
+			});
+		})
+	});
+
+	$(document).on("pageInit", "#page-onboard-detail", function(e, pageId, $page) {
+		$page.on('click', '.openMemberBtn', function(){
+			var memberModal = $.modal({
+		      extraClass: "onboard-detail-Modal",
+			  title: '<img src="/assets/img/onboardModal.jpg">',
+			  text:  '<div>'+
+		                '<div class="f16">奥利弗餐厅</div>' +
+		                '<div class="f14 mt10">最具人期待明星主厨詹姆斯奥利弗，以崇尚有机健康的饮食理念，成为风靡于欧洲、美国和澳大利亚的风云人物。需要着冬装的日子只有12-3月这段时间，并且不用穿得很厚。只要长袖短外套和羊毛衫即可。除此之外的季节，穿T恤衫和短裤等等夏装即可舒爽度过。不过，冲绳的紫外线很强，所以太阳镜、帽子和防晒霜等是必备之一。</div>' +
+		                '<div class="f14 mt20">该餐厅已入驻以下游轮</div>' +
+		                '<div class="f14"><span class="fblue">海洋量子号</span><span class="fblue ml20">海洋航行者号</span></div>' +
+		              '</div>'
+			});
+		})
+	});
+
 	$(document).on("pageInit", "#page-device", function(e, pageId, $page) {
+		var time1 = new Date().getTime(), tcount = 0;
 		function orientationHandler(event){   
 	        document.getElementById("gamma").innerHTML = Math.floor(event.gamma);
 	        var m = Math.floor(event.gamma) > 80 ? 80 : Math.floor(event.gamma);
 	        	m = m < -80 ? -80 : m;
-	        $('#page-device').css({'-webkit-transform': 'translate3d('+ m/2 +'px,0,0)' })
+	        piceMove(m/2,'orientationHandler');
 	    }
-	    function motionHandler(event){  
+	    function motionHandler(event){
 	        var acc = event.acceleration, accGravity = event.accelerationIncludingGravity;  
-	        document.getElementById("y").innerHTML = acc.y;  
-	        document.getElementById("yg").innerHTML = accGravity.y;  
-	        document.getElementById("interval").innerHTML = event.interval;  
+	        // document.getElementById("y").innerHTML = Math.floor(acc.x);  
+	        // document.getElementById("interval").innerHTML = event.interval;  
+
+	        document.getElementById("yg").innerHTML = Math.floor(accGravity.x);  
+			var m = Math.floor(accGravity.x) * 10;
+			piceMove(m/2,'motionHandler');
 	    }
-	    if (window.DeviceMotionEvent){  
-	        window.addEventListener("devicemotion", motionHandler, false);  
+
+	    function piceMove(x, type){
+	    	tcount += 1;
+	        $('#page-device').css({'-webkit-transform': 'translate3d('+ x +'px,0,0)' });
+	        // $('#page-device').css({'margin-left': x });
+	        var now = new Date().getTime();
+	        $('.fps').html(type + 'fps:' + (1000/(now-time1) * tcount).toFixed(2));
+	        time1 = now, tcount =0;
 	    }
 	    if (window.DeviceOrientationEvent){  
 	        window.addEventListener("deviceorientation", orientationHandler, false);  
+	    }else if (window.DeviceMotionEvent){  
+	        window.addEventListener("devicemotion", motionHandler, false);  
 	    }
 	    $page.css({'width':'120%','margin-left':'-10%'});
 	});
-
 	$(document).on("pageInit", "#page-index", function(e, pageId, $page) {
 		var device = $.param($.device);
 		device = device.replace(/&/g,'<br>')
