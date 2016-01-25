@@ -349,19 +349,15 @@ $(function () {
 
 	$(document).on("pageInit", "#page-device", function(e, pageId, $page) {
 		var time1 = new Date().getTime(), tcount = 0;
-		function orientationHandler(event){   
-	        document.getElementById("gamma").innerHTML = Math.floor(event.gamma);
+		function orientationHandler(event){
 	        var m = Math.floor(event.gamma) > 80 ? 80 : Math.floor(event.gamma);
-	        	m = m < -80 ? -80 : m;
-	        piceMove(m/2,'orientationHandler');
+	        	m = m < -70 ? -70 : m;
+	        piceMove(-m/2,'orientationHandler');
 	    }
 	    function motionHandler(event){
 	        var acc = event.acceleration, accGravity = event.accelerationIncludingGravity;  
-	        // document.getElementById("y").innerHTML = Math.floor(acc.x);  
-	        // document.getElementById("interval").innerHTML = event.interval;  
-
-	        document.getElementById("yg").innerHTML = Math.floor(accGravity.x);  
-			var m = Math.floor(accGravity.x) * 10;
+			var x = accGravity.x * 10 , m = Math.floor(x) > 80 ? 80 : Math.floor(x);
+	        	m = m < -70 ? -70 : m;
 			piceMove(m/2,'motionHandler');
 	    }
 
@@ -370,14 +366,32 @@ $(function () {
 	        $('#page-device').css({'-webkit-transform': 'translate3d('+ x +'px,0,0)' });
 	        // $('#page-device').css({'margin-left': x });
 	        var now = new Date().getTime();
-	        $('.fps').html(type + 'fps:' + (1000/(now-time1) * tcount).toFixed(2));
+	        // $('.fps').html(type + 'fps:' + (1000/(now-time1) * tcount).toFixed(2) + '<br>x:'+ x);
 	        time1 = now, tcount =0;
 	    }
+
+		function testMotionHandler(event){
+			window.removeEventListener("devicemotion", testMotionHandler, false);
+			window.addEventListener("devicemotion", motionHandler, false); 
+		}
+		function testOrientationHandler(event){
+			window.removeEventListener("deviceorientation", testOrientationHandler, false);
+			window.removeEventListener("devicemotion", motionHandler, false);
+			window.addEventListener("deviceorientation", orientationHandler, false);  
+		}
+
+	    //测试是否允许 部分安卓只有 devicemotion， 部分安卓 和 ios 两个值都有 
+	    //测试发现 deviceorientation 在低版本卡顿较小；
+	    //具体实现 先绑定 devicemotion；如果有 deviceorientation 移除 devicemotion 绑定 deviceorientation；
+	    if (window.DeviceMotionEvent){
+	    	window.addEventListener("devicemotion", testMotionHandler, false);  
+	    } ;
 	    if (window.DeviceOrientationEvent){  
-	        window.addEventListener("deviceorientation", orientationHandler, false);  
-	    }else if (window.DeviceMotionEvent){  
-	        window.addEventListener("devicemotion", motionHandler, false);  
-	    }
+	    	window.setTimeout(function(){
+	    		window.addEventListener("deviceorientation", testOrientationHandler, false);
+	    	}, 500);
+	    } ;
+
 	    $page.css({'width':'120%','margin-left':'-10%'});
 	});
 	$(document).on("pageInit", "#page-index", function(e, pageId, $page) {
