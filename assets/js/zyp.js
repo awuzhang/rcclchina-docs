@@ -66,6 +66,36 @@ $(function () {
 		});
 	});
 
+	$(document).on("pageInit", "#page-checkin-index", function(e) {
+		var totheight = $("#page-checkin-index").height();
+		var divheight = $(".checkin_dh").height();
+		var mgt = ((totheight-divheight-divheight-56)/3);
+		$('.checkin_gmt').css("marginTop",mgt);
+	});
+
+	$(document).on("pageInit", "#page-checkin-orderno", function(e) {
+		//低版本android打开时间控件
+		if($.device.android && $.compareVersion('5.0', $.device.osVersion)){
+			$('input[name="sailingdate"]', $page).calendar();
+		}
+	});
+	$(document).on("pageInit", "#page-checkin-carbinno", function(e) {
+		//低版本android打开时间控件
+		if($.device.android && $.compareVersion('5.0', $.device.osVersion)){
+			$('input[name="sailingdate"]', $page).calendar();
+		}
+
+		if($.device.android && $.compareVersion('5.0', $.device.osVersion)){
+			$('input[name="birthdate"]', $page).calendar({value: ['1980-01-01']});
+		}
+	});
+	$(document).on("pageInit", "#page-searchmyorder-input", function(e) {
+		//低版本android打开时间控件
+		if($.device.android && $.compareVersion('5.0', $.device.osVersion)){
+			$('input[name="sailingdate"]', $page).calendar();
+		}
+	});
+
 	//checkin时间控制    （由于页面允许通过链接直接访问step2,3,4 所以每个页面都需尝试初始化时间函数）
 	$(document).on("pageAnimationStart", "#page-checkin-selectpassenger", function(e, pageId, $page) {
 		$page.find('#remainTime').html(checkinTimerControl.getInstance().endTimeString() );
@@ -166,11 +196,13 @@ $(function () {
 			$('.home_pg0').addClass('hidden');
 			$('.home_lbnav2').removeClass('hidden');
 			$('.home_pg1').removeClass('hidden');
+			$('.home_bthxcx').removeClass('nodisplay');
 		});
 		$('.home_arrowdup img').click(function(){
 			$('.home_pg0').removeClass('hidden');
 			$('.home_lbnav2').addClass('hidden');
 			$('.home_pg1').addClass('hidden');
+			$('.home_bthxcx').addClass('nodisplay');
 		})
 
 	    $(document).on('click','.confirm-title-ok', function () {
