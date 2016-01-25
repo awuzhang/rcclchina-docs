@@ -11,59 +11,47 @@ title: 舱房号验证
     <div class="content-block text-center">
       <img src="/assets/img/shiplogo.png" class="checkin_logo_img">
     </div>
-    <div class="card">
-      <div class="list-block">
-        <ul>
-          <li>
-            <div class="item-content db">
-              <div class="item-inner">
-                <div class="item-title">舱房号</div>
-                <div class="item-input">
-                  <input type="text" pattern="[0-9]*" value="273842" placeholder="请输入舱房号">
-                </div>
-              </div>
+    <div class="content-block list-block inset checkin clear_pad checkin_title">
+      <ul>
+        <li>
+          <div class="row no-gutter item">
+            <div class="col-100">
+              <div>舱房号</div>
+              <input type="text" pattern="[0-9]*" value="273842" placeholder="请输入舱房号">
             </div>
-          </li>
-          <li>
-            <div class="item-content db">
-              <div class="item-inner">
-                <div class="item-title label">出航日期</div>
-                <div class="item-input">
-                  <input type="text" ontouchstart="this.type='date';" name="sailingdate" placeholder="请选择" class="select_date">
-                </div>
-              </div>
-              <div class="item-inner bl1">
-                <div class="item-title label">搭乘游轮</div>
-                <div class="item-input">
-                  <select class="nopadding select_ship" placeholder="请选择">
-                    <option>海洋量子号</option>
-                    <option>海洋水手号</option>
-                    <option>海洋航行者号</option>
-                    <option>海洋神话号</option>
-                    <option>海洋赞礼号</option>
-                  </select>
-                </div>
-              </div>
+          </div>
+        </li>
+        <li>
+          <div class="row no-gutter item">
+            <div class="col-50">
+              <div>出航日期</div>
+              <input type="text" ontouchstart="this.type='date';" name="sailingdate" placeholder="请选择" class="select_date">
             </div>
-          </li>
-          <li>
-            <div class="item-content db">
-              <div class="item-inner">
-                <div class="item-title label">乘客姓氏拼音</div>
-                <div class="item-input">
-                  <input type="text" value="Hong" placeholder='例"ZHENG"'>
-                </div>
-              </div>
-              <div class="item-inner bl1">
-                <div class="item-title label">乘客出生日期</div>
-                <div class="item-input">
-                  <input type="text" ontouchstart="this.type='date';if(this.value == ''){this.value='1980-01-01';}" name="birthdate" placeholder="请输入" class="select_date">
-                </div>
-              </div>
+            <div class="col-50">
+              <div>搭乘邮轮</div>
+              <select class="nopadding">
+                <option>海洋量子号</option>
+                <option>海洋水手号</option>
+                <option>海洋航行者号</option>
+                <option>海洋神话号</option>
+                <option>海洋赞礼号</option>
+              </select>
             </div>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </li>
+        <li>
+          <div class="row no-gutter item">
+            <div class="col-50">
+              <div>乘客姓氏拼音</div>
+              <input type="text" value="Hong" placeholder='例"ZHENG"'>
+            </div>
+            <div class="col-50">
+              <div>乘客出生日期</div>
+              <input type="text" ontouchstart="this.type='date';if(this.value == ''){this.value='1980-01-01';}" name="birthdate" placeholder="请选择" 
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
     <div class="content-block clear_margin mgt_2">
       <a href="/checkin/checkin_selectpassenger" class="button button-big button-fill button-success button-round">确认</a>

@@ -16,7 +16,7 @@
   background: linear-gradient(#121657, #2b6ecc);
 }
 .bg_img {
-  background:url(/assets/img/bgimg.png) no-repeat;
+  background:url(/assets/img/bgimg.jpg) no-repeat;
   background-size: cover;
 }
 .checkin_smallimg {
@@ -43,13 +43,25 @@
 .checkin .row {
   padding: 0.7rem 0;
 }
+.checkin .item {
+  padding: 0;
+  margin: 0 0 0.8rem;
+  border-bottom: 1px solid #e7e7e7;
+}
+.checkin li:last-child .item {
+  border-bottom: none;
+}
 .checkin li {
-  border-top: 1px solid #e7e7e7;
   margin: 0 0.7rem;
 }
+#page-checkin-selectpassenger .checkin li {
+  border-top: 1px solid #e7e7e7;
+}
+
 .checkin li:first-child {
   border-top: none;
 }
+
 #page-checkin-carbinno .list-block input, #page-checkin-carbinno .list-block select {
   padding: 0;
 }
@@ -61,6 +73,28 @@
 }
 #page-checkin-orderno .list-block input, #page-checkin-orderno .list-block select {
   padding: 0;
+}
+#page-searchmyorder-input .list-block input, #page-searchmyorder-input .list-block select {
+  padding: 0;
+}
+#page-checkin-supplementary .list-block ul {
+  padding: 0.5rem 0;
+}
+#page-checkin-payment .list-block ul {
+  padding: 0.5rem 0;
+}
+#page-checkin-orderno .list-block ul {
+  padding: 0.5rem 0;
+}
+#page-searchmyorder-input .list-block ul {
+  padding: 0.5rem 0;
+}
+#page-checkin-payment .checkin .checkin_content li {
+  border-top: 1px solid #e7e7e7;
+  margin: 0 0.7rem;
+}
+#page-checkin-payment .checkin .checkin_content li:first-child {
+  border-top: none;
 }
 .clear_pad {
   padding: 0;
@@ -678,19 +712,19 @@ background-color: #000;
   padding-bottom: 0.5rem;
 }
 .knowship_img1{
-  background-image: url(/assets/img/knowship_2.png);
+  background-image: url(/assets/img/knowship_2.jpg);
 }
 .knowship_img2{
-  background-image: url(/assets/img/knowship_4.png);
+  background-image: url(/assets/img/knowship_4.jpg);
 }
 .knowship_img3{
-  background-image: url(/assets/img/knowship_6.png);
+  background-image: url(/assets/img/knowship_6.jpg);
 }
 .knowship_img4{
-  background-image: url(/assets/img/knowship_8.png);
+  background-image: url(/assets/img/knowship_8.jpg);
 }
 .knowship_img5{
-  background-image: url(/assets/img/knowship_01.png);
+  background-image: url(/assets/img/knowship_01.jpg);
 }
 .knowship_box1{
    -webkit-background-size: 6rem 6rem;

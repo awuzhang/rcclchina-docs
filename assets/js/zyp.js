@@ -213,7 +213,7 @@ $(function () {
  		//全局变量，触摸开始位置
         var startX = 0, startY = 0;
         //touchstart事件
-        function touchSatrtFunc(evt) {
+        function touchStartFunc(evt) {
             try
             {
                 var touch = evt.touches[0]; //获取第一个触点
@@ -253,7 +253,7 @@ $(function () {
         function bindEvent(f) {
             if(f==1){
             }else{
-                document.addEventListener('touchstart', touchSatrtFunc, false);
+                document.addEventListener('touchstart', touchStartFunc, false);
                 document.addEventListener('touchmove', touchMoveFunc, false);
                 document.addEventListener('touchend', touchEndFunc, false);
             }
@@ -262,7 +262,6 @@ $(function () {
         function isTouchDevice() {
             try {
                 document.createEvent("TouchEvent");
-                //alert("支持TouchEvent事件！");
                 bindEvent(); //绑定事件
             }
             catch (e) {
