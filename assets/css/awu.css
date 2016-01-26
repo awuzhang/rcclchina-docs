@@ -372,8 +372,13 @@ header.bar ~ .order-header {top:2.2rem;}
 .shorex-shorexdetail-list .img img{width: 100%; border-top-left-radius: 0.2rem;border-top-right-radius: 0.2rem;}
 .shorex-shorexdetail-list .tip{border: 1px solid #fbb818;color: #fbb818;height: 1.35rem;line-height: 1.35rem; display: inline-block; border-radius: .675rem;padding: 0 .5rem;margin-right: .3rem;}
 
-#page-onboard-list .onboard1bg {width: 100%;height: 25rem;background: url(/assets/img/onboard-1.jpg) center top no-repeat; background-size: contain ;}
-#page-onboard-list .onboard-1 {height: 13.4rem; text-align: center;width: 100%;}
+#page-onboard-list .onboard1bg {width: 100%;height: 25rem;background: url(/assets/img/onboard-1.jpg) center top no-repeat; background-size: contain ;overflow: hidden;}
+#page-onboard-list .onboard-1 {height: 13.4rem; text-align: center;width: 100%;animation-duration: 2s;animation-fill-mode: both;opacity: 0}
+/*
+top: -4rem;opacity: .5; 
+#page-onboard-list .onboard-1.show {height: 13.4rem; text-align: center;width: 100%;top: 0;opacity: 1;}
+*/
+
 #page-onboard-list .onboard-1 .onboardpng{height: 13.4rem;}
 #page-onboard-list .onboard-list .card-content,
 #page-onboard-list .onboard-list .card-content-inner{height: 9.2rem;}
@@ -407,3 +412,37 @@ header.bar ~ .order-header {top:2.2rem;}
 
 
 
+
+
+@-webkit-keyframes onboard-1down {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -40%, 0);
+    transform: translate3d(0, -40%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes onboard-1down {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -40%, 0);
+    transform: translate3d(0, -40%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.onboard-1down {
+  -webkit-animation-name: onboard-1down;
+  animation-name: onboard-1down;
+}

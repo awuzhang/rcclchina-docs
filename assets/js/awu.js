@@ -332,6 +332,13 @@ $(function () {
 		})
 	});
 
+	$(document).on("pageInit", "#page-onboard-list", function(e, pageId, $page) {
+		setTimeout(function(){
+			$('.onboard-1').addClass('onboard-1down');
+		},1000)
+		
+	})
+
 	$(document).on("pageInit", "#page-onboard-detail", function(e, pageId, $page) {
 		$page.on('click', '.openMemberBtn', function(){
 			var memberModal = $.modal({

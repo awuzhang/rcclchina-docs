@@ -14,7 +14,7 @@ title: 查询订单
     <div class="content-block list-block inset checkin clear_pad checkin_title">
       <ul>
         <li>
-          <div class="row no-gutter">
+          <div class="row no-gutter item">
             <div class="col-50">
               <div>订单号</div>
               <input type="text" pattern="[0-9]*" value="2748592" placeholder="请输入订单号">
@@ -26,11 +26,10 @@ title: 查询订单
           </div>
         </li>
         <li>
-          <div class="row no-gutter">
+          <div class="row no-gutter item">
             <div class="col-50">
               <div>出航日期</div>
-              <!-- <input type="text" class="date-input" /> -->
-              <input type="date" />
+              <input type="text" ontouchstart="this.type='date';" name="sailingdate" placeholder="请选择">
             </div>
             <div class="col-50">
               <div>搭乘邮轮</div>
