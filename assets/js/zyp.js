@@ -70,7 +70,33 @@ $(function () {
 		var totheight = $("#page-checkin-index").height();
 		var divheight = $(".checkin_dh").height();
 		var mgt = ((totheight-divheight-divheight-56)/3);
-		$('.checkin_gmt').css("marginTop",mgt);
+		$('.checkin_gmt').css("padding-top",mgt);
+		$('.checkin_gmt').css("height", divheight + mgt);
+
+		$("#btncarbinno").on("touchstart", function() {
+		    var bfheight = $(this).height();
+		    $(this).css("height", bfheight*0.92);
+		    $(this).css("width", bfheight*0.92);
+		    $(this).css("margin-bottom", bfheight*0.08);
+        });
+        $("#btncarbinno").on("touchend", function() {
+            var bfheight = $(this).height();
+            $(this).css("height", bfheight/0.92);
+            $(this).css("width", bfheight/0.92);
+            $(this).css("margin-bottom", 0);
+        });
+		$("#btnorderno").on("touchstart", function() {
+		    var bfheight = $(this).height();
+            $(this).css("height", bfheight*0.92);
+            $(this).css("width", bfheight*0.92);
+            $(this).css("margin-bottom", bfheight*0.08);
+		});
+		$("#btnorderno").on("touchend", function() {
+            var bfheight = $(this).height();
+            $(this).css("height", bfheight/0.92);
+            $(this).css("width", bfheight/0.92);
+            $(this).css("margin-bottom", 0);
+        });
 	});
 
 	$(document).on("pageInit", "#page-checkin-orderno", function(e) {
