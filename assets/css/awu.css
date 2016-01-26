@@ -5,7 +5,7 @@
 .zx1{z-index:1;}.zx2{z-index:2;}.zx0{z-index:0;}
 .b{font-weight: bold;}
 .f12{font-size: .6rem;}.f12i{font-size: .6rem !important;}.f13{font-size: .65rem;}.f14{font-size:.7rem;}.f15{font-size:.7.5rem;}.f15i{font-size:.75rem !important;}.f16{font-size:.8rem;}.f18{font-size:.9rem;}.f20{font-size:1rem;}.f24{font-size:1.2rem;}
-.fblue{color: #0795ff;}.fff{color: #fff;}.ccc{color: #ccc;}.fgreen{color: #39ab29;}.fyellow{color: #fbc400;}
+.fblue{color: #0795ff;}.fff{color: #fff;}.ccc{color: #ccc;}.fgreen{color: #3ee028;}.fyellow{color: #fbc400;}
 .db{display: block;}.dn{display: none;}
 .abs{position: absolute;}.rel{position: relative;}
 .lh2{line-height: 2;}
@@ -411,38 +411,22 @@ top: -4rem;opacity: .5;
 .onboard-detail-Modal .btns .button {display: block;color: #100f4f;border-radius: 1.35rem;height: 1.8rem;line-height: 1.8rem;}
 
 
+#page-wifi-booking .list-block .item-title.label {width: 100%;}
+#page-wifi-booking .db .item-inner{display: block; overflow: inherit; margin-bottom: .8rem; padding-top: 0;}
+#page-wifi-booking .list-block ul {padding:.5rem 0}
 
+#page-wifi-select .no-border .item-inner:after{height: 0;}
+#page-wifi-package .bookbtn {height: 1.8rem;line-height: 1.8rem;border-radius: .9rem;padding: 0 1rem;display: inline-block;}
+#page-wifi-bookingok .icon-confirm{width: 2.35rem;height: 2.9rem;fill:#fbb818}
 
 
 @-webkit-keyframes onboard-1down {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -40%, 0);
-    transform: translate3d(0, -40%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
+  from {opacity: 0; -webkit-transform: translate3d(0, -40%, 0); transform: translate3d(0, -40%, 0); }
+  to {opacity: 1; -webkit-transform: none; transform: none; }
 }
 
 @keyframes onboard-1down {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -40%, 0);
-    transform: translate3d(0, -40%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
+  from {opacity: 0; -webkit-transform: translate3d(0, -40%, 0); transform: translate3d(0, -40%, 0); }
+  to {opacity: 1; -webkit-transform: none; transform: none; }
 }
-
-.onboard-1down {
-  -webkit-animation-name: onboard-1down;
-  animation-name: onboard-1down;
-}
+.onboard-1down {-webkit-animation-name: onboard-1down; animation-name: onboard-1down; }
