@@ -121,6 +121,36 @@ $(function () {
 			$('input[name="sailingdate"]', $page).calendar();
 		}
 	});
+	$(document).on("pageInit", "#page-faq-index", function(e, pageId, $page) {
+		$page.on('click', '.item-link > .item-inner', function(e){
+			$(this).toggleClass('open');
+			$(this).find('.inside-div').toggleClass('hidden');
+		});
+
+		$("#page-faq-index #searchcond").on('keyup', function(event) {
+			var keyword = $("#page-faq-index #searchcond").val();
+			if (keyword) {
+				$("#page-faq-index #faqlist").addClass('hidden');
+				$("#page-faq-index #searchresult").removeClass('hidden');
+				SearchHighlight("searchresult", keyword);
+			} else {
+				$("#page-faq-index #faqlist").removeClass('hidden');
+				$("#page-faq-index #searchresult").addClass('hidden');
+			}
+		});
+	});
+	$(document).on("pageInit", "#page-faq-payment", function(e, pageId, $page) {
+		$page.on('click', '.item-link > .item-inner', function(e){
+			$(this).toggleClass('open');
+			$(this).find('.inside-div').toggleClass('hidden');
+		});
+	});
+	$(document).on("pageInit", "#page-travelnotes-checkin", function(e, pageId, $page) {
+		var top = $('.firstli').offset().top;
+		var bottom = $('.lastli').offset().top;
+		var height = bottom - top;
+		$('#page-travelnotes-checkin .verticalline').attr("style", "height:" + height + "px");
+	});
 
 	//checkin时间控制    （由于页面允许通过链接直接访问step2,3,4 所以每个页面都需尝试初始化时间函数）
 	$(document).on("pageAnimationStart", "#page-checkin-selectpassenger", function(e, pageId, $page) {
@@ -308,7 +338,45 @@ function regDate(str) {
             } 
         )
     ); 
-} 
+}
+
+function SearchHighlight(idVal,keyword) {
+	var pucl = document.getElementById(idVal);
+	if("" == keyword) return;
+	$('#searchresult div ul li').each(function(index, el) {
+		var title = $(this).find('.item-title').html();
+		if (title.indexOf(keyword) == -1) {
+			$(this).attr({
+				style: 'display:none'
+			});
+		} else {
+			$(this).attr({
+				style: 'display:block'
+			});
+		}
+	});
+	var temp = pucl.innerHTML;
+	var r1 = '<b class="highlight">';
+	var r2 = '</b>';
+	var htmlReg = new RegExp(r1,"i");
+	var htmlReg1 = new RegExp(r2,"i");
+	//去除前回替换结果
+	for (var i = 0 ; true; i++) {
+		var m = htmlReg.exec(temp);
+		var n = htmlReg1.exec(temp);
+		if (m) {
+			temp = temp.replace(m, "");
+		} else if (n) {
+			temp = temp.replace(n, "");
+		} else {
+			break;
+		}
+	}
+	//替换关键字
+	var reResult = new RegExp("("+ keyword +")", "gi");
+	temp = temp.replace(reResult,"<b class='highlight'>$1</b>");
+	pucl.innerHTML = temp;
+}
 
 var checkinModal = {
 	'nextConfirm' : function(){
@@ -320,7 +388,7 @@ var checkinModal = {
 				checkinTimerControl.getInstance().run();
 			},
 			function() {
-				window.location = "../../index.html";
+				window.location = "/index.html";
 			}
 		);
 	},

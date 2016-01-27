@@ -54,6 +54,9 @@
 .checkin li {
   margin: 0 0.7rem;
 }
+.faq li {
+  border-top: 1px solid #e7e7e7;
+}
 #page-checkin-selectpassenger .checkin li {
   border-top: 1px solid #e7e7e7;
 }
@@ -98,6 +101,9 @@
 }
 .clear_pad {
   padding: 0;
+}
+.checkin .clear_pt {
+  padding-top: 0;
 }
 .clear_margin {
   margin: 0;
@@ -979,4 +985,236 @@ background-color: #000;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+.fag_index_img {
+  width: 50%;
+}
+#page-faq-index .bar-header-secondary {
+  background-color: inherit;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  margin: 1rem 0.75rem;
+  padding: 0;
+}
+#page-faq-index .searchbar {
+  height: 3.4rem;
+  line-height: 2.4rem;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #6a739a;
+  background-color: inherit;
+}
+#page-faq-index .searchbar .search-input input {
+  height: 2.4rem;
+  border-radius: 1.25rem;
+  background-color: #384478;
+  color: #b4b4b4;
+  padding-left: 1.8rem;
+}
+#page-faq-index .bar-header-secondary ~ .content {
+  top: 6.4rem;
+}
+#page-faq-index .item-link .item-inner {
+  background-position: 97% .6rem;
+  background-image: url("/assets/img/list-chevron-down.png");
+}
+#page-faq-index .item-link .item-inner.open {
+  background-image: url("/assets/img/list-chevron-up.png");
+}
+#page-faq-index .item-content.db .item-inner {
+  display: block;
+}
+#page-faq-index .item-content.db .item-inner.open .item-title {
+  color: #0795ff;
+}
+#page-faq-index .list-block .item-content.hidden {
+  display: hidden;
+}
+#page-faq-index .list-block .item-title {
+  white-space: inherit;
+}
+#page-faq-index .bar-tab {
+  background-color: inherit;
+}
+#page-faq-index .bar-tab .tab-item {
+  font-size: 0.85rem;
+  color: #6d6d72;
+}
+#page-faq-index .bar-tab a {
+  font-size: 0.85rem;
+  color: #0073bb;
+}
+.bgc-white {
+  background-color: white;
+}
+.faq_activity_content {
+  color: #000;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+.faq_activity_title {
+  color: #000;
+  font-weight: bold;
+}
+#page-faq-payment .item-link .item-inner {
+  background-position: 97% .6rem;
+  background-image: url("/assets/img/list-chevron-down.png");
+}
+#page-faq-payment .item-link .item-inner.open {
+  background-image: url("/assets/img/list-chevron-up.png");
+}
+#page-faq-payment .item-content.db .item-inner {
+  display: block;
+}
+#page-faq-payment .item-content.db .item-inner.open .item-title {
+  color: #0795ff;
+}
+#page-faq-payment .list-block .item-title {
+  white-space: inherit;
+}
+#page-faq-payment .bar-tab {
+  background-color: inherit;
+}
+#page-faq-payment .bar-tab .tab-item {
+  font-size: 0.85rem;
+  color: #6d6d72;
+}
+#page-faq-payment .bar-tab a {
+  font-size: 0.85rem;
+  color: #0073bb;
+}
+.inside-div {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+.highlight {
+  color: #0795ff;
+}
+#page-travelnotes-index .list-block.inset ul {
+  overflow: hidden;
+  margin-top: 1rem;
+}
+#page-travelnotes-index .list-block.inset ul:after{
+  -webkit-transform: rotate(-45deg);
+  background-color: #fbb818;
+  font-size: 0.8rem;
+  color: #fff;
+  width: 2rem;
+  height: 1.5rem;
+  line-height: 2.2rem;
+  text-align: center;
+  position: absolute;
+  top: -0.8rem;
+  left: -0.3rem;
+  display: block;
+}
+#page-travelnotes-index .list-block.inset ul.tipbaggage:after{
+  content: "1";
+}
+#page-travelnotes-index .list-block.inset ul.tipcard:after{
+  content: "2";
+}
+#page-travelnotes-index .list-block.inset ul.tipcertificate:after{
+  content: "3";
+}
+#page-travelnotes-index .list-block.inset ul.tipcheckin:after{
+  content: "4";
+}
+.note_img {
+  width: 70%;
+  margin-top: 0.5rem;
+}
+.note_title {
+  font-weight: bold;
+  color: #000;
+  font-size: 0.85rem;
+}
+.note_tips {
+  color: #4c4c4c;
+}
+#page-travelnotes-index .col-85 {
+  background-position: 100%;
+  background-image: url("/assets/img/knowship4.png");
+  background-repeat: no-repeat;
+  background-size: 0.5rem;
+}
+#page-travelnotes-index .bar-tab {
+  background-color: inherit;
+}
+#page-travelnotes-index .bar-tab .tab-item {
+  font-size: 0.85rem;
+  color: #6d6d72;
+}
+#page-travelnotes-index .bar-tab a {
+  font-size: 0.85rem;
+  color: #0073bb;
+}
+#page-travelnotes-bagpreparation .list-block.inset ul {
+  margin-top: 1rem;
+}
+#page-travelnotes-bagpreparation .checkin li {
+  border-top: 1px solid #e7e7e7;
+}
+#page-travelnotes-card .list-block.inset ul {
+  margin-top: 1rem;
+}
+#page-travelnotes-card .checkin li {
+  border-top: 1px solid #e7e7e7;
+}
+#page-travelnotes-certificate .list-block.inset ul {
+  margin-top: 1rem;
+}
+#page-travelnotes-certificate .checkin li {
+  border-top: 1px solid #e7e7e7;
+}
+#page-travelnotes-checkin .list-block.inset ul.rule {
+  margin-top: 1rem;
+  border-top-left-radius: 0;
+  margin-left: 1.5rem;
+}
+#page-travelnotes-checkin .list-block.inset ul.rule:before {
+  background-color: #061556;
+  border-radius: 50%;
+  border: 2px solid #fbb818;
+  height: 0.5rem;
+  width: 0.5rem;
+  display: block;
+  content: '';
+  position: absolute;
+  top: -0.4rem;
+  left: -1.5rem;
+}
+#page-travelnotes-checkin .list-block.inset ul.rule:after {
+  width: 0; 
+  height: 0; 
+  border-top: 0.5rem solid #fff; 
+  border-left: 0.52rem solid #061556;
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -0.5rem;
+}
+#page-travelnotes-checkin .checkin li {
+  border-top: 1px solid #e7e7e7;
+}
+#page-travelnotes-checkin .list-block.inset ul {
+  margin-top: 2rem;
+}
+.bagpreparation_img {
+  width: 70%;
+  margin-top: -0.1rem;
+}
+.remarks {
+  color: #6d6d72;
+}
+.verticalline {
+  border-left: 1px dotted #164bc4;
+  position: absolute;
+  top: 1.2rem;
+  left: 1.1rem;
+  /*bottom: 0;
+  height: 80%;*/
 }
