@@ -368,6 +368,23 @@ $(function () {
 		});
 	});
 
+	$(document).on("pageInit", "#page-myorder-ship", function(e, pageId, $page) {
+		$page.on('click', '.importBtn', function(){
+			var memberModal = $.modal({
+		      extraClass: "import-Modal",
+			  title: '<div class="lh15p pt30">是否将以下订单导入到我的订单？<div class="f12 o4">导入后可获得此订单与航线的最新动态</div></div>',
+			  text:  '<div class="f14">'+
+		                '<div><label>订单号</label>2678365</div>' +
+		                '<div><label>所乘游轮</label>海洋量子号</div>' +
+		                '<div><label>出发日期</label>2015/12/12</div>' +
+		                '<div><label>航线</label>上海 - 冲绳 - 香港</div>' +
+		                '<div class="mt20"><a href="#" class="button button-big button-fill button-success button-round">导入到我的订单</a></div>' +
+		                '<div class="tc"><a href="#" class="f16 fyellow">暂不导入</a></div>' +
+		              '</div>'
+			});
+		})
+	});
+
 	$(document).on("pageInit", "#page-device", function(e, pageId, $page) {
 		var time1 = new Date().getTime(), tcount = 0;
 		function orientationHandler(event){
