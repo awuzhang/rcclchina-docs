@@ -385,6 +385,25 @@ $(function () {
 		})
 	});
 
+	$(document).on("pageInit", "#page-member-login", function(e, pageId, $page) {
+		$page.on('click', 'span.agree', function(){
+			if ($(this).children('i').hasClass('checkbox_on')){
+				$(this).children('i').addClass('checkbox_off');
+				$(this).children('i').removeClass('checkbox_on');
+			} else {
+				$(this).children('i').addClass('checkbox_on');
+				$(this).children('i').removeClass('checkbox_off');
+			}
+		});
+	});
+
+	$(document).on("pageInit", "#page-member-profile", function(e, pageId, $page) {
+		$page.on('click', '.bindingbtn', function(){
+			$.toast("绑定成功");
+		});
+	});
+
+
 	$(document).on("pageInit", "#page-device", function(e, pageId, $page) {
 		var time1 = new Date().getTime(), tcount = 0;
 		function orientationHandler(event){

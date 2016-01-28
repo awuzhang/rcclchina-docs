@@ -451,6 +451,19 @@ top: -4rem;opacity: .5;
 .import-Modal .btns {padding: .5rem .75rem;}
 .import-Modal .btns .button {display: block;color: #100f4f;border-radius: 1.35rem;height: 1.8rem;line-height: 1.8rem;}
 
+#page-member-profile .item-media {width: 3rem;}
+#page-member-profile .no-border .item-inner:after {height: 0;}
+#page-member-profile .userimg {width: 2rem;height: 2rem;border-radius: 50%;}
+#page-member-profile .card-footer {display: block;}
+
+#page-member-login .db .item-inner{display: block; overflow: inherit; margin-bottom: .8rem; padding-top: 0;}
+#page-member-login .list-block ul {padding:.5rem 0}
+#page-member-login .codeimg {background-color: #ccc; color: #000; padding: .1rem .5rem;}
+
+#page-member-information .db .item-inner{display: block; overflow: inherit; margin-bottom: .8rem; padding-top: 0;}
+#page-member-information .list-block ul {padding:.5rem 0}
+#page-member-information .codeimg {background-color: #ccc; color: #000; padding: .1rem .5rem;}
+
 @-webkit-keyframes onboard-1down {
   from {opacity: 0; -webkit-transform: translate3d(0, -40%, 0); transform: translate3d(0, -40%, 0); }
   to {opacity: 1; -webkit-transform: none; transform: none; }
