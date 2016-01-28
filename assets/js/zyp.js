@@ -72,6 +72,7 @@ $(function () {
 		var mgt = ((totheight-divheight-divheight-56)/3);
 		$('.checkin_gmt').css("padding-top",mgt);
 		$('.checkin_gmt').css("height", divheight + mgt);
+		$('#page-checkin-index .content').removeClass('novisible');
 
 		$("#btncarbinno").on("touchstart", function() {
 		    var bfheight = $(this).height();
@@ -343,6 +344,7 @@ function regDate(str) {
 function SearchHighlight(idVal,keyword) {
 	var pucl = document.getElementById(idVal);
 	if("" == keyword) return;
+	//关键字匹配不上的问题列表不显示
 	$('#searchresult div ul li').each(function(index, el) {
 		var title = $(this).find('.item-title').html();
 		if (title.indexOf(keyword) == -1) {
@@ -358,23 +360,32 @@ function SearchHighlight(idVal,keyword) {
 	var temp = pucl.innerHTML;
 	var r1 = '<b class="highlight">';
 	var r2 = '</b>';
-	var htmlReg = new RegExp(r1,"i");
-	var htmlReg1 = new RegExp(r2,"i");
-	//去除前回替换结果
+	var htmlReg = new RegExp("\<.*?\>","i");
+	var arrA = new Array();
+	//替换HTML标签
 	for (var i = 0 ; true; i++) {
 		var m = htmlReg.exec(temp);
-		var n = htmlReg1.exec(temp);
 		if (m) {
-			temp = temp.replace(m, "");
-		} else if (n) {
-			temp = temp.replace(n, "");
+			if (m.indexOf(r1) == -1 && m.indexOf(r2)) {
+				arrA[i] = m;
+			} else {
+				arrA[i] = "";
+			}
 		} else {
 			break;
 		}
+		temp = temp.replace(m, "{[("+i+")]}");
 	}
 	//替换关键字
-	var reResult = new RegExp("("+ keyword +")", "gi");
-	temp = temp.replace(reResult,"<b class='highlight'>$1</b>");
+	words = unescape(keyword.replace(/\+/g,' ')).split(/\s+/);
+	for (var w = 0;w < words.length; w++) {
+		var r = new RegExp("("+words[w].replace(/[(){}.+*?^$|\\\[\]]/g, "\\$&")+")","ig");
+		temp = temp.replace(r,"<b class='highlight'>$1</b>");
+	}
+	//恢复HTML标签
+	for(var i = 0; i<arrA.length; i++) {
+		temp = temp.replace("{[("+i+")]}", arrA[i]);
+	}
 	pucl.innerHTML = temp;
 }
 
