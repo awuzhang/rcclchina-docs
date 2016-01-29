@@ -192,7 +192,17 @@ $(function () {
 	});
 	//时间控制结束
 
-	$(document).on("pageInit", "#page-home", function(e) {
+	$(document).on("pageInit", "#page-home", function(e, pageId, $page) {
+		function orientationHandler(event){
+            var m = Math.floor(event.gamma) > 80 ? 80 : Math.floor(event.gamma);
+            m = m < -80 ? -80 : m;
+            $('#page-home').css({'-webkit-transform': 'translate3d('+ m/2 +'px,0,0)' });
+        }
+        if (window.DeviceOrientationEvent){  
+            window.addEventListener("deviceorientation", orientationHandler, false);  
+        }
+     	$page.css({'width':'120%','margin-left':'-10%'});
+
 		$('.home_cddj').click(function(){
 			if($('.panel-left').hasClass('active')){
 			 	$(this).removeClass('open-panel');

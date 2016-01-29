@@ -312,6 +312,10 @@
 }
 
 /*home*/
+.homebgimg {
+  background:url(/assets/img/home_carousel.jpg);
+  background-size: cover;
+}
 .home_lb{
   position: relative;
    margin: auto;
@@ -351,9 +355,9 @@
   display: block; 
   width: 30%;
 }
-.home_mgl{margin-left: 1rem;}
+.home_mgl{margin-left: 2.5rem;}
 .home_mga{margin:auto;}
-.home_mgr{float:right;margin-right: 1rem;}
+.home_mgr{float:right;margin-right: 2.5rem;}
 
 .home_lbtitle{
   color: white;
