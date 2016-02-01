@@ -6,58 +6,27 @@ title: 首页
 <div class="page" id="page-index">
   <div class="content" style="padding">
     <p style="padding:20px; line-height:2">
-    <a href="home/home">首页</a> <br>
-    <a href="route/route">航班查询</a> <br>
-    <a href="order/order_booking">预定船票</a> <br>
-    <a href="checkin/checkin_index">办理登船</a> <br>
-    <a href="searchmyorder/input">订单查询</a> <br>
-    <a href="faq/faq_index">常见问题</a> <br>
-    <a href="travelnotes/travelnotes_index">行前须知</a> <br>
-    <a href="shorex/shorex">岸上观光</a> <br>
-    <a href="onboard/onboard_list">船上体验</a> <br>
-    <a href="aboutship/knowship">关于邮轮</a> <br>
-    <a href="wifi/booking">预定wifi</a> <br>
-    <a href="coupon/mycoupon">我的优惠券</a> <br>
-    <a href="myorder/myorder_ship">我的订单</a> <br>
-    <a href="member/member_login">个人中心</a> <br>
+    <a class="external" href="/home/home">首页</a> <br>
+    <a class="external" href="/route/route">航班查询</a> <br>
+    <a class="external" href="/order/order_booking">预定船票</a> <br>
+    <a class="external" href="/checkin/checkin_index">办理登船</a> <br>
+    <a class="external" href="/searchmyorder/input">订单查询</a> <br>
+    <a class="external" href="/faq/faq_index">常见问题</a> <br>
+    <a class="external" href="/travelnotes/travelnotes_index">行前须知</a> <br>
+    <a class="external" href="/shorex/shorex">岸上观光</a> <br>
+    <a class="external" href="/onboard/onboard_list">船上体验</a> <br>
+    <a class="external" href="/aboutship/knowship">关于邮轮</a> <br>
+    <a class="external" href="/wifi/booking">预定wifi</a> <br>
+    <a class="external" href="/coupon/mycoupon">我的优惠券</a> <br>
+    <a class="external" href="/myorder/myorder_ship">我的订单</a> <br>
+    <a class="external" href="/member/member_login">个人中心</a> <br>
+    <a class="external" href="/member/wx_member_profile">微信个人中心</a><br>
+    <a class="external" href="/member/wx_member_profile">办理登船后-同步账号信息</a><br>
+    <a class="external" href="/survey/welcome">问卷</a> <br>
     
-    <a href="/DeviceMotionEvent">DeviceMotionEvent</a>
+
     </p>
-    <p class="fff">webP:<img src="/assets/img/1.webp" width="100" alt=""></p>
-    <p class="fff">iconfont:<span class="icon icon-app"></span></p>
-    <p class="fff">svg:<svg style="fill:#fff" width="100" height="100"> <use xlink:href='/assets/svg.svg#icon-sold'/></svg></p>
-
-    <p class="fff" id="device"></p>
-    <p class="fff" id="webP"></p>
-
-    <script>
-    function regDate(str) {
-        str = str.replace(/\//, '').substring(0,4);
-        if(isNaN(str)) return '';
-        var reg = /(\d{2})(\d{1,2})/;
-        return(str.replace 
-            (reg, 
-                function($0,$1,$2) { 
-                    return  ($1 +"/" + $2);
-                } 
-            )
-        ); 
-    } 
-    </script>
-
-    <p ><span class="fff">有效日期</span> <input placeholder="01/23" type="text" onkeyup ="value=regDate(value)" pattern="[0-9]*"></p>
-<!-- 
-    <div style="padding-top:100px">
-    </div>
-
-    <div>date<input type="date"></div>
-    <div>datetime<input type="datetime"></div>
-    <p>拨号: <a href="tel:18050125150" mce_href="tel:18050125150" class="external">18050125150</a></p>
-
-    <div>SUI模拟 <input type="text" id='picker'/></div>
-    <div style="padding:20px">type='number' <input type="number"></div>
-    <div style="padding:20px">select <select><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
- -->
+    
   </div>
 </div>
 <script type="text/javascript">

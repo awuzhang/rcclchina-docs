@@ -397,11 +397,11 @@ $(function () {
 		});
 	});
 
-	$(document).on("pageInit", "#page-member-profile", function(e, pageId, $page) {
-		$page.on('click', '.bindingbtn', function(){
-			$.toast("绑定成功");
-		});
-	});
+	// $(document).on("pageInit", "#page-member-profile", function(e, pageId, $page) {
+	// 	$page.on('click', '.bindingbtn', function(){
+	// 		$.toast("绑定成功");
+	// 	});
+	// });
 
 
 	$(document).on("pageInit", "#page-device", function(e, pageId, $page) {

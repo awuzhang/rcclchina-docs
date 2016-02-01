@@ -64,6 +64,15 @@ $(function () {
 			$('.ks_t2').addClass('hidden');
 			$('.ks_t1').removeClass('hidden');
 		});
+
+		var countup1 = new CountUp("countup1", 0, 45, 0, 2.5, {});
+		var countup2 = new CountUp("countup2", 0, 6, 0, 2.5, {});
+		var countup3 = new CountUp("countup3", 0, 41, 0, 2.5, {});
+		var countup4 = new CountUp("countup4", 0, 460, 0, 2.5, {});
+		countup1.start();
+		countup2.start();
+		countup3.start();
+		countup4.start();
 	});
 
 	$(document).on("pageInit", "#page-checkin-index", function(e) {
@@ -75,28 +84,16 @@ $(function () {
 		$('#page-checkin-index .content').removeClass('novisible');
 
 		$("#btncarbinno").on("touchstart", function() {
-		    var bfheight = $(this).height();
-		    $(this).css("height", bfheight*0.92);
-		    $(this).css("width", bfheight*0.92);
-		    $(this).css("margin-bottom", bfheight*0.08);
+			$(this).addClass('sc8');
         });
         $("#btncarbinno").on("touchend", function() {
-            var bfheight = $(this).height();
-            $(this).css("height", bfheight/0.92);
-            $(this).css("width", bfheight/0.92);
-            $(this).css("margin-bottom", 0);
+        	$(this).removeClass('sc8');
         });
 		$("#btnorderno").on("touchstart", function() {
-		    var bfheight = $(this).height();
-            $(this).css("height", bfheight*0.92);
-            $(this).css("width", bfheight*0.92);
-            $(this).css("margin-bottom", bfheight*0.08);
+			$(this).addClass('sc8');
 		});
 		$("#btnorderno").on("touchend", function() {
-            var bfheight = $(this).height();
-            $(this).css("height", bfheight/0.92);
-            $(this).css("width", bfheight/0.92);
-            $(this).css("margin-bottom", 0);
+        	$(this).removeClass('sc8');
         });
 	});
 
@@ -191,151 +188,6 @@ $(function () {
 		checkinTimerControl.getInstance().removeEvent();
 	});
 	//时间控制结束
-
-	$(document).on("pageInit", "#page-home", function(e, pageId, $page) {
-		function orientationHandler(event){
-            var m = Math.floor(event.gamma) > 80 ? 80 : Math.floor(event.gamma);
-            m = m < -80 ? -80 : m;
-            $('#page-home').css({'-webkit-transform': 'translate3d('+ m/2 +'px,0,0)' });
-        }
-        if (window.DeviceOrientationEvent){  
-            window.addEventListener("deviceorientation", orientationHandler, false);  
-        }
-     	$page.css({'width':'120%','margin-left':'-10%'});
-
-		$('.home_cddj').click(function(){
-			if($('.panel-left').hasClass('active')){
-			 	$(this).removeClass('open-panel');
-			 	$(this).addClass('close-panel');
-			}
-			if(!$('.panel-left').hasClass('active')){
-				$(this).addClass('open-panel');
-			 	$(this).removeClass('close-panel');
-			}
-		});
-
-		$('.home_jhlx').click(function(){
-			if($('.jhlx').hasClass('hidden')){
-				$(".jhlx").removeClass('hidden');
-				$(".jia0").addClass('hidden');
-				$(".jian0").removeClass('hidden');
-			}else{
-				$(".jhlx").addClass('hidden');
-				$(".jian0").addClass('hidden');
-				$(".jia0").removeClass('hidden');
-			}
-		});
-		$('.home_hjcd').click(function(){
-			if($('.hjcd').hasClass('hidden')){
-				$(".hjcd").removeClass('hidden');
-				$(".jia1").addClass('hidden');
-				$(".jian1").removeClass('hidden');
-			}else{
-				$(".hjcd").addClass('hidden');
-				$(".jian1").addClass('hidden');
-				$(".jia1").removeClass('hidden');
-			}
-		});
-		$('.home_zbdc').click(function(){
-			if($('.zbdc').hasClass('hidden')){
-				$(".zbdc").removeClass('hidden');
-				$(".jia2").addClass('hidden');
-				$(".jian2").removeClass('hidden');
-			}else{
-				$(".zbdc").addClass('hidden');
-				$(".jian2").addClass('hidden');
-				$(".jia2").removeClass('hidden');
-			}
-		});
-		$('.home_gezx').click(function(){
-			if($('.grzx').hasClass('hidden')){
-				$(".grzx").removeClass('hidden');
-				$(".jia3").addClass('hidden');
-				$(".jian3").removeClass('hidden');
-			}else{
-				$(".grzx").addClass('hidden');
-				$(".jian3").addClass('hidden');
-				$(".jia3").removeClass('hidden');
-			}
-		});
-
-		$('.home_arrowd img').click(function(){
-			$('.home_pg0').addClass('hidden');
-			$('.home_lbnav2').removeClass('hidden');
-			$('.home_pg1').removeClass('hidden');
-			$('.home_bthxcx').removeClass('nodisplay');
-		});
-		$('.home_arrowdup img').click(function(){
-			$('.home_pg0').removeClass('hidden');
-			$('.home_lbnav2').addClass('hidden');
-			$('.home_pg1').addClass('hidden');
-			$('.home_bthxcx').addClass('nodisplay');
-		})
-
-	    $(document).on('click','.confirm-title-ok', function () {
-		  	$.confirm( '拨打客服：400-123-456', function () {
-		      	$.alert('确认拨打');
-		  	});
-		});
- 		//全局变量，触摸开始位置
-        var startX = 0, startY = 0;
-        //touchstart事件
-        function touchStartFunc(evt) {
-            try
-            {
-                var touch = evt.touches[0]; //获取第一个触点
-                var y = touch.pageY; //页面触点Y坐标
-                //记录触点初始位置
-                startY = y;
-            }
-            catch (e) {
-            }
-        }
-        //touchmove事件，这个事件无法获取坐标
-        function touchMoveFunc(evt) {
-            try
-            {
-                var touch = evt.touches[0]; //获取第一个触点
-                var y = touch.pageY; //页面触点Y坐标
-
-                if (y - startY < 0) {
-                    $('.home_btbg').addClass('hidden');
-                } else {
-                	$('.home_btbg').removeClass('hidden');
-                }
-                startY = y;
-            }
-            catch (e) {
-            }
-        }
-
-        //touchend事件
-        function touchEndFunc(evt) {
-            try {
-            }
-            catch (e) {
-            }
-        }
-        //绑定事件
-        function bindEvent(f) {
-            if(f==1){
-            }else{
-                document.addEventListener('touchstart', touchStartFunc, false);
-                document.addEventListener('touchmove', touchMoveFunc, false);
-                document.addEventListener('touchend', touchEndFunc, false);
-            }
-        }
-        //判断是否支持触摸事件
-        function isTouchDevice() {
-            try {
-                document.createEvent("TouchEvent");
-                bindEvent(); //绑定事件
-            }
-            catch (e) {
-            }
-        }
-    	window.onload = isTouchDevice;
-	});
 });
 
 function regDate(str) {
