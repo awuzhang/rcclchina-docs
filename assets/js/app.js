@@ -45,6 +45,29 @@ $(function(){
 
 $(function () {
 	'use strict';
+
+	$(document).on("pageAnimationStart", function(e) {
+		if($.device.isWeixin) {
+			$('header.bar').remove();
+			$('.bar-nav ~ .content').css({'top' : '0'});
+		}
+	})
+	$(document).on("pageInit", function(e) {
+		//微信打开不用header
+		if($.device.isWeixin) {
+			$('header.bar').remove();
+			$('.bar-nav ~ .content').css({'top' : '0'});
+		}
+		//点击遮罩关闭弹窗
+		$(document).on('click', '.modal-overlay', function(){
+			$.closeModal();
+		});
+	});
+
+	$(document).on('pageReinit', function(){
+		$.closeModal();
+	})
+
 	$(document).on("pageInit", "#page-checkin-payment", function(e) {
 		$('#page-checkin-payment .label-checkbox').on("click",function(){
 			if ($(this).find('i').hasClass('checkbox_on')){
@@ -109,14 +132,6 @@ $(function () {
 			$('.ks_t1').removeClass('hidden');
 		});
 
-		var countup1 = new CountUp("countup1", 0, 45, 0, 2.5, {});
-		var countup2 = new CountUp("countup2", 0, 6, 0, 2.5, {});
-		var countup3 = new CountUp("countup3", 0, 41, 0, 2.5, {});
-		var countup4 = new CountUp("countup4", 0, 460, 0, 2.5, {});
-		countup1.start();
-		countup2.start();
-		countup3.start();
-		countup4.start();
 	});
 
 	$(document).on("pageInit", "#page-checkin-index", function(e) {
@@ -234,23 +249,6 @@ $(function () {
 	//时间控制结束
 
 
-	$(document).on("pageAnimationStart", function(e) {
-		if($.device.isWeixin) {
-			$('header.bar').remove();
-			$('.bar-nav ~ .content').css({'top' : '0'});
-		}
-	})
-	$(document).on("pageInit", function(e) {
-		//微信打开不用header
-		if($.device.isWeixin) {
-			$('header.bar').remove();
-			$('.bar-nav ~ .content').css({'top' : '0'});
-		}
-		//点击遮罩关闭弹窗
-		$(document).on('click', '.modal-overlay', function(){
-			$.closeModal();
-		})
-	});
 
 	$(document).on("pageInit", "#page-route", function(e, pageId, $page) {
 		$('.popup-ships .select-all').on('click', function(){
@@ -610,9 +608,64 @@ $(function () {
 	$(document).on("pageInit", "#page-wx-member-profile", function(e, pageId, $page) {
 		$.toast("绑定成功");
 	});
+	$(document).on("pageInit", "#page-import-member-profile", function(e, pageId, $page) {
+		$.toast("同步成功");
+	});
 
+	$(document).on("pageInit", "#page-checkin-ticket", function(e, pageId, $page) {
+		checkinTimerControl.getInstance().stop();
 
+		$page.on('click', '#finishBtn', function(){
+			var memberModal = $.modal({
+		      extraClass: "room-memberModal",
+			  title: '完善信息可以接受定制化推送信息',
+			  text:  '<div>'+
+		                '<div class="f14 tc o4">系统检测到您可能是？</div>' +
+							'<div class="card-content list-block mb0">' +
+								'<ul>' +
+									'<li class="item-content">' +
+										'<label class="label-checkbox item-content">' +
+											'<input type="radio" name="my-radio">' +
+											'<div class="item-media"><i class="icon icon-form-checkbox"></i></div>' +
+											'<div class="item-inner"> 洪莉丝 ALICE HONG </div>' +
+										'</label>' +
+									'</li>' +
+									'<li class="item-content">' +
+										'<label class="label-checkbox item-content">' +
+											'<input type="radio" name="my-radio">' +
+											'<div class="item-media"><i class="icon icon-form-checkbox"></i></div>' +
+											'<div class="item-inner"> 王悦威 WANG YUEWEI </div>' +
+										'</label>' +
+									'</li>' +
+								'</ul>' +
+								'<div class="content-block list-block clear_margin">' +
+									'<a href="/member/import_member_profile" onClick="$.closeModal();" class="button button-big button-fill button-success button-round external">同步到我的账户</a>' +
+									'<div class="goback text-center ">' +
+										'<a href="#" onClick="$.closeModal()">都不是我，跳过</a>' +
+									'</div>' +
+								'</div>' +
+							'</div>' +
+		              '</div>'
+			});
+		})
+	});
 
+	$(document).on("pageInit", "#page-Premierroom", function(e, pageId, $page) {
+		$page.on('click', '.photos', function () {
+	    var modal = $.modal({
+	      text:  '<div class="swiper-container" style="width: auto;">'+
+                    '<div class="swiper-pagination"></div>'+
+                    '<div class="swiper-wrapper">'+
+                      '<div class="swiper-slide"><img src="/assets/img/room.jpg" width="100%"></div>' +
+                      '<div class="swiper-slide"><img src="/assets/img/room.jpg" width="100%"></div>'+
+                      '<div class="swiper-slide"><img src="/assets/img/room.jpg" width="100%"></div>'+
+                      '<div class="swiper-slide"><img src="/assets/img/room.jpg" width="100%"></div>'+
+                    '</div>'+
+                  '</div>',
+            extraClass : 'room-photoModal'
+	    })
+	    $.swiper($(modal).find('.swiper-container'), {pagination: '.swiper-pagination'});});
+	})
   
 	$.init();
 });
