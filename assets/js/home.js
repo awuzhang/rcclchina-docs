@@ -73,10 +73,15 @@ $(function () {
 
      	$page.find('.home_pg0').css({'width':'120%','margin-left':'-10%'});
 
-		$page.on('swipeUp', '.home_pg0', function(){
+		// $page.on('swipeUp', '.home_pg0', function(){
+		// 	$page.find('.page1').addClass('hide');
+		// 	$page.find('.home-bar-nav').css({'background-color':'#000'});
+		// });
+
+    	touch.on('.home_pg0', 'swipeup', function(){
 			$page.find('.page1').addClass('hide');
 			$page.find('.home-bar-nav').css({'background-color':'#000'});
-		});
+    	});
 
 		$page.on('webkitTransitionEnd', '.page1', function(){
 			if($(this).hasClass('hide')){
@@ -88,14 +93,23 @@ $(function () {
 			}
 		});
 
-		$page.on('swipeDown', '.home_bgc', function(){
+		// $page.on('swipeDown', '.home_bgc', function(){
+		// 	if($('.content').scrollTop() <= 0 ) {
+		// 		$page.find('.page1').removeClass('hide');
+		// 		$page.find('.home-bar-nav').css({'background-color':'transparent'});
+		// 		$('.content').css({'bottom':'0'});
+		// 		$('nav.bar-tab').hide();
+		// 	}
+		// });
+    	touch.on('.home_bgc', 'swipedown', function(){
 			if($('.content').scrollTop() <= 0 ) {
 				$page.find('.page1').removeClass('hide');
 				$page.find('.home-bar-nav').css({'background-color':'transparent'});
 				$('.content').css({'bottom':'0'});
 				$('nav.bar-tab').hide();
 			}
-		});
+    	});
+
 
 		$page.on('click', '.closePanelmark', function(){
 			$(this).hide();
