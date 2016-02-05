@@ -68,17 +68,17 @@ title: 在线值船
               <li class="display">
                 <div class="row no-gutter item">
                   <div>信用卡卡号</div>
-                  <input type="tel" value="6225 7575 2663 6281" id="cardno" placeholder="请输入卡号">
+                  <input type="tel" value="" id="cardno" placeholder="请输入卡号">
                 </div>
               </li>
               <li class="display">
                 <div class="row no-gutter item">
                   <div class="col-50">
                     <div>持有人姓名拼音</div>
-                    <input type="text" value="Alice Hong"  placeholder='例如"ZHANGYI"'>
+                    <input type="text" value="" onkeyup="value=value.toUpperCase()"  placeholder='例如"ZHANGYI"'>
                   </div>
                   <div class="col-50">
-                    <div>有效期至</div>
+                    <div>有效期至(月/年)</div>
                     <input type="text" placeholder='例"02/24"' onkeyup="value=regDate(value)">
                   </div>
                 </div>

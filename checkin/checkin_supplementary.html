@@ -40,11 +40,11 @@ title: 补充信息
           <div class="row no-gutter item">
             <div class="col-50">
               <div>中文姓</div>
-              <input type="text" value="洪" placeholder='例"郑"'>
+              <input type="text" value="" placeholder='例"郑"'>
             </div>
             <div class="col-50">
               <div>中文名</div>
-              <input type="text" value="丽丝" placeholder='例"义"'>
+              <input type="text" value="" placeholder='例"义"'>
             </div>
           </div>
         </li>
@@ -52,11 +52,11 @@ title: 补充信息
           <div class="row no-gutter item">
             <div class="col-50">
               <div>姓氏拼音</div>
-              <input type="text" value="Hong" placeholder='例"ZHENG"'>
+              <input type="text" onkeyup="value=value.toUpperCase()" placeholder='例"ZHENG"'>
             </div>
             <div class="col-50">
               <div>名字拼音</div>
-              <input type="text" value="Alice" placeholder='例"YI"'>
+              <input type="text" onkeyup="value=value.toUpperCase()" placeholder='例"YI"'>
             </div>
           </div>
         </li>
@@ -64,13 +64,7 @@ title: 补充信息
           <div class="row no-gutter item">
             <div class="col-100">
               <div>所属国籍</div>
-              <select class="nopadding">
-                <option>中国</option>
-                <option>美国</option>
-                <option>日本</option>
-                <option>澳大利亚</option>
-                <option>德国</option>
-              </select>
+              <input type="text" placeholder="请选择国籍" id="country-picker">
             </div>
           </div>
         </li>
@@ -78,11 +72,11 @@ title: 补充信息
           <div class="row no-gutter item">
             <div class="col-50">
               <div>护照号</div>
-              <input type="text" value="E73829910" placeholder="请填写护照号">
+              <input type="text" value="" placeholder="请填写护照号">
             </div>
             <div class="col-50">
               <div>有效日期</div>
-              <input type="text" placeholder='例"02/24"' onkeyup="value=regDate(value)">
+              <input type="text" ontouchstart="this.type='date'"  placeholder="请选择">
             </div>
           </div>
         </li>
@@ -90,7 +84,7 @@ title: 补充信息
           <div class="row no-gutter item">
             <div class="col-100">
               <div>紧急联络人电话</div>
-              <input type="tel" value="13302847360" placeholder="请填写电话">
+              <input type="tel" value="" placeholder="请填写电话">
             </div>
           </div>
         </li>
@@ -98,7 +92,7 @@ title: 补充信息
           <div class="row no-gutter item">
             <div class="col-100">
               <div>会员号码（选填 / 填写可累积会员积分）</div>
-              <input type="text" pattern="[0-9]*" value="603382915" placeholder="请填写会员号">
+              <input type="text" pattern="[0-9]*" value="" placeholder="请填写会员号">
             </div>
           </div>
         </li>

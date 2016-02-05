@@ -9,7 +9,13 @@ $(function () {
 		$('#panel-left-demo .home_tlineb333').on('click', function(){
 			var $old = $('#panel-left-demo .home_tlineb333.curr');
 			var $next = $(this).next();
-			if($old === $next){return;}
+			if($old.html() === $(this).html()){
+				$old.removeClass('curr');
+				$old.next().toggleClass('hidden');
+				$(".jia", $old).toggleClass('hidden');
+				$(".jian", $old).toggleClass('hidden');
+				return;
+			}
 
 			if($next.is('ul')){
 				if($old.length > 0 ){
@@ -99,65 +105,6 @@ $(function () {
 		})
 
 		handlePannelLeft();
-/*
-		$('.home_jhlx').click(function(){
-			if($('.jhlx').hasClass('hidden')){
-				$(".jhlx").removeClass('hidden');
-				$(".jia0").addClass('hidden');
-				$(".jian0").removeClass('hidden');
-			}else{
-				$(".jhlx").addClass('hidden');
-				$(".jian0").addClass('hidden');
-				$(".jia0").removeClass('hidden');
-			}
-		});
-		$('.home_hjcd').click(function(){
-			if($('.hjcd').hasClass('hidden')){
-				$(".hjcd").removeClass('hidden');
-				$(".jia1").addClass('hidden');
-				$(".jian1").removeClass('hidden');
-			}else{
-				$(".hjcd").addClass('hidden');
-				$(".jian1").addClass('hidden');
-				$(".jia1").removeClass('hidden');
-			}
-		});
-		$('.home_zbdc').click(function(){
-			if($('.zbdc').hasClass('hidden')){
-				$(".zbdc").removeClass('hidden');
-				$(".jia2").addClass('hidden');
-				$(".jian2").removeClass('hidden');
-			}else{
-				$(".zbdc").addClass('hidden');
-				$(".jian2").addClass('hidden');
-				$(".jia2").removeClass('hidden');
-			}
-		});
-		$('.home_gezx').click(function(){
-			if($('.grzx').hasClass('hidden')){
-				$(".grzx").removeClass('hidden');
-				$(".jia3").addClass('hidden');
-				$(".jian3").removeClass('hidden');
-			}else{
-				$(".grzx").addClass('hidden');
-				$(".jian3").addClass('hidden');
-				$(".jia3").removeClass('hidden');
-			}
-		});
-
-		$('.home_arrowd img').click(function(){
-			$('.home_pg0').addClass('hidden');
-			$('.home_lbnav2').removeClass('hidden');
-			$('.home_pg1').removeClass('hidden');
-			$('.home_bthxcx').removeClass('nodisplay');
-		});
-		$('.home_arrowdup img').click(function(){
-			$('.home_pg0').removeClass('hidden');
-			$('.home_lbnav2').addClass('hidden');
-			$('.home_pg1').addClass('hidden');
-			$('.home_bthxcx').addClass('nodisplay');
-		})
-*/
 	});
 
 	$.init();

@@ -1,5 +1,6 @@
 /* 修复 sui.js 自定义Modal的BUG*/
 $(function(){
+	'use strict';
 	if($.modal){
 		var _modalTemplateTempDiv = document.createElement('div');
 		var defaults =  $.modal.prototype.defaults  = {
@@ -229,6 +230,13 @@ $(function () {
 		checkinTimerControl.getInstance().run();
 		checkinTimerControl.getInstance().addEvent(function(){
 			$page.find('#remainTime').html(checkinTimerControl.getInstance().endTimeString() );
+		});
+
+		$("#country-picker").countryPicker({
+		    toolbarTemplate: '<header class="bar bar-nav">\
+		    <button class="button button-link pull-right close-picker">确定</button>\
+		    <h1 class="title">请选择国籍</h1>\
+		    </header>'
 		});
 	});
 	$(document).on("pageInit", "#page-checkin-payment", function(e, pageId, $page) {
@@ -554,7 +562,7 @@ $(function () {
 		});
 	});
 
-	$(document).on("pageInit", "#page-myorder-ship", function(e, pageId, $page) {
+	$(document).on("pageInit", "#page-wifi-bookingok", function(e, pageId, $page) {
 		$page.on('click', '.importBtn', function(){
 			var memberModal = $.modal({
 		      extraClass: "import-Modal",
@@ -564,8 +572,8 @@ $(function () {
 		                '<div><label>所乘游轮</label>海洋量子号</div>' +
 		                '<div><label>出发日期</label>2015/12/12</div>' +
 		                '<div><label>航线</label>上海 - 冲绳 - 香港</div>' +
-		                '<div class="mt20"><a href="#" class="button button-big button-fill button-success button-round">导入到我的订单</a></div>' +
-		                '<div class="tc"><a href="#" class="f16 fyellow">暂不导入</a></div>' +
+		                '<div class="mt20"><a href="/myorder/myorder_ship_ok" onclick="$.closeModal()" class="button button-big button-fill button-success button-round">导入到我的订单</a></div>' +
+		                '<div class="tc"><a href="#" onclick="$.closeModal()" class="f16 fyellow">暂不导入</a></div>' +
 		              '</div>'
 			});
 		})
@@ -610,6 +618,9 @@ $(function () {
 	});
 	$(document).on("pageInit", "#page-import-member-profile", function(e, pageId, $page) {
 		$.toast("同步成功");
+	});
+	$(document).on("pageInit", "#page-myorder-ship-ok", function(e, pageId, $page) {
+		$.toast("导入成功");
 	});
 
 	$(document).on("pageInit", "#page-checkin-ticket", function(e, pageId, $page) {
@@ -666,6 +677,10 @@ $(function () {
 	    })
 	    $.swiper($(modal).find('.swiper-container'), {pagination: '.swiper-pagination'});});
 	})
+
+	$(document).on("pageInit", "#page-shipdetail", function(e, pageId, $page) {
+		new CountUp("countUp", 0, 16.8, 1, 2, {useEasing : false, useGrouping : false, separator : '', decimal : '.', prefix : '', suffix : ''}).start();
+	});
   
 	$.init();
 });

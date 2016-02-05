@@ -17,7 +17,7 @@ title: 订单号验证
           <div class="row no-gutter item">
             <div class="col-100">
               <div>订单号</div>
-              <input type="text" pattern="[0-9]*" value="273842" placeholder="请输入订单号">
+              <input type="text" pattern="[0-9]*" value="" placeholder="请输入订单号">
             </div>
           </div>
         </li>
@@ -29,7 +29,8 @@ title: 订单号验证
             </div>
             <div class="col-50">
               <div>搭乘邮轮</div>
-              <select class="nopadding">
+              <select name="" class="o6" ontouchstart="this.setAttribute('class','');">
+                <option value="" class="dn" disabled="" selected="">请选择搭乘邮轮</option>  
                 <option>海洋量子号</option>
                 <option>海洋水手号</option>
                 <option>海洋航行者号</option>
@@ -43,7 +44,7 @@ title: 订单号验证
           <div class="row no-gutter item">
             <div class="col-100">
               <div>乘客姓氏拼音</div>
-              <input type="text" value="Hong" placeholder='例"ZHENG"'>
+              <input type="text" onkeyup="value=value.toUpperCase()" placeholder='例"ZHENG"'>
             </div>
           </div>
         </li>
